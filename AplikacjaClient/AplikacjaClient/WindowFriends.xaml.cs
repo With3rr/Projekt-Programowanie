@@ -67,6 +67,8 @@ namespace AplikacjaClient
             inicjalizacjaListyfriends(a);
             zmiennauzytkownika = a;
 
+            CzyoknoON.Wlaczany = true;
+
 
 
 
@@ -127,6 +129,7 @@ namespace AplikacjaClient
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+            CzyoknoON.Wlaczany = false;
             this.Close();
         }
 

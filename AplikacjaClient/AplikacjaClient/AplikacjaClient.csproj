@@ -64,6 +64,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="CzyoknoON.cs" />
     <Compile Include="Friend.cs">
       <DependentUpon>ModelBazyUżytkownikow.tt</DependentUpon>
     </Compile>
@@ -158,49 +159,36 @@
     <Resource Include="close.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="expand.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="minimize.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="coollogo_com-55103211.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="facebook.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="instagram.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="snapchat.png" />
-  </ItemGroup>
-  <ItemGroup>
+    <Resource Include="sword.png" />
+    <Resource Include="sports-and-competition.png" />
+    <Resource Include="star-wars.png" />
+    <Resource Include="puzzle.png" />
     <Resource Include="twitter.png" />
-  </ItemGroup>
-  <ItemGroup>
+    <Resource Include="snapchat.png" />
     <Resource Include="ms.png" />
     <Resource Include="student.png" />
-    <Resource Include="friend.png" />
-    <Resource Include="downl.png" />
-    <Resource Include="add-user.png" />
     <Resource Include="loupe.png" />
+    <Resource Include="minimize.png" />
+    <Resource Include="logo.png" />
+    <Resource Include="facebook.png" />
+    <Resource Include="instagram.png" />
+    <Resource Include="friend.png" />
+    <Resource Include="interface.png" />
+    <Resource Include="game.png" />
+    <Resource Include="fps.png" />
+    <Resource Include="car.png" />
+    <Resource Include="add-user.png" />
     <Resource Include="man.png" />
+    <Resource Include="MainPict\tytul.jpg" />
     <Content Include="Movies\acs.mp4" />
     <Content Include="Movies\Wiedmin 3 Dziki Gon - trailer PL.mp4" />
-    <Resource Include="slider.png" />
     <Resource Include="speaker.png" />
     <Resource Include="stop.png" />
     <Resource Include="pause.png" />
     <Resource Include="play.png" />
     <Resource Include="play-button.png" />
     <Resource Include="plus %281%29.png" />
-    <Resource Include="search %284%29.png" />
-    <Resource Include="SwX5v3I.png" />
-    <Resource Include="search %283%29.png" />
     <Resource Include="search %282%29.png" />
-    <Resource Include="notification.png" />
-    <Resource Include="search %281%29.png" />
     <Resource Include="search.png" />
     <Resource Include="Games\stratGames\header29.jpg" />
     <Resource Include="Games\stratGames\header30.jpg" />
@@ -234,15 +222,6 @@
     <Resource Include="Games\racingGames\header37.jpg" />
     <Resource Include="Games\racingGames\header40.jpg" />
     <Resource Include="Games\racingGames\header41.jpg" />
-    <Resource Include="sword.png" />
-    <Resource Include="star-wars.png" />
-    <Resource Include="sports-and-competition.png" />
-    <Resource Include="puzzle.png" />
-    <Resource Include="fps.png" />
-    <Resource Include="car.png" />
-    <Resource Include="game.png" />
-    <Resource Include="cropped-3840-2160-600255.jpg" />
-    <Resource Include="header.jpg" />
     <Resource Include="Games\actGames\header.jpg" />
     <Resource Include="Games\actGames\header1.jpg" />
     <Resource Include="Games\actGames\header17.jpg" />
@@ -258,26 +237,11 @@
     <Resource Include="Games\racingGames\header43.jpg" />
     <Resource Include="Games\sportGames\header46.jpg" />
     <Resource Include="Games\stratGames\header47.jpg" />
-    <Resource Include="followerss.png" />
-    <Resource Include="followers.png" />
     <Resource Include="basket1.png" />
-    <Resource Include="followers %281%29.png" />
-    <Resource Include="followers %282%29.png" />
-    <Resource Include="basket %281%29.png" />
-    <Resource Include="bell.png" />
     <Resource Include="close %283%29.png" />
-    <Resource Include="adobe.png" />
-    <Resource Include="game-controller.png" />
-    <Resource Include="batman %281%29.png" />
-    <Resource Include="indesign.png" />
-    <Resource Include="friends.png" />
-    <Resource Include="friends %281%29.png" />
     <Resource Include="download.png" />
-    <Resource Include="600255.jpg" />
     <Resource Include="Games\rpgGames\600255.jpg" />
     <Resource Include="Games\stratGames\728987.jpg" />
-    <Resource Include="gearwheel.png" />
-    <Resource Include="mechanic.png" />
     <Resource Include="Games\actGames\ac.jpg" />
     <Content Include="ModelBazyUżytkownikow.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>

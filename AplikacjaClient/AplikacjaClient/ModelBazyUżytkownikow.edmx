@@ -11,14 +11,14 @@
           </Key>
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="NazwaUżytkownika" Type="nchar" MaxLength="50" Nullable="false" />
-          <Property Name="HasloUzytkownika" Type="nchar" MaxLength="50" Nullable="false" />
-          <Property Name="EmailAdress" Type="nchar" MaxLength="20" Nullable="false" />
-          <Property Name="Imie" Type="nchar" MaxLength="20" />
-          <Property Name="Nazwisko" Type="nchar" MaxLength="20" />
+          <Property Name="HasloUzytkownika" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="EmailAdress" Type="nchar" MaxLength="40" Nullable="false" />
+          <Property Name="Imie" Type="nvarchar" MaxLength="50" />
+          <Property Name="Nazwisko" Type="nvarchar" MaxLength="50" />
           <Property Name="Płeć" Type="nchar" MaxLength="10" />
-          <Property Name="Hobby" Type="nchar" MaxLength="200" />
-          <Property Name="Narodowosc" Type="nchar" MaxLength="20" />
-          <Property Name="Miejscowosc" Type="nchar" MaxLength="20" />
+          <Property Name="Hobby" Type="nvarchar" MaxLength="200" />
+          <Property Name="Narodowosc" Type="nvarchar" MaxLength="50" />
+          <Property Name="Miejscowosc" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="Friends">
           <Key>
@@ -33,7 +33,7 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Nazwa_gry" Type="nchar" MaxLength="30" Nullable="false" />
+          <Property Name="Nazwa_gry" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="godzinywGrze" Type="int" Nullable="false" />
           <Property Name="Użytkownik" Type="int" Nullable="false" />
           <Property Name="Path" Type="nvarchar" MaxLength="100" />
@@ -64,7 +64,7 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Nazwa_gry" Type="nchar" MaxLength="30" Nullable="false" />
+          <Property Name="Nazwa_gry" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="Kod_gry" Type="nchar" MaxLength="30" Nullable="false" />
         </EntityType>
         <Association Name="FK_Friends_ToTable">
@@ -133,16 +133,16 @@
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="NazwaUżytkownika" Type="String" MaxLength="50" FixedLength="true" Unicode="true" Nullable="false" />
-          <Property Name="HasloUzytkownika" Type="String" MaxLength="50" FixedLength="true" Unicode="true" Nullable="false" />
-          <Property Name="EmailAdress" Type="String" MaxLength="20" FixedLength="true" Unicode="true" Nullable="false" />
-          <Property Name="Imie" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
-          <Property Name="Nazwisko" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
+          <Property Name="HasloUzytkownika" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="EmailAdress" Type="String" MaxLength="40" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Imie" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Nazwisko" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Płeć" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
           <NavigationProperty Name="GrywMojejBiblioteces" Relationship="BazaUżytkownikowModel.FK_Table_ToTable" FromRole="DaneKonta" ToRole="GrywMojejBibliotece" />
           <NavigationProperty Name="Friends" Relationship="BazaUżytkownikowModel.FK_Friends_ToTable" FromRole="DaneKonta" ToRole="Friend" />
-          <Property Name="Hobby" Type="String" MaxLength="200" FixedLength="true" Unicode="true" />
-          <Property Name="Narodowosc" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
-          <Property Name="Miejscowosc" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
+          <Property Name="Hobby" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Narodowosc" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Miejscowosc" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="HistoriaZakupows" Relationship="BazaUżytkownikowModel.FK_HistoriaZakupow_ToTable" FromRole="DaneKonta" ToRole="HistoriaZakupow" />
         </EntityType>
         <EntityContainer Name="BazaUżytkownikowEntities" annotation:LazyLoadingEnabled="true">
@@ -181,7 +181,7 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Nazwa_gry" Type="String" Nullable="false" MaxLength="30" FixedLength="true" Unicode="true" />
+          <Property Name="Nazwa_gry" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="godzinywGrze" Type="Int32" Nullable="false" />
           <Property Name="Użytkownik" Type="Int32" Nullable="false" />
           <NavigationProperty Name="DaneKonta" Relationship="BazaUżytkownikowModel.FK_Table_ToTable" FromRole="GrywMojejBibliotece" ToRole="DaneKonta" />
@@ -225,7 +225,7 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" />
-          <Property Name="Nazwa_gry" Type="String" Nullable="false" MaxLength="30" FixedLength="true" Unicode="true" />
+          <Property Name="Nazwa_gry" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Kod_gry" Type="String" Nullable="false" MaxLength="30" FixedLength="true" Unicode="true" />
         </EntityType>
         <EntityType Name="HistoriaZakupow">

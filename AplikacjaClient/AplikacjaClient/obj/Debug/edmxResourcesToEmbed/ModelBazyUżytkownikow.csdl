@@ -6,16 +6,16 @@
     </Key>
     <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="NazwaUżytkownika" Type="String" MaxLength="50" FixedLength="true" Unicode="true" Nullable="false" />
-    <Property Name="HasloUzytkownika" Type="String" MaxLength="50" FixedLength="true" Unicode="true" Nullable="false" />
-    <Property Name="EmailAdress" Type="String" MaxLength="20" FixedLength="true" Unicode="true" Nullable="false" />
-    <Property Name="Imie" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
-    <Property Name="Nazwisko" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
+    <Property Name="HasloUzytkownika" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="EmailAdress" Type="String" MaxLength="40" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="Imie" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Nazwisko" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="Płeć" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
     <NavigationProperty Name="GrywMojejBiblioteces" Relationship="BazaUżytkownikowModel.FK_Table_ToTable" FromRole="DaneKonta" ToRole="GrywMojejBibliotece" />
     <NavigationProperty Name="Friends" Relationship="BazaUżytkownikowModel.FK_Friends_ToTable" FromRole="DaneKonta" ToRole="Friend" />
-    <Property Name="Hobby" Type="String" MaxLength="200" FixedLength="true" Unicode="true" />
-    <Property Name="Narodowosc" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
-    <Property Name="Miejscowosc" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
+    <Property Name="Hobby" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Narodowosc" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Miejscowosc" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <NavigationProperty Name="HistoriaZakupows" Relationship="BazaUżytkownikowModel.FK_HistoriaZakupow_ToTable" FromRole="DaneKonta" ToRole="HistoriaZakupow" />
   </EntityType>
   <EntityContainer Name="BazaUżytkownikowEntities" annotation:LazyLoadingEnabled="true">
@@ -54,7 +54,7 @@
       <PropertyRef Name="Id" />
     </Key>
     <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="Nazwa_gry" Type="String" Nullable="false" MaxLength="30" FixedLength="true" Unicode="true" />
+    <Property Name="Nazwa_gry" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="godzinywGrze" Type="Int32" Nullable="false" />
     <Property Name="Użytkownik" Type="Int32" Nullable="false" />
     <NavigationProperty Name="DaneKonta" Relationship="BazaUżytkownikowModel.FK_Table_ToTable" FromRole="GrywMojejBibliotece" ToRole="DaneKonta" />
@@ -98,7 +98,7 @@
       <PropertyRef Name="Id" />
     </Key>
     <Property Name="Id" Type="Int32" Nullable="false" />
-    <Property Name="Nazwa_gry" Type="String" Nullable="false" MaxLength="30" FixedLength="true" Unicode="true" />
+    <Property Name="Nazwa_gry" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="Kod_gry" Type="String" Nullable="false" MaxLength="30" FixedLength="true" Unicode="true" />
   </EntityType>
   <EntityType Name="HistoriaZakupow">

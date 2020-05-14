@@ -184,6 +184,14 @@ namespace AplikacjaClient
             //bazadanych.Kodies.Add(new Kody { Kod_gry = "578937581", Nazwa_gry = "Dota 2" });
             //bazadanych.Kodies.Add(new Kody { Kod_gry = "084936417", Nazwa_gry = "Misbits" });
             //bazadanych.Kodies.Add(new Kody { Kod_gry = "123321678", Nazwa_gry = "The surge 2" });
+
+
+
+            //bazadanych.Kodies.Add(new Kody { Kod_gry = "223456789", Nazwa_gry = "Arma 3" });
+            //bazadanych.Kodies.Add(new Kody { Kod_gry = "467490053", Nazwa_gry = "Ori 2" });
+            //bazadanych.Kodies.Add(new Kody { Kod_gry = "878937581", Nazwa_gry = "Dota 2" });
+            //bazadanych.Kodies.Add(new Kody { Kod_gry = "184936417", Nazwa_gry = "Misbits" });
+            //bazadanych.Kodies.Add(new Kody { Kod_gry = "223321678", Nazwa_gry = "The surge 2" });
             //bazadanych.SaveChanges();
 
 
@@ -257,6 +265,7 @@ namespace AplikacjaClient
         /// </remarks>
         public void inicjalizacjaGier()
         {
+            string sciezka2 = "pack://application:,,,/MainPict/";
             string sciezka = "pack://application:,,,/Games/";
             Actiongames = new ObservableCollection<Gry>();
             Actiongames.Add(new Gry("Resident evil 3", "Resident Evil 3: Nemesis is a survival horror game where the player controls the protagonist, Jill Valentine,  from  a third-person  perspective to interact with the environment and enemies. The player takes control  of another character for a brief portion of the game.", 240,"Akcja", new Uri(sciezka + "actGames/header.jpg"), "akcja", "horror", "coop", "apokalipsa","Capcom",2020));
@@ -267,7 +276,7 @@ namespace AplikacjaClient
             Actiongames.Add(new Gry("Assassin's creed origins", "Assassin's Creed Origins is an action-adventure stealth game played from a third-person  perspective. ... The player  can take control of Senu and scout an area in advance, highlighting  enemies which will then be  visible when they return to controlling Bayek, the game's main character.", 110, "Akcja", new Uri(sciezka + "actGames/header17.jpg"), "pustynia", "walka", "skradanie", "open-world","Ubisoft",2017));
             Actiongames.Add(new Gry("Deus ex human revolution", "Deus Ex: Human Revolution is an action role-playing game with incorporated first-person shooter  and stealth  mechanics. Players take the role of Adam Jensen, a man equipped with mechanical cybernetic implants  called augmentations.", 140, "Akcja", new Uri(sciezka + "actGames/header25.jpg"), "skradanie", "cyber", "walka", "futuryzm", "Eidos Montreal",2014));
             Actiongames.Add(new Gry("Arma 3", "ARMA 3. ARMA 3 is an open-world, realism-based, military tactical shooter video game developed  and published  by Bohemia  Interactive.  It was released for Microsoft Windows in September 2013, and   later announced for macOS and Linux  in August 2015.", 260, "Akcja", new Uri(sciezka + "actGames/header28.jpg"), "broń", "walka", "multiplayer", "wojna","Sonic",2015));
-            Actiongames[5].ZdjTytulowe = new Uri(sciezka + "actGames/ac.jpg");
+            Actiongames[7].ZdjTytulowe = new Uri(sciezka2 + "tytul.jpg");
             Actiongames[5].SciezkaVideo = "https://www.youtube.com/watch?v=cK4iAjzAoas&t=53s";
             Actiongames[5].sciezKaVideoOkno = @"C:\Users\With3rr\source\repos\Platforma\AplikacjaClient\AplikacjaClient\Movies\acs.mp4";
 
@@ -615,6 +624,7 @@ namespace AplikacjaClient
         {
             try
             {
+                
                 this.DragMove();
                 
             }
@@ -884,7 +894,7 @@ namespace AplikacjaClient
             string loginLogowanie = string.Empty;
             string PasswordLogowanie = string.Empty;
             loginLogowanie = emailusernameLogin.Text;
-            PasswordLogowanie = passwordLogin.Text;
+            PasswordLogowanie = passwordLogin.Password;
             
             if(loginLogowanie==string.Empty || PasswordLogowanie==string.Empty)
             {
@@ -946,7 +956,7 @@ namespace AplikacjaClient
 
 
                     emailusernameLogin.Text = string.Empty;
-                    passwordLogin.Text = string.Empty;
+                    passwordLogin.Password = string.Empty;
 
 
 
@@ -1154,6 +1164,7 @@ namespace AplikacjaClient
 
         private void Button_Click_7(object sender, RoutedEventArgs e)
         {
+            textslidera.Text = "300";
             Jakacena.Value = 300;
             rokmin.Text = "2000";
             rokmax.Text = "2020";
@@ -1390,14 +1401,15 @@ namespace AplikacjaClient
             {
                 if(karta.Stan>=max)
                 {
+
+                    resetowaniedanychplacenia();
                     niepoprawnaKarta.Visibility = Visibility.Collapsed;
                     karta.Stan -= max;
                     bazadanych.SaveChanges();
                     for (int i = 0; i < gryWkoszyku.Count; i++)
                     {
                         bazadanych.GrywMojejBiblioteces.Add(new GrywMojejBibliotece { godzinywGrze = 0, Nazwa_gry = gryWkoszyku[i].Nazwa, Użytkownik = logowanie.Id });
-                        bazadanych.HistoriaZakupows.Add(new HistoriaZakupow { Id_uzytkownika = logowanie.Id, Cena = gryWkoszyku[i].Cena.ToString(), Nazwa_prod = gryWkoszyku[i].Nazwa, Data_zakupu = DateTime.Today.ToString() });
-
+                        bazadanych.HistoriaZakupows.Add(new HistoriaZakupow { Id_uzytkownika = logowanie.Id, Cena = gryWkoszyku[i].Cena.ToString(), Nazwa_prod = gryWkoszyku[i].Nazwa, Data_zakupu = DateTime.Today.ToString("M/d/yyyy")}); 
                     }
                     bazadanych.SaveChanges();
                     gryWBibliotece.Clear();
@@ -1484,8 +1496,13 @@ namespace AplikacjaClient
 
         private void Button_Click_13(object sender, RoutedEventArgs e)
         {
-            WindowFriends secwindow = new WindowFriends(logowanie.Id);
-            secwindow.Show();
+            if(CzyoknoON.Wlaczany==false)
+            {
+                WindowFriends secwindow = new WindowFriends(logowanie.Id);
+                secwindow.Show();
+
+            }
+           
 
         }
 
@@ -1518,7 +1535,7 @@ namespace AplikacjaClient
         private void MenuItem_Click_6(object sender, RoutedEventArgs e)
         {
        
-            System.Diagnostics.Process.Start(" https://www.twitch.tv");
+            System.Diagnostics.Process.Start("https://www.youtube.com");
 
         }
 
@@ -1564,7 +1581,10 @@ namespace AplikacjaClient
                     zlykod.Visibility = Visibility.Collapsed;
                     for (int i = 0; i < listagier.Count; i++)
                     {
-                        if(kody.Nazwa_gry.Contains(listagier[i].Nazwa_gry))
+                        
+
+
+                        if(listagier[i].Nazwa_gry.Contains(kody.Nazwa_gry))
                         {
                             
                             posiadanie = true;
@@ -1689,11 +1709,7 @@ namespace AplikacjaClient
                 gridplacenie.Visibility = Visibility.Collapsed;
 
             }
-            else
-            {
-                MessageBox.Show("Brak gier w bibliotece");
-
-            }
+          
             
             
             
@@ -1704,20 +1720,34 @@ namespace AplikacjaClient
         private void gridBiblioteka_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
             video.Stop();
-            gProfile.Visibility = Visibility.Collapsed;
-            gryBibliotekaOkno.Visibility = Visibility.Visible;
-            lftpanel.Visibility = Visibility.Collapsed;
-            gridpc.Visibility = Visibility.Collapsed;
-        }
+           
 
-        private void Button_Click_18(object sender, RoutedEventArgs e)
+            if (gryWBibliotece.Count > 0)
+            {
+                gProfile.Visibility = Visibility.Collapsed;
+                lftpanel.Visibility = Visibility.Collapsed;
+                gridpc.Visibility = Visibility.Collapsed;
+                gridBasket.Visibility = Visibility.Collapsed;
+                gryBibliotekaOkno.Visibility = Visibility.Visible;
+                gridplacenie.Visibility = Visibility.Collapsed;
+
+            }
+
+        }
+        public void resetowaniedanychplacenia()
         {
-            gridplacenie.Visibility = Visibility.Collapsed;
-            gridBasket.Visibility = Visibility.Visible;
             imiePlacenie.Text = string.Empty;
             nazwiskoPlacenie.Text = string.Empty;
             nrkartyPlacenie.Text = string.Empty;
             kodPlacenie.Text = string.Empty;
+        }
+
+        private void Button_Click_18(object sender, RoutedEventArgs e)
+        {
+
+            gridplacenie.Visibility = Visibility.Collapsed;
+            gridBasket.Visibility = Visibility.Visible;
+            resetowaniedanychplacenia();
             niepoprawnaKarta.Visibility = Visibility.Collapsed;
 
         }

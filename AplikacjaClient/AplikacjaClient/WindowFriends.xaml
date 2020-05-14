@@ -12,10 +12,10 @@
 
         <Grid Margin="0,0,0,518"  Height="25" Style="{StaticResource stylPanelijednokolorowy}">
 
-            <Image Margin="0,0,325,0" Source="coollogo_com-55103211.png"/>
+            <Image Margin="0,0,325,0" Source="logo.png"/>
             <Button Margin="325,0,0,0" Click="Button_Click" Foreground="{x:Null}" BorderBrush="{x:Null}" RenderTransformOrigin="-0.093,0.533" Opacity="0.6">
                 <Button.Background>
-                    <ImageBrush ImageSource="close (3).png"/>
+                    <ImageBrush ImageSource="close.png"/>
                 </Button.Background>
             </Button>
 
@@ -29,11 +29,11 @@
             </Grid.ColumnDefinitions>
 
             <Button Grid.Column="1" Margin="5,5,5,5"   BorderBrush="White" Click="Button_Click_1">
-                <Image Source="loupe.png"></Image>
+                <Image Source="loupe.png" ></Image>
 
             </Button>
             <Button Grid.Column="2" Margin="5,5,5,5"  Click="Button_Click_2" BorderBrush="White">
-                <Image Source="add-user.png"></Image>
+                <Image Source="add-user.png" ></Image>
 
             </Button>
             <TextBox x:Name="filtrowanieFriends" Grid.Column="0" Margin="10,5,5,5" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" Foreground="DarkGray" TextChanged="filtrowanieFriends_TextChanged" />
@@ -74,11 +74,11 @@
         </Grid>
         <StackPanel x:Name="dodajznaj"  Margin="37,114,37,274" Style="{StaticResource stylPaneli}" Visibility="Collapsed">
             <Grid Height="16" Style="{StaticResource stylPanelijednokolorowy}">
-                <Image Margin="0,0,260,0" Source="coollogo_com-55103211.png"></Image>
+                <Image Margin="0,0,260,0" Source="student.png"></Image>
                 <TextBlock  Margin="21,0,148,0" Style="{StaticResource stylText}"  >Dodaj znajomego</TextBlock>
                 <Button Margin="260,0,0,0" Click="Button_Click_4">
                     <Button.Background>
-                        <ImageBrush ImageSource="close (3).png"/>
+                        <ImageBrush ImageSource="close.png"/>
                     </Button.Background>
                 </Button>
             </Grid>

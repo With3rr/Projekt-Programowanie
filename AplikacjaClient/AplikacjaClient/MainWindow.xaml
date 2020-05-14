@@ -75,7 +75,7 @@
 
             <Button x:Name="Exit"  Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Width="34" Margin="1366,0,0,0" Click="Exit_Click" Height="34" BorderBrush="White" Foreground="{x:Null}" Opacity="0.5" >
                 <Button.Background>
-                    <ImageBrush ImageSource="close (3).png"/>
+                    <ImageBrush ImageSource="close.png"/>
                 </Button.Background>
             </Button>
             <Button x:Name="Minimize" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Width="34" Margin="1332,0,0,0" Click="Minimize_Click" RenderTransformOrigin="5.48,-13.25" Height="34" BorderBrush="White" Foreground="{x:Null}" Opacity="0.5">
@@ -84,11 +84,11 @@
                 </Button.Background>
             </Button>
 
-            <Image Margin="0,0,1364,0" Source="coollogo_com-55103211.png"></Image>
+            <Image Margin="0,0,1364,0" Source="logo.png"></Image>
 
         </Grid>
         <Grid x:Name="main1" Margin="0,34,0,0" Style="{StaticResource panelGridow}">
-            <Grid x:Name="Rejestracja" Height="600" Width="420"  Margin="487,60,487,106" Style="{StaticResource stylPaneli}">
+            <Grid x:Name="Rejestracja" Height="600" Width="420"  Margin="487,60,487,106" Style="{StaticResource stylPaneli}" Visibility="Collapsed">
                 <Grid.Resources>
                     <Style TargetType="Label" x:Key="labelstyle">
                         <Style.Triggers>
@@ -96,7 +96,7 @@
                                 <Trigger.EnterActions>
                                     <BeginStoryboard>
                                         <Storyboard>
-                                            <DoubleAnimation Storyboard.TargetProperty="FontSize" To="20" ></DoubleAnimation>
+                                            <DoubleAnimation Storyboard.TargetProperty="FontSize" To="15" ></DoubleAnimation>
                                         </Storyboard>
                                     </BeginStoryboard>
 
@@ -118,8 +118,8 @@
                         <ColumnDefinition Width="70"></ColumnDefinition>
                         <ColumnDefinition Width="*"></ColumnDefinition>
                     </Grid.ColumnDefinitions>
-                    <Image Grid.Column="0" Source="coollogo_com-55103211.png"></Image>
-                    <Label Grid.Column="1" Content="Register" Foreground="#FF747070" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="24" FontFamily="Perpetua Titling MT"></Label>
+                    <Image Grid.Column="0" Source="logo.png"></Image>
+                    <TextBlock Grid.Column="1" Text="Register" Foreground="#FF747070" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="30" Style="{StaticResource stylText}"></TextBlock>
                 </Grid>
                 <Grid Height="60" Margin="60,85,60,455" Width="300" >
                     <Grid.ColumnDefinitions>
@@ -186,7 +186,7 @@
 
 
                 </StackPanel>
-                <Label Margin="274,576,26,0" Content="Read the terms " MouseLeftButtonDown="Label_MouseLeftButtonDown" FontFamily="Microsoft Uighur" FontSize="16" FontWeight="Bold" FontStyle="Italic" Foreground="#FF272626" Style="{StaticResource labelstyle}"  >
+                <Label Margin="274,576,26,0" Content="Read the terms " MouseLeftButtonDown="Label_MouseLeftButtonDown" FontFamily="Microsoft Uighur" FontSize="16" FontWeight="Bold" FontStyle="Italic" Foreground="#FF272626" Style="{StaticResource labelstyle}" Opacity="0.7"  >
 
                 </Label>
                 <Label x:Name="errorLogin" Margin="0,576,260,0" Content="Invalid data or account exists!!" FontFamily="Microsoft Uighur" FontSize="14" FontWeight="Bold" FontStyle="Italic" Background="{x:Null}" Foreground="#FFC70707" Visibility="Collapsed" />
@@ -194,7 +194,7 @@
 
 
             </Grid>
-            <Grid x:Name="Logowanie" Height="600" Width="420"  Margin="487,60,487,106" Style="{StaticResource stylPaneli}" Visibility="Collapsed">
+            <Grid x:Name="Logowanie" Height="600" Width="420"  Margin="487,60,487,106" Style="{StaticResource stylPaneli}">
                 <Grid.Resources>
                     <Style TargetType="{x:Type TextBlock}" x:Key="stylpowiekszania">
                         <Style.Triggers>
@@ -224,8 +224,8 @@
                         <ColumnDefinition Width="70"></ColumnDefinition>
                         <ColumnDefinition Width="*"></ColumnDefinition>
                     </Grid.ColumnDefinitions>
-                    <Image Grid.Column="0" Source="coollogo_com-55103211.png"></Image>
-                    <TextBlock Grid.Column="1" Text="Logowanie" Foreground="#FF747070" VerticalAlignment="Center" FontSize="24" Style="{StaticResource stylText}"></TextBlock>
+                    <Image Grid.Column="0" Source="logo.png"></Image>
+                    <TextBlock Grid.Column="1" Text="  Log in" Foreground="#FF747070" VerticalAlignment="Center" FontSize="30" Style="{StaticResource stylText}"></TextBlock>
                 </Grid>
                 <Grid Height="60" Margin="60,85,60,455" Width="300" >
                     <Grid.ColumnDefinitions>
@@ -258,7 +258,7 @@
                     <TextBlock x:Name="labelemail" Text="Username/Email" FontSize="20"  Background="{x:Null}" Style="{StaticResource stylText}" ></TextBlock>
                     <TextBox x:Name="emailusernameLogin" Height="40" Background="#FFC5B3B3" VerticalContentAlignment="Center" HorizontalContentAlignment="Left" Style="{StaticResource stylTextWpisywanie}"/>
                     <TextBlock x:Name="lpasswotd" Text="Password" FontSize="20"  Background="{x:Null}" Style="{StaticResource stylText}"></TextBlock>
-                    <TextBox x:Name="passwordLogin" Height="40" Background="#FFC5B3B3" VerticalContentAlignment="Center" HorizontalContentAlignment="Left" Style="{StaticResource stylTextWpisywanie}"/>
+                    <PasswordBox x:Name="passwordLogin" Height="40" Background="#FFC5B3B3" VerticalContentAlignment="Center" HorizontalContentAlignment="Left" Style="{StaticResource stylPassword}"  />
                     <Grid x:Name="kontoihaslo" Height="30">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition></ColumnDefinition>
@@ -268,8 +268,9 @@
 
 
                     </Grid>
+                    <Separator Visibility="Hidden" ></Separator>
 
-                    <Separator Height="10" IsHitTestVisible="False"/>
+                    <Separator Visibility="Hidden" Height="10" IsHitTestVisible="False"/>
                     <Button x:Name="LogInNow" Style="{StaticResource buttony}"     Content="Log in now"  FontSize="16" Click="LogInNow_Click" Width="Auto" Height="49" Margin="30,0"/>
                     <Separator  Height="15"></Separator>
                     <Button x:Name="ClickToRegister"  Style="{StaticResource buttony2}" Content="Regiser"   Margin="30,0" FontFamily="Global Monospace" FontSize="16" Click="ClickToRegister_Click" Width="Auto"/>
@@ -277,7 +278,7 @@
 
 
                 </StackPanel>
-                <TextBlock Margin="243,0,0,0" Text="Przeczytaj warunki umowy" MouseLeftButtonDown="Label_MouseLeftButtonDown" HorizontalAlignment="Left" VerticalAlignment="Bottom" FontFamily="Microsoft Uighur" FontSize="16" FontWeight="Bold" FontStyle="Italic" Style="{StaticResource stylpowiekszania}" Foreground="#FFBB7E7E" Height="24" Width="177" />
+                <TextBlock Margin="295,0,0,2" Text="Read the terms" MouseLeftButtonDown="Label_MouseLeftButtonDown" HorizontalAlignment="Left" VerticalAlignment="Bottom" FontFamily="Microsoft Uighur" FontSize="16" FontWeight="Bold" FontStyle="Italic" Style="{StaticResource stylpowiekszania}" Foreground="#FFBB7E7E" Height="24" Width="103" />
                 <Label x:Name="bladLogowania" Margin="60,487,200,89" Content="Nie podano wszystkich danych"  FontFamily="Microsoft Uighur" FontSize="16" FontWeight="Bold" FontStyle="Italic" Foreground="Red" Visibility="Collapsed"/>
                 <Label x:Name="brakUsera" Margin="60,516,200,60" Content="Incorect email or Password"  FontFamily="Microsoft Uighur" FontSize="16" FontWeight="Bold" FontStyle="Italic" Foreground="Red" Visibility="Collapsed"/>
 
@@ -293,12 +294,12 @@
                     <TextBlock TextWrapping="Wrap" Text="Your account has been successfully created " VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="#FFF9F9F9" Margin="0,10"/>
 
                 </StackPanel>
-                <Image Margin="110,152,110,129" Source="user.png"/>
+                <Image Margin="110,152,110,129" Source="student.png"/>
 
                 <Button x:Name="btprzejdzdoLog"   Content="Go back to login"  FontSize="14" Style="{StaticResource buttony}" Click="btprzejdzdoLog_Click"  Margin="65,252,65,61"/>
             </Grid>
             <Grid x:Name="PotwierdzenieLogowania"  Margin="550,152,550,338" Style="{StaticResource panelGridow3}" Visibility="Collapsed">
-                <Image Grid.Column="0" Source="coollogo_com-55103211.png" Margin="85,156,85,20" OpacityMask="Black">
+                <Image Grid.Column="0"  Margin="85,156,85,20" OpacityMask="Black">
                 </Image>
                 <StackPanel Margin="30,10,30,120">
 
@@ -404,7 +405,7 @@
                     <ToggleButton x:Name="menupopup" Margin="130,0,128,0" IsChecked="{Binding ElementName=menukont, Path=IsOpen}" Style="{StaticResource gridFG}"  BorderBrush="#FFFFD2D2" Foreground="{x:Null}"  >
 
 
-                        <Image Width="34" Height="34" Source="coollogo_com-55103211.png">
+                        <Image Width="34" Height="34" Source="logo.png">
 
                         </Image>
                     </ToggleButton>
@@ -418,12 +419,12 @@
                     <StackPanel Width="183" Style="{StaticResource stylPaneli}" >
 
 
-                        <ToggleButton FontSize="14" HorizontalContentAlignment="Left" Background="LightGray" Margin="7,2"  BorderBrush="DarkGray" FontFamily="Global Monospace" Foreground="DarkSlateGray"    BorderThickness="2" IsChecked="{Binding ElementName=lkod, Path=IsOpen}" Click="ToggleButton_Click" >Aktywuj kod</ToggleButton>
+                        <ToggleButton FontSize="14" HorizontalContentAlignment="Left" Background="LightGray" Margin="7,2"  BorderBrush="DarkGray" FontFamily="Global Monospace" Foreground="DarkSlateGray"    BorderThickness="2" IsChecked="{Binding ElementName=lkod, Path=IsOpen}" Click="ToggleButton_Click" >Enter code</ToggleButton>
                         <Separator FontSize="10" ></Separator>
-                        <Button FontSize="14"  HorizontalContentAlignment="Left" Background="LightGray"  Margin="7,2"  BorderBrush="DarkGray" BorderThickness="2" FontFamily="Global Monospace" Foreground="DarkSlateGray" >Ustawienia</Button>
-                        <Button FontSize="14" HorizontalContentAlignment="Left" Background="LightGray"  Margin="7,2" BorderBrush="DarkGray" BorderThickness="2" Click="Button_Click_16" FontFamily="Global Monospace" Foreground="DarkSlateGray">Wsparcie techniczne</Button>
-                        <ToggleButton FontSize="14" HorizontalContentAlignment="Left" Background="LightGray"  Margin="7,2" BorderBrush="DarkGray" BorderThickness="2" IsChecked="{Binding ElementName=lzmiany, Path=IsOpen}" FontFamily="Global Monospace" Foreground="DarkSlateGray">Lista zmian</ToggleButton>
-                        <Button FontSize="14" HorizontalContentAlignment="Left" Background="LightGray"  Margin="7,2"  BorderBrush="DarkGray" BorderThickness="2" Click="Button_Click_15" FontFamily="Global Monospace" Foreground="DarkSlateGray">Zamknij</Button>
+                        <Button FontSize="14"  HorizontalContentAlignment="Left" Background="LightGray"  Margin="7,2"  BorderBrush="DarkGray" BorderThickness="2" FontFamily="Global Monospace" Foreground="DarkSlateGray" >Settings</Button>
+                        <Button FontSize="14" HorizontalContentAlignment="Left" Background="LightGray"  Margin="7,2" BorderBrush="DarkGray" BorderThickness="2" Click="Button_Click_16" FontFamily="Global Monospace" Foreground="DarkSlateGray">Support</Button>
+                        <ToggleButton FontSize="14" HorizontalContentAlignment="Left" Background="LightGray"  Margin="7,2" BorderBrush="DarkGray" BorderThickness="2" IsChecked="{Binding ElementName=lzmiany, Path=IsOpen}" FontFamily="Global Monospace" Foreground="DarkSlateGray">Changes</ToggleButton>
+                        <Button FontSize="14" HorizontalContentAlignment="Left" Background="LightGray"  Margin="7,2"  BorderBrush="DarkGray" BorderThickness="2" Click="Button_Click_15" FontFamily="Global Monospace" Foreground="DarkSlateGray">Exit</Button>
                     </StackPanel>
 
                 </Popup>
@@ -439,7 +440,7 @@
                     </Grid.ColumnDefinitions>
                     <Button Height="42" VerticalAlignment="Bottom" Click="Button_Click_14">
                         <Button.Background>
-                            <ImageBrush ImageSource="search (2).png"/>
+                            <ImageBrush ImageSource="loupe.png"/>
                         </Button.Background>
                     </Button>
                     <TextBox x:Name="filtrBiblioteki" Grid.Column="1" VerticalContentAlignment="Center" FontSize="22" TextChanged="filtrBiblioteki_TextChanged"></TextBox>
@@ -477,7 +478,7 @@
                                                 <Image Source="{Binding Path=Zdjecie}"  Grid.Column="0" HorizontalAlignment="Left" ></Image>
                                                 <TextBlock Text="{Binding Path=Nazwa}" Grid.Column="1"   Style="{StaticResource stylText}" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="13" ></TextBlock>
                                                 <Button Grid.Column="2" BorderBrush="{x:Null}" Foreground="{x:Null}" Click="Button_Click_19" >
-                                                    <Image Source="mechanic.png">
+                                                    <Image Source="interface.png">
 
                                                     </Image>
                                                 </Button>
@@ -492,16 +493,16 @@
                     </ScrollViewer>
                     <StackPanel x:Name="spsciezka" Margin="0,58,0,464" Style="{StaticResource stylWewn}" Visibility="Collapsed">
                         <Grid Height="20" Style="{StaticResource stylPaneli}">
-                            <Image Margin="0,0,280,0" Source="coollogo_com-55103211.png"></Image>
+                            <Image Margin="0,0,280,0" Source="logo.png"></Image>
                             <Button Margin="280,0,0,0" Click="Button_Click_20" Opacity="0.5">
                                 <Button.Background>
                                     <ImageBrush ImageSource="close (3).png"/>
                                 </Button.Background>
                             </Button>
                         </Grid>
-                        <TextBlock FontSize="24" Foreground="#FFF7ECEC" Style="{StaticResource stylText}">Podaj scieżkę do gry</TextBlock>
+                        <TextBlock FontSize="24" Foreground="#FFF7ECEC" Style="{StaticResource stylText}">Enter source</TextBlock>
                         <TextBox x:Name="tbsciezka" Height="35" VerticalContentAlignment="Center" FontSize="18"></TextBox>
-                        <Button x:Name="potwiedzeniesciezki" Margin="60,10" Click="potwiedzeniesciezki_Click" Style="{StaticResource buttony}">Potwiedź</Button>
+                        <Button x:Name="potwiedzeniesciezki" Margin="60,10" Click="potwiedzeniesciezki_Click" Style="{StaticResource buttony}">Enter</Button>
                     </StackPanel>
                 </Grid>
 
@@ -566,30 +567,30 @@
                 </Menu>
                 <Menu Grid.Column="4" HorizontalContentAlignment="Center" VerticalAlignment="Center">
                     <MenuItem Width="90" Height="42"  Header="  Shop" HorizontalContentAlignment="Right" FontSize="14" >
-                        <MenuItem Header="Wyróżnione" Height="50" FontSize="14"></MenuItem>
-                        <MenuItem Header="Premiery"  Height="50" FontSize="14"></MenuItem>
-                        <MenuItem Header="Bestsellery"  Height="50" FontSize="14"></MenuItem>
+                        <MenuItem Header="Featured" Height="50" FontSize="14"></MenuItem>
+                        <MenuItem Header="Premiers"  Height="50" FontSize="14"></MenuItem>
+                        <MenuItem Header="Bestsellers"  Height="50" FontSize="14"></MenuItem>
                         <Separator Width="200"></Separator>
-                        <MenuItem Header="Gry pc"  Height="50" FontSize="14" Click="MenuItem_Click"></MenuItem>
-                        <MenuItem Header="Filmy  dla graczy"  Height="50" FontSize="14"></MenuItem>
+                        <MenuItem Header="Pc games"  Height="50" FontSize="14" Click="MenuItem_Click"></MenuItem>
+                        <MenuItem Header="Cutscenes"  Height="50" FontSize="14"></MenuItem>
                     </MenuItem>
 
                 </Menu>
                 <Menu Grid.Column="6" HorizontalContentAlignment="Center" VerticalAlignment="Center">
                     <MenuItem Width="90" Height="42"  Header=" Profile" HorizontalContentAlignment="Right" FontSize="14" >
-                        <MenuItem Header="Twój profil"  Height="50" FontSize="14" Click="MenuItem_Click_9"></MenuItem>
-                        <MenuItem Header="Portfel"  Height="50" FontSize="14" Click="MenuItem_Click_4"></MenuItem>
-                        <MenuItem Header="Koszyk"  Height="50" FontSize="14" Click="MenuItem_Click_3"></MenuItem>
+                        <MenuItem Header="Profile"  Height="50" FontSize="14" Click="MenuItem_Click_9"></MenuItem>
+                        <MenuItem Header="Wallet"  Height="50" FontSize="14" Click="MenuItem_Click_4"></MenuItem>
+                        <MenuItem Header="Basket"  Height="50" FontSize="14" Click="MenuItem_Click_3"></MenuItem>
                         <Separator></Separator>
-                        <MenuItem Header="Wyloguj się"  Height="50" FontSize="14" Click="MenuItem_Click_7"></MenuItem>
+                        <MenuItem Header="Log out"  Height="50" FontSize="14" Click="MenuItem_Click_7"></MenuItem>
 
                     </MenuItem>
 
                 </Menu>
                 <Menu Grid.Column="8" HorizontalContentAlignment="Center" VerticalAlignment="Center">
                     <MenuItem Width="90" Height="42"  Header="Comunity" HorizontalContentAlignment="Right" FontSize="14"  >
-                        <MenuItem Header="Wszytkie fora"  Height="50" FontSize="14"></MenuItem>
-                        <MenuItem Header="Forum główne"  Height="50" FontSize="14"></MenuItem>
+                        <MenuItem Header="Foras"  Height="50" FontSize="14"></MenuItem>
+                        <MenuItem Header="Main forum"  Height="50" FontSize="14"></MenuItem>
                         <Separator></Separator>
                         <MenuItem Header="Facebook"  Height="50" FontSize="14" Click="MenuItem_Click_2"></MenuItem>
                         <MenuItem Header="Youtube"  Height="50" FontSize="14" Click="MenuItem_Click_5"></MenuItem>
@@ -597,8 +598,8 @@
                     </MenuItem>
 
                 </Menu>
-                <Button Grid.Column="13" BorderBrush="White" >
-                    <Image Source="downl.png"></Image>
+                <Button Grid.Column="13" BorderBrush="White" Background="#FF723B3B" >
+
                 </Button>
                 <Button Grid.Column="15" BorderBrush="White" Foreground="{x:Null}" Click="Button_Click_13" HorizontalAlignment="Right" Width="42" Height="42" VerticalAlignment="Bottom">
                     <Image Source="friend.png" Width="38"></Image>
@@ -679,7 +680,7 @@
             <Grid x:Name="gridBasket" Width="Auto" Margin="300,42,0,0" Style="{StaticResource stylWewn}" Visibility="Collapsed">
                 <Button Content="Continue" Margin="534,565,300,111" FontSize="22" Style="{StaticResource buttony}" Click="Button_Click_10" Width="Auto"></Button>
                 <Button  Content="Remove all" Height="50" Margin="264,613,584,61"   FontSize="20" Style="{StaticResource buttony2}" Click="Button_Click_9"></Button>
-                <TextBlock Text="Your Backset" HorizontalAlignment="Right" Margin="0,10,628,648" Width="472" Style="{StaticResource stylText}" FontSize="40"/>
+                <TextBlock Text="Your Basket" HorizontalAlignment="Right" Margin="0,10,628,648" Width="472" Style="{StaticResource stylText}" FontSize="40"/>
                 <Grid Margin="574,81,76,412" Style="{StaticResource stylPaneli}">
                     <TextBlock  Text="Dellivery" HorizontalAlignment="Right" Margin="0,10,176,155" Width="274" Style="{StaticResource stylText}" FontSize="48" RenderTransformOrigin="1.667,1.333"/>
                     <TextBlock TextWrapping="Wrap" Text="All digital products are available; via the app. Your games will be available after purchase.  " Style="{StaticResource stylText}" FontSize="20" Margin="10,81,31,10"/>
@@ -739,26 +740,26 @@
             <Grid x:Name="gProfile" Margin="300,42,0,0"  Style="{StaticResource stylWewn}" Visibility="Collapsed">
 
                 <StackPanel x:Name="daneuzytkownika" Margin="490,156,54,10" >
-                    <TextBlock FontSize="26" Style="{StaticResource stylText}">Imie</TextBlock>
+                    <TextBlock FontSize="26" Style="{StaticResource stylText}">Name</TextBlock>
                     <TextBox x:Name="imieZmiana" Text="{Binding Imie}" FontSize="26" VerticalContentAlignment="Center" Style="{StaticResource stylTextWpisywanie}"></TextBox>
-                    <TextBlock FontSize="26" Style="{StaticResource stylText}">Nazwisko</TextBlock>
+                    <TextBlock FontSize="26" Style="{StaticResource stylText}">Last name</TextBlock>
                     <TextBox  x:Name="nazwiskoZmiana" Text="{Binding Nazwisko}" FontSize="26" VerticalContentAlignment="Center" Style="{StaticResource stylTextWpisywanie}"></TextBox>
-                    <TextBlock FontSize="26" Style="{StaticResource stylText}">Narodowość</TextBlock>
+                    <TextBlock FontSize="26" Style="{StaticResource stylText}">Nationality</TextBlock>
                     <TextBox  x:Name="NarodowoscZmiana" Text="{Binding Narodowosc}" FontSize="26" VerticalContentAlignment="Center" Style="{StaticResource stylTextWpisywanie}"></TextBox>
                     <TextBlock FontSize="26" Style="{StaticResource stylText}">Hobby</TextBlock>
                     <TextBox  x:Name="HobbySZmiana" Text="{Binding Hobby}" FontSize="26" Height="162" Style="{StaticResource stylTextWpisywanie}"></TextBox>
                     <Separator></Separator>
-                    <Button Height="70" Width="200" Style="{StaticResource buttony}" FontSize="24" Click="Button_Click_26">Potwiedz</Button>
+                    <Button Height="70" Width="200" Style="{StaticResource buttony}" FontSize="24" Click="Button_Click_26">Commit</Button>
 
 
                 </StackPanel>
                 <StackPanel x:Name="potwiedzenieZmianydanych" Margin="352,271,432,341" Style="{StaticResource stylPaneli}" Visibility="Collapsed">
-                    <TextBlock Style="{StaticResource stylText}" HorizontalAlignment="Center" Margin="8"  FontSize="20">Pomyślnie zmieniono dane</TextBlock>
-                    <Button Style="{StaticResource buttony}" Click="Button_Click_29">Kontynuuj</Button>
+                    <TextBlock Style="{StaticResource stylText}" HorizontalAlignment="Center" Margin="8"  FontSize="20">Changed succesfully</TextBlock>
+                    <Button Style="{StaticResource buttony}" Click="Button_Click_29">Continue</Button>
                 </StackPanel>
                 <StackPanel x:Name="potwiedzenieZmianyHasla" Margin="352,271,432,341" Style="{StaticResource stylPaneli}" Visibility="Collapsed">
-                    <TextBlock Style="{StaticResource stylText}" HorizontalAlignment="Center" Margin="8"  FontSize="20">Pomyślnie zmieniono hasło</TextBlock>
-                    <Button Style="{StaticResource buttony}" Click="Button_Click_30">Kontynuuj</Button>
+                    <TextBlock Style="{StaticResource stylText}" HorizontalAlignment="Center" Margin="8"  FontSize="15">Your password has beed changed</TextBlock>
+                    <Button Style="{StaticResource buttony}" Click="Button_Click_30">Continue</Button>
                 </StackPanel>
 
 
@@ -770,13 +771,13 @@
 
 
                 </StackPanel>
-                <ScrollViewer x:Name="scrollOrderhistory"  Margin="522,161,78,52" Visibility="Collapsed">
-                    <DataGrid x:Name="historiaZak" AutoGenerateColumns="False" IsReadOnly="True"  >
+                <ScrollViewer x:Name="scrollOrderhistory"  Margin="522,161,78,52" Background="BurlyWood" Visibility="Collapsed"  >
+                    <DataGrid x:Name="historiaZak" AutoGenerateColumns="False" IsReadOnly="True" Background="BurlyWood"  >
                         <DataGrid.Columns>
                             <DataGridTemplateColumn>
                                 <DataGridTemplateColumn.CellTemplate>
                                     <DataTemplate >
-                                        <WrapPanel Height="30" Width="472">
+                                        <WrapPanel Height="30" Width="472" Background="BurlyWood" >
                                             <TextBlock Text="{Binding Nazwa_prod}" Width="200" VerticalAlignment="Center" Style="{StaticResource stylText}"></TextBlock>
                                             <TextBlock Text="{Binding Data_zakupu }" Width="200" VerticalAlignment="Center"  Style="{StaticResource stylText}"></TextBlock>
                                             <TextBlock Text="{Binding StringFormat={}{0}$ , Path=Cena}" Width="100" VerticalAlignment="Center"  Style="{StaticResource stylText}"></TextBlock>
@@ -809,9 +810,9 @@
                 <StackPanel Margin="10,264,578,386" Background="#FF918A8A">
                     <TextBlock FontSize="20" Style="{StaticResource stylText}" Background="#FF637874">Your Activity</TextBlock>
                     <Grid Height="46">
-                        <Image Source="user.png" Margin="0,0,466,0"/>
+                        <Image Source="student.png" Margin="0,0,466,0"/>
 
-                        <TextBlock Text="{Binding StringFormat={} {0} godzin,Path=liczbaGodzin}" Margin="349,10,77,10" FontSize="16" Foreground="#FFD3C6C6"  ></TextBlock>
+                        <TextBlock Text="{Binding StringFormat={} {0} h,Path=liczbaGodzin}" Margin="349,10,77,10" FontSize="16" Foreground="#FFD3C6C6"  ></TextBlock>
 
                     </Grid>
                 </StackPanel>
@@ -979,7 +980,7 @@
                                             <TextBlock Grid.Column="1" Text="{Binding Twórca}"  Style="{StaticResource stylText}" HorizontalAlignment="Left"></TextBlock>
                                             <TextBlock Text="Release date:" Grid.Column="0" Grid.Row="1"  Style="{StaticResource stylText}" FontSize="12"></TextBlock>
                                             <TextBlock Grid.Column="1" Grid.Row="1" Text="{Binding Rokwydania}"  Style="{StaticResource stylText}"  ></TextBlock>
-                                            <Button x:Name="btndodajDoKosz1" Grid.Column="2" Grid.ColumnSpan="2"  VerticalAlignment="Top" Width="80" Height="30" Content="Buy"  Style="{StaticResource buttony2}"   FontSize="16" Click="btndodajDoKosz1_Click"  ></Button>
+                                            <Button x:Name="btndodajDoKosz1" Grid.Column="2" Grid.ColumnSpan="2"  VerticalAlignment="Top" Width="120" Height="30" Content="Buy"  Style="{StaticResource buttony2}"   FontSize="16" Click="btndodajDoKosz1_Click"  ></Button>
 
 
                                         </Grid>
@@ -1064,7 +1065,7 @@
                                             <TextBlock Grid.Column="1" Text="{Binding Twórca}"  Style="{StaticResource stylText}" HorizontalAlignment="Left"></TextBlock>
                                             <TextBlock Text="Release date:" Grid.Column="0" Grid.Row="1"  Style="{StaticResource stylText}" FontSize="12"></TextBlock>
                                             <TextBlock Grid.Column="1" Grid.Row="1" Text="{Binding Rokwydania}"  Style="{StaticResource stylText}"  ></TextBlock>
-                                            <Button x:Name="btndodajDoKosz2" Grid.Column="2" Grid.ColumnSpan="2"  VerticalAlignment="Top" Width="80" Height="30" Content="Buy"  Style="{StaticResource buttony2}"   FontSize="16" Click="btndodajDoKosz2_Click"  ></Button>
+                                            <Button x:Name="btndodajDoKosz2" Grid.Column="2" Grid.ColumnSpan="2"  VerticalAlignment="Top" Width="120" Height="30" Content="Buy"  Style="{StaticResource buttony2}"   FontSize="16" Click="btndodajDoKosz2_Click"  ></Button>
 
 
                                         </Grid>
@@ -1149,7 +1150,7 @@
                                             <TextBlock Grid.Column="1" Text="{Binding Twórca}"  Style="{StaticResource stylText}" HorizontalAlignment="Left"></TextBlock>
                                             <TextBlock Text="Release date:" Grid.Column="0" Grid.Row="1"  Style="{StaticResource stylText}" FontSize="12"></TextBlock>
                                             <TextBlock Grid.Column="1" Grid.Row="1" Text="{Binding Rokwydania}"  Style="{StaticResource stylText}"  ></TextBlock>
-                                            <Button x:Name="btndodajDoKosz3" Grid.Column="2" Grid.ColumnSpan="2"  VerticalAlignment="Top" Width="80" Height="30" Content="Buy"  Style="{StaticResource buttony2}"   FontSize="16" Click="btndodajDoKosz3_Click"  ></Button>
+                                            <Button x:Name="btndodajDoKosz3" Grid.Column="2" Grid.ColumnSpan="2"  VerticalAlignment="Top" Width="120" Height="30" Content="Buy"  Style="{StaticResource buttony2}"   FontSize="16" Click="btndodajDoKosz3_Click"  ></Button>
 
 
                                         </Grid>
@@ -1235,7 +1236,7 @@
                                             <TextBlock Grid.Column="1" Text="{Binding Twórca}"  Style="{StaticResource stylText}" HorizontalAlignment="Left"></TextBlock>
                                             <TextBlock Text="Release date:" Grid.Column="0" Grid.Row="1"  Style="{StaticResource stylText}" FontSize="12"></TextBlock>
                                             <TextBlock Grid.Column="1" Grid.Row="1" Text="{Binding Rokwydania}"  Style="{StaticResource stylText}"  ></TextBlock>
-                                            <Button x:Name="btndodajDoKosz4" Grid.Column="2" Grid.ColumnSpan="2"  VerticalAlignment="Top" Width="80" Height="30" Content="Buy"  Style="{StaticResource buttony2}"   FontSize="16" Click="btndodajDoKosz4_Click"  ></Button>
+                                            <Button x:Name="btndodajDoKosz4" Grid.Column="2" Grid.ColumnSpan="2"  VerticalAlignment="Top" Width="120" Height="30" Content="Buy"  Style="{StaticResource buttony2}"   FontSize="16" Click="btndodajDoKosz4_Click"  ></Button>
 
 
                                         </Grid>
@@ -1320,7 +1321,7 @@
                                             <TextBlock Grid.Column="1" Text="{Binding Twórca}"  Style="{StaticResource stylText}" HorizontalAlignment="Left"></TextBlock>
                                             <TextBlock Text="Release date:" Grid.Column="0" Grid.Row="1"  Style="{StaticResource stylText}" FontSize="12"></TextBlock>
                                             <TextBlock Grid.Column="1" Grid.Row="1" Text="{Binding Rokwydania}"  Style="{StaticResource stylText}"  ></TextBlock>
-                                            <Button x:Name="btndodajDoKosz5" Grid.Column="2" Grid.ColumnSpan="2"  VerticalAlignment="Top" Width="80" Height="30" Content="Buy"  Style="{StaticResource buttony2}"   FontSize="16" Click="btndodajDoKosz5_Click"  ></Button>
+                                            <Button x:Name="btndodajDoKosz5" Grid.Column="2" Grid.ColumnSpan="2"  VerticalAlignment="Top" Width="120" Height="30" Content="Buy"  Style="{StaticResource buttony2}"   FontSize="16" Click="btndodajDoKosz5_Click"  ></Button>
 
 
                                         </Grid>
@@ -1405,7 +1406,7 @@
                                             <TextBlock Grid.Column="1" Text="{Binding Twórca}"  Style="{StaticResource stylText}" HorizontalAlignment="Left"></TextBlock>
                                             <TextBlock Text="Release date:" Grid.Column="0" Grid.Row="1"  Style="{StaticResource stylText}" FontSize="12"></TextBlock>
                                             <TextBlock Grid.Column="1" Grid.Row="1" Text="{Binding Rokwydania}"  Style="{StaticResource stylText}"  ></TextBlock>
-                                            <Button x:Name="btndodajDoKosz6" Grid.Column="2" Grid.ColumnSpan="2"  VerticalAlignment="Top" Width="80" Height="30" Content="Buy"  Style="{StaticResource buttony2}"   FontSize="16" Click="btndodajDoKosz6_Click"  ></Button>
+                                            <Button x:Name="btndodajDoKosz6" Grid.Column="2" Grid.ColumnSpan="2"  VerticalAlignment="Top" Width="120" Height="30" Content="Buy"  Style="{StaticResource buttony2}"   FontSize="16" Click="btndodajDoKosz6_Click"  ></Button>
 
 
                                         </Grid>
@@ -1490,7 +1491,7 @@
                                             <TextBlock Grid.Column="1" Text="{Binding Twórca}"  Style="{StaticResource stylText}" HorizontalAlignment="Left"></TextBlock>
                                             <TextBlock Text="Release date:" Grid.Column="0" Grid.Row="1"  Style="{StaticResource stylText}" FontSize="12"></TextBlock>
                                             <TextBlock Grid.Column="1" Grid.Row="1" Text="{Binding Rokwydania}"  Style="{StaticResource stylText}"  ></TextBlock>
-                                            <Button x:Name="btndodajDoKosz7" Grid.Column="2" Grid.ColumnSpan="2"  VerticalAlignment="Top" Width="80" Height="30" Content="Buy"  Style="{StaticResource buttony2}"   FontSize="16" Click="btndodajDoKosz7_Click"  ></Button>
+                                            <Button x:Name="btndodajDoKosz7" Grid.Column="2" Grid.ColumnSpan="2"  VerticalAlignment="Top" Width="120" Height="30" Content="Buy"  Style="{StaticResource buttony2}"   FontSize="16" Click="btndodajDoKosz7_Click"  ></Button>
 
 
                                         </Grid>
@@ -1528,7 +1529,7 @@
             </Grid>
             <StackPanel x:Name="potwiedzeniekodu" HorizontalAlignment="Left" Height="225" Margin="700,235,0,0" VerticalAlignment="Top" Width="332" Style="{StaticResource stylPaneli}" Visibility="Collapsed">
                 <TextBlock FontSize="20"  HorizontalAlignment="Center" Style="{StaticResource stylText}">Gra o nazwie</TextBlock>
-                <TextBlock x:Name="nazwaGrypotwiedzeniekodu" HorizontalAlignment="Center" Height="51" FontSize="22" Style="{StaticResource stylText}" Margin="30,0,30,0" Width="264"></TextBlock>
+                <TextBlock  x:Name="nazwaGrypotwiedzeniekodu" HorizontalAlignment="Center" VerticalAlignment="Center" Height="51" FontSize="22" Style="{StaticResource stylText}" Margin="34,7" Width="264"></TextBlock>
                 <TextBlock HorizontalAlignment="Center" Style="{StaticResource stylText}" >Została dodana do biblioteki</TextBlock>
                 <Button Margin="60,10" Height="36" Click="Button_Click_17" Style="{StaticResource buttony}">Kontynuuj</Button>
                 <TextBlock HorizontalAlignment="Center" Style="{StaticResource stylText}"  FontSize="22" Background="{x:Null}" Foreground="#FF136C13">Dziękujemy</TextBlock>

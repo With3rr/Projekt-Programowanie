@@ -24,6 +24,13 @@
             <Setter Property="FontFamily" Value="Global Monospace"></Setter>
 
         </Style>
+
+        <Style TargetType="{x:Type PasswordBox}" x:Key="stylPassword">
+            <Setter Property="Foreground" Value="DarkSlateGray">
+            </Setter>
+            <Setter Property="FontFamily" Value="Global Monospace"></Setter>
+
+        </Style>
         <Style TargetType="{x:Type TextBlock}" x:Key="stylText">
             <Setter Property="Foreground" Value="DarkSlateGray">
             </Setter>
@@ -78,6 +85,7 @@
 
 
         </Style>
+        
 
     </Application.Resources>
 </Application>

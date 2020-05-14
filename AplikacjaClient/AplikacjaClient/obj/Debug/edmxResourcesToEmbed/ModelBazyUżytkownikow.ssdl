@@ -6,14 +6,14 @@
     </Key>
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="NazwaUżytkownika" Type="nchar" MaxLength="50" Nullable="false" />
-    <Property Name="HasloUzytkownika" Type="nchar" MaxLength="50" Nullable="false" />
-    <Property Name="EmailAdress" Type="nchar" MaxLength="20" Nullable="false" />
-    <Property Name="Imie" Type="nchar" MaxLength="20" />
-    <Property Name="Nazwisko" Type="nchar" MaxLength="20" />
+    <Property Name="HasloUzytkownika" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="EmailAdress" Type="nchar" MaxLength="40" Nullable="false" />
+    <Property Name="Imie" Type="nvarchar" MaxLength="50" />
+    <Property Name="Nazwisko" Type="nvarchar" MaxLength="50" />
     <Property Name="Płeć" Type="nchar" MaxLength="10" />
-    <Property Name="Hobby" Type="nchar" MaxLength="200" />
-    <Property Name="Narodowosc" Type="nchar" MaxLength="20" />
-    <Property Name="Miejscowosc" Type="nchar" MaxLength="20" />
+    <Property Name="Hobby" Type="nvarchar" MaxLength="200" />
+    <Property Name="Narodowosc" Type="nvarchar" MaxLength="50" />
+    <Property Name="Miejscowosc" Type="nvarchar" MaxLength="50" />
   </EntityType>
   <EntityType Name="Friends">
     <Key>
@@ -28,7 +28,7 @@
       <PropertyRef Name="Id" />
     </Key>
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Nazwa_gry" Type="nchar" MaxLength="30" Nullable="false" />
+    <Property Name="Nazwa_gry" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="godzinywGrze" Type="int" Nullable="false" />
     <Property Name="Użytkownik" Type="int" Nullable="false" />
     <Property Name="Path" Type="nvarchar" MaxLength="100" />
@@ -59,7 +59,7 @@
       <PropertyRef Name="Id" />
     </Key>
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Nazwa_gry" Type="nchar" MaxLength="30" Nullable="false" />
+    <Property Name="Nazwa_gry" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="Kod_gry" Type="nchar" MaxLength="30" Nullable="false" />
   </EntityType>
   <Association Name="FK_Friends_ToTable">
