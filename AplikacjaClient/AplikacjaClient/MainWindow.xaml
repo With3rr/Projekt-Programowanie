@@ -88,7 +88,30 @@
 
         </Grid>
         <Grid x:Name="main1" Margin="0,34,0,0" Style="{StaticResource panelGridow}">
-            <Grid x:Name="Rejestracja" Height="600" Width="420"  Margin="487,60,487,106" Style="{StaticResource stylPaneli}" Visibility="Collapsed">
+            <Grid x:Name="Rejestracja" Height="600" Width="420"  Margin="487,60,487,106" Style="{StaticResource stylPaneli}">
+                <Grid.Resources>
+                    <Style TargetType="Label" x:Key="labelstyle">
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="true">
+                                <Trigger.EnterActions>
+                                    <BeginStoryboard>
+                                        <Storyboard>
+                                            <DoubleAnimation Storyboard.TargetProperty="FontSize" To="20" ></DoubleAnimation>
+                                        </Storyboard>
+                                    </BeginStoryboard>
+
+                                </Trigger.EnterActions>
+                                <Trigger.ExitActions>
+                                    <BeginStoryboard>
+                                        <Storyboard>
+                                            <DoubleAnimation Storyboard.TargetProperty="FontSize"  ></DoubleAnimation>
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </Trigger.ExitActions>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Grid.Resources>
 
                 <Grid Margin="90,10,90,520">
                     <Grid.ColumnDefinitions>
@@ -126,13 +149,14 @@
                     </Button>
                 </Grid>
                 <StackPanel Margin="35,145,35,24">
+
                     <Grid>
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="140"></ColumnDefinition>
                             <ColumnDefinition Width="*"></ColumnDefinition>
                         </Grid.ColumnDefinitions>
                         <TextBlock x:Name="labLogin" Text="Username" FontSize="20"  Background="{x:Null}" Style="{StaticResource stylText}" Grid.Column="0"></TextBlock>
-                        <TextBlock x:Name="takiNickJest" Grid.Column="1" Text="Konto o podanum nicku już istnieje"  Foreground="Red" Visibility="Collapsed"></TextBlock>
+                        <TextBlock x:Name="takiNickJest" Grid.Column="1" Text="Konto o podanum nicku już istnieje"  Foreground="Red" Margin="0,2" Visibility="Collapsed"/>
                     </Grid>
 
                     <TextBox x:Name="tbLogin" Height="40" Background="#FFC5B3B3" VerticalContentAlignment="Center" HorizontalContentAlignment="Left" Style="{StaticResource stylTextWpisywanie}" />
@@ -162,13 +186,15 @@
 
 
                 </StackPanel>
-                <Label Margin="268,576,10,0" Content="Przeczytaj warunki umowy" MouseLeftButtonDown="Label_MouseLeftButtonDown" FontFamily="Microsoft Uighur" FontSize="16" FontWeight="Bold" FontStyle="Italic" Foreground="#FF272626" />
-                <Label x:Name="errorLogin" Margin="0,576,260,0" Content="Wypelnij podkreslone dane!!" FontFamily="Microsoft Uighur" FontSize="14" FontWeight="Bold" FontStyle="Italic" Background="{x:Null}" Foreground="#FFC70707" Visibility="Collapsed" />
+                <Label Margin="274,576,26,0" Content="Read the terms " MouseLeftButtonDown="Label_MouseLeftButtonDown" FontFamily="Microsoft Uighur" FontSize="16" FontWeight="Bold" FontStyle="Italic" Foreground="#FF272626" Style="{StaticResource labelstyle}"  >
+
+                </Label>
+                <Label x:Name="errorLogin" Margin="0,576,260,0" Content="Invalid data or account exists!!" FontFamily="Microsoft Uighur" FontSize="14" FontWeight="Bold" FontStyle="Italic" Background="{x:Null}" Foreground="#FFC70707" Visibility="Collapsed" />
 
 
 
             </Grid>
-            <Grid x:Name="Logowanie" Height="600" Width="420"  Margin="487,60,487,106" Style="{StaticResource stylPaneli}">
+            <Grid x:Name="Logowanie" Height="600" Width="420"  Margin="487,60,487,106" Style="{StaticResource stylPaneli}" Visibility="Collapsed">
                 <Grid.Resources>
                     <Style TargetType="{x:Type TextBlock}" x:Key="stylpowiekszania">
                         <Style.Triggers>
@@ -215,16 +241,16 @@
 
                     </Grid.ColumnDefinitions>
 
-                    <Button Grid.Column="0" BorderBrush="{x:Null}" Click="Button_Click" Foreground="{x:Null}">
+                    <Button Grid.Column="0" BorderBrush="{x:Null}" Click="Button_Click" Foreground="{x:Null}" Background="{x:Null}">
                         <Image Source="facebook.png"></Image>
                     </Button>
-                    <Button Grid.Column="2" BorderBrush="{x:Null}" Click="Button_Click_1">
+                    <Button Grid.Column="2" BorderBrush="{x:Null}" Click="Button_Click_1" Background="{x:Null}">
                         <Image Source="instagram.png"></Image>
                     </Button>
-                    <Button Grid.Column="4" BorderBrush="{x:Null}" Click="Button_Click_2">
+                    <Button Grid.Column="4" BorderBrush="{x:Null}" Click="Button_Click_2" Background="{x:Null}">
                         <Image Source="snapchat.png"></Image>
                     </Button>
-                    <Button Grid.Column="6" BorderBrush="{x:Null}" Click="Button_Click_3">
+                    <Button Grid.Column="6" BorderBrush="{x:Null}" Click="Button_Click_3" Background="{x:Null}">
                         <Image Source="twitter.png"></Image>
                     </Button>
                 </Grid>

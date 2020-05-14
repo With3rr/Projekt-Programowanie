@@ -698,20 +698,34 @@ namespace AplikacjaClient
             Logowanie.Visibility = Visibility.Hidden;
         }
 
+        public void resetowanie_danych_rejestracji()
+        {
+            tbEmail.Text = string.Empty;
+            tbPassword.Text = string.Empty;
+            tbLogin.Text = string.Empty;
+
+            cbAgrement.BorderBrush = Brushes.Black;
+            tbPassword.BorderBrush = Brushes.Black;
+            tbLogin.BorderBrush = Brushes.Black;
+            tbEmail.BorderBrush = Brushes.Black;
+            errorLogin.Visibility = Visibility.Collapsed;
+            cbAgrement.IsChecked = false;
+        }
         private void GotSignIn_Click(object sender, RoutedEventArgs e)
         {
             Rejestracja.Visibility = Visibility.Collapsed;
-            Logowanie.Visibility = Visibility.Visible; ;
+            Logowanie.Visibility = Visibility.Visible;
+            resetowanie_danych_rejestracji();
 
         }
 
         private void SignUp_Click(object sender, RoutedEventArgs e)
         {
-            if(tbPassword.Text==string.Empty || tbLogin.Text==string.Empty ||tbEmail.Text==string.Empty || cbAgrement.IsChecked==false)
+            if(tbPassword.Text==string.Empty || tbLogin.Text==string.Empty ||tbEmail.Text==string.Empty || cbAgrement.IsChecked==false || tbPassword.Text.Count()<8 || tbLogin.Text.Count() < 5 || tbEmail.Text.Count() < 8 )
             {
                 errorLogin.Visibility = Visibility.Visible;
 
-                if (tbPassword.Text == string.Empty)
+                if (tbPassword.Text == string.Empty || tbPassword.Text.Count() < 8)
                 {
                     tbPassword.BorderBrush = Brushes.Red;
                 }
@@ -720,18 +734,20 @@ namespace AplikacjaClient
                     tbPassword.BorderBrush = Brushes.Black;
 
                 }
-                if (tbLogin.Text == string.Empty)
+                if (tbLogin.Text == string.Empty || tbLogin.Text.Count() < 5)
                 {
                     tbLogin.BorderBrush = Brushes.Red;
+                    takiNickJest.Visibility = Visibility.Hidden;
                 }
                 else
                 {
                     tbLogin.BorderBrush = Brushes.Black;
 
                 }
-                if (tbEmail.Text == string.Empty)
+                if (tbEmail.Text == string.Empty || tbEmail.Text.Count() < 8)
                 {
                     tbEmail.BorderBrush = Brushes.Red;
+                    takiEmailJest.Visibility = Visibility.Hidden;
                 }
                 else
                 {
@@ -747,10 +763,17 @@ namespace AplikacjaClient
                     cbAgrement.BorderBrush = Brushes.Black;
 
                 }
+                
 
             }
             else
             {
+
+                cbAgrement.BorderBrush = Brushes.Black;
+                tbEmail.BorderBrush = Brushes.Black;
+                tbLogin.BorderBrush = Brushes.Black;
+                tbPassword.BorderBrush = Brushes.Black;
+
                 string Nick=tbLogin.Text;
                 string Email=tbEmail.Text;
                 string haslo = tbPassword.Text;
@@ -762,14 +785,18 @@ namespace AplikacjaClient
                 }
                 else
                 {
+                   
 
                     DaneKonta konto = bazadanych.DaneKontas.FirstOrDefault(n => n.NazwaUżytkownika == Nick);
                     DaneKonta konto1 = bazadanych.DaneKontas.FirstOrDefault(n => n.EmailAdress == Email);
                     if (konto != null || konto1!=null)
                     {
-                        
-                        
-                        if(konto != null)
+                        errorLogin.Visibility = Visibility.Visible;
+
+
+
+
+                        if (konto != null)
                         {
                             takiNickJest.Visibility = Visibility.Visible;
 
@@ -799,6 +826,11 @@ namespace AplikacjaClient
                         takiNickJest.Visibility = Visibility.Hidden;
                         takiEmailJest.Visibility = Visibility.Hidden;
                         DodajUzytkownika(Email, Nick, haslo);
+                        resetowanie_danych_rejestracji();
+
+                        PotwierdzenieRejestracji.Visibility = Visibility.Visible;
+                        Rejestracja.Visibility = Visibility.Hidden;
+
 
                     }
                     
@@ -811,13 +843,8 @@ namespace AplikacjaClient
                     
                
 
-                cbAgrement.BorderBrush = Brushes.Black;
-                tbPassword.BorderBrush = Brushes.Black;
-                tbLogin.BorderBrush = Brushes.Black;
-                tbEmail.BorderBrush = Brushes.Black;
-                errorLogin.Visibility = Visibility.Collapsed;
-                PotwierdzenieRejestracji.Visibility = Visibility.Visible;
-                Rejestracja.Visibility = Visibility.Hidden;
+               
+                
 
 
 
