@@ -1,0 +1,300 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{9ED07198-0AFF-4670-9983-DF0A79C06C05}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>AplikacjaClient</RootNamespace>
+    <AssemblyName>AplikacjaClient</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="Friend.cs">
+      <DependentUpon>ModelBazyUżytkownikow.tt</DependentUpon>
+    </Compile>
+    <Compile Include="HistoriaZakupow.cs">
+      <DependentUpon>ModelBazyUżytkownikow.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Kody.cs">
+      <DependentUpon>ModelBazyUżytkownikow.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WindowFriends.xaml.cs">
+      <DependentUpon>WindowFriends.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ZmianyPatche.cs" />
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DaneKonta.cs">
+      <DependentUpon>ModelBazyUżytkownikow.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Gry.cs" />
+    <Compile Include="GryBiblioteka.cs" />
+    <Compile Include="GrywMojejBibliotece.cs">
+      <DependentUpon>ModelBazyUżytkownikow.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Karty.cs">
+      <DependentUpon>ModelBazyUżytkownikow.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="WindowFriends.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ModelBazyUżytkownikow.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelBazyUżytkownikow.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelBazyUżytkownikow.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelBazyUżytkownikow.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelBazyUżytkownikow.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelBazyUżytkownikow.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EntityDeploy Include="ModelBazyUżytkownikow.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ModelBazyUżytkownikow.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="ModelBazyUżytkownikow.edmx.diagram">
+      <DependentUpon>ModelBazyUżytkownikow.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="close.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="expand.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="minimize.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="coollogo_com-55103211.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="facebook.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="instagram.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="snapchat.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="twitter.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ms.png" />
+    <Resource Include="student.png" />
+    <Resource Include="friend.png" />
+    <Resource Include="downl.png" />
+    <Resource Include="add-user.png" />
+    <Resource Include="loupe.png" />
+    <Resource Include="man.png" />
+    <Content Include="Movies\acs.mp4" />
+    <Content Include="Movies\Wiedmin 3 Dziki Gon - trailer PL.mp4" />
+    <Resource Include="slider.png" />
+    <Resource Include="speaker.png" />
+    <Resource Include="stop.png" />
+    <Resource Include="pause.png" />
+    <Resource Include="play.png" />
+    <Resource Include="play-button.png" />
+    <Resource Include="plus %281%29.png" />
+    <Resource Include="search %284%29.png" />
+    <Resource Include="SwX5v3I.png" />
+    <Resource Include="search %283%29.png" />
+    <Resource Include="search %282%29.png" />
+    <Resource Include="notification.png" />
+    <Resource Include="search %281%29.png" />
+    <Resource Include="search.png" />
+    <Resource Include="Games\stratGames\header29.jpg" />
+    <Resource Include="Games\stratGames\header30.jpg" />
+    <Resource Include="Games\stratGames\header31.jpg" />
+    <Resource Include="Games\stratGames\header32.jpg" />
+    <Resource Include="Games\stratGames\header7.jpg" />
+    <Resource Include="Games\sportGames\header33.jpg" />
+    <Resource Include="Games\sportGames\header34.jpg" />
+    <Resource Include="Games\sportGames\header35.jpg" />
+    <Resource Include="Games\sportGames\header38.jpg" />
+    <Resource Include="Games\sportGames\header39.jpg" />
+    <Resource Include="Games\scifGames\header13.jpg" />
+    <Resource Include="Games\scifGames\header19.jpg" />
+    <Resource Include="Games\scifGames\header23.jpg" />
+    <Resource Include="Games\scifGames\header4.jpg" />
+    <Resource Include="Games\rpgGames\header10.jpg" />
+    <Resource Include="Games\rpgGames\header11.jpg" />
+    <Resource Include="Games\rpgGames\header12.jpg" />
+    <Resource Include="Games\rpgGames\header14.jpg" />
+    <Resource Include="Games\rpgGames\header15.jpg" />
+    <Resource Include="Games\rpgGames\header16.jpg" />
+    <Resource Include="Games\rpgGames\header18.jpg" />
+    <Resource Include="Games\rpgGames\header2.jpg" />
+    <Resource Include="Games\rpgGames\header20.jpg" />
+    <Resource Include="Games\rpgGames\header21.jpg" />
+    <Resource Include="Games\rpgGames\header22.jpg" />
+    <Resource Include="Games\rpgGames\header24.jpg" />
+    <Resource Include="Games\rpgGames\header26.jpg" />
+    <Resource Include="Games\rpgGames\header27.jpg" />
+    <Resource Include="Games\racingGames\header36.jpg" />
+    <Resource Include="Games\racingGames\header37.jpg" />
+    <Resource Include="Games\racingGames\header40.jpg" />
+    <Resource Include="Games\racingGames\header41.jpg" />
+    <Resource Include="sword.png" />
+    <Resource Include="star-wars.png" />
+    <Resource Include="sports-and-competition.png" />
+    <Resource Include="puzzle.png" />
+    <Resource Include="fps.png" />
+    <Resource Include="car.png" />
+    <Resource Include="game.png" />
+    <Resource Include="cropped-3840-2160-600255.jpg" />
+    <Resource Include="header.jpg" />
+    <Resource Include="Games\actGames\header.jpg" />
+    <Resource Include="Games\actGames\header1.jpg" />
+    <Resource Include="Games\actGames\header17.jpg" />
+    <Resource Include="Games\actGames\header25.jpg" />
+    <Resource Include="Games\actGames\header28.jpg" />
+    <Resource Include="Games\actGames\header6.jpg" />
+    <Resource Include="Games\actGames\header8.jpg" />
+    <Resource Include="Games\actGames\header9.jpg" />
+    <Resource Include="Games\actGames\header19.jpg" />
+    <Resource Include="Games\scifGames\header44.jpg" />
+    <Resource Include="Games\scifGames\header45.jpg" />
+    <Resource Include="Games\racingGames\header42.jpg" />
+    <Resource Include="Games\racingGames\header43.jpg" />
+    <Resource Include="Games\sportGames\header46.jpg" />
+    <Resource Include="Games\stratGames\header47.jpg" />
+    <Resource Include="followerss.png" />
+    <Resource Include="followers.png" />
+    <Resource Include="basket1.png" />
+    <Resource Include="followers %281%29.png" />
+    <Resource Include="followers %282%29.png" />
+    <Resource Include="basket %281%29.png" />
+    <Resource Include="bell.png" />
+    <Resource Include="close %283%29.png" />
+    <Resource Include="adobe.png" />
+    <Resource Include="game-controller.png" />
+    <Resource Include="batman %281%29.png" />
+    <Resource Include="indesign.png" />
+    <Resource Include="friends.png" />
+    <Resource Include="friends %281%29.png" />
+    <Resource Include="download.png" />
+    <Resource Include="600255.jpg" />
+    <Resource Include="Games\rpgGames\600255.jpg" />
+    <Resource Include="Games\stratGames\728987.jpg" />
+    <Resource Include="gearwheel.png" />
+    <Resource Include="mechanic.png" />
+    <Resource Include="Games\actGames\ac.jpg" />
+    <Content Include="ModelBazyUżytkownikow.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>ModelBazyUżytkownikow.Context.cs</LastGenOutput>
+      <DependentUpon>ModelBazyUżytkownikow.edmx</DependentUpon>
+    </Content>
+    <Content Include="ModelBazyUżytkownikow.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ModelBazyUżytkownikow.edmx</DependentUpon>
+      <LastGenOutput>ModelBazyUżytkownikow.cs</LastGenOutput>
+    </Content>
+    <Resource Include="user.png" />
+    <Resource Include="tick.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

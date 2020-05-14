@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="BazaUżytkownikowModelStoreContainer" CdmEntityContainer="BazaUżytkownikowEntities">
+    <EntitySetMapping Name="DaneKontas">
+      <EntityTypeMapping TypeName="BazaUżytkownikowModel.DaneKonta">
+        <MappingFragment StoreEntitySet="DaneKonta">
+          <ScalarProperty Name="Miejscowosc" ColumnName="Miejscowosc" />
+          <ScalarProperty Name="Narodowosc" ColumnName="Narodowosc" />
+          <ScalarProperty Name="Hobby" ColumnName="Hobby" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="NazwaUżytkownika" ColumnName="NazwaUżytkownika" />
+          <ScalarProperty Name="HasloUzytkownika" ColumnName="HasloUzytkownika" />
+          <ScalarProperty Name="EmailAdress" ColumnName="EmailAdress" />
+          <ScalarProperty Name="Imie" ColumnName="Imie" />
+          <ScalarProperty Name="Nazwisko" ColumnName="Nazwisko" />
+          <ScalarProperty Name="Płeć" ColumnName="Płeć" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Karties">
+      <EntityTypeMapping TypeName="BazaUżytkownikowModel.Karty">
+        <MappingFragment StoreEntitySet="Karty">
+          <ScalarProperty Name="Stan" ColumnName="Stan" />
+          <ScalarProperty Name="nrID" ColumnName="nrID" />
+          <ScalarProperty Name="Nazwisko" ColumnName="Nazwisko" />
+          <ScalarProperty Name="Imie" ColumnName="Imie" />
+          <ScalarProperty Name="nrKarty" ColumnName="nrKarty" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GrywMojejBiblioteces">
+      <EntityTypeMapping TypeName="BazaUżytkownikowModel.GrywMojejBibliotece">
+        <MappingFragment StoreEntitySet="GrywMojejBibliotece">
+          <ScalarProperty Name="Path" ColumnName="Path" />
+          <ScalarProperty Name="Użytkownik" ColumnName="Użytkownik" />
+          <ScalarProperty Name="godzinywGrze" ColumnName="godzinywGrze" />
+          <ScalarProperty Name="Nazwa_gry" ColumnName="Nazwa_gry" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Friends">
+      <EntityTypeMapping TypeName="BazaUżytkownikowModel.Friend">
+        <MappingFragment StoreEntitySet="Friends">
+          <ScalarProperty Name="Id_kogo" ColumnName="Id_kogo" />
+          <ScalarProperty Name="Nick" ColumnName="Nick" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Kodies">
+      <EntityTypeMapping TypeName="BazaUżytkownikowModel.Kody">
+        <MappingFragment StoreEntitySet="Kody">
+          <ScalarProperty Name="Kod_gry" ColumnName="Kod_gry" />
+          <ScalarProperty Name="Nazwa_gry" ColumnName="Nazwa_gry" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="HistoriaZakupows">
+      <EntityTypeMapping TypeName="BazaUżytkownikowModel.HistoriaZakupow">
+        <MappingFragment StoreEntitySet="HistoriaZakupow">
+          <ScalarProperty Name="Data_zakupu" ColumnName="Data_zakupu" />
+          <ScalarProperty Name="Cena" ColumnName="Cena" />
+          <ScalarProperty Name="Nazwa_prod" ColumnName="Nazwa_prod" />
+          <ScalarProperty Name="Id_uzytkownika" ColumnName="Id_uzytkownika" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

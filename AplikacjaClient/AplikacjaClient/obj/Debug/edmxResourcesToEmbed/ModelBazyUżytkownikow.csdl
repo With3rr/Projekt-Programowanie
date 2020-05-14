@@ -1,0 +1,127 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="BazaUżytkownikowModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="DaneKonta">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NazwaUżytkownika" Type="String" MaxLength="50" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="HasloUzytkownika" Type="String" MaxLength="50" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="EmailAdress" Type="String" MaxLength="20" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="Imie" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
+    <Property Name="Nazwisko" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
+    <Property Name="Płeć" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <NavigationProperty Name="GrywMojejBiblioteces" Relationship="BazaUżytkownikowModel.FK_Table_ToTable" FromRole="DaneKonta" ToRole="GrywMojejBibliotece" />
+    <NavigationProperty Name="Friends" Relationship="BazaUżytkownikowModel.FK_Friends_ToTable" FromRole="DaneKonta" ToRole="Friend" />
+    <Property Name="Hobby" Type="String" MaxLength="200" FixedLength="true" Unicode="true" />
+    <Property Name="Narodowosc" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
+    <Property Name="Miejscowosc" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
+    <NavigationProperty Name="HistoriaZakupows" Relationship="BazaUżytkownikowModel.FK_HistoriaZakupow_ToTable" FromRole="DaneKonta" ToRole="HistoriaZakupow" />
+  </EntityType>
+  <EntityContainer Name="BazaUżytkownikowEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="DaneKontas" EntityType="Self.DaneKonta" />
+    <EntitySet Name="Karties" EntityType="BazaUżytkownikowModel.Karty" />
+    <EntitySet Name="GrywMojejBiblioteces" EntityType="BazaUżytkownikowModel.GrywMojejBibliotece" />
+    <AssociationSet Name="FK_Table_ToTable" Association="BazaUżytkownikowModel.FK_Table_ToTable">
+      <End Role="DaneKonta" EntitySet="DaneKontas" />
+      <End Role="GrywMojejBibliotece" EntitySet="GrywMojejBiblioteces" />
+    </AssociationSet>
+    <EntitySet Name="Friends" EntityType="BazaUżytkownikowModel.Friend" />
+    <AssociationSet Name="FK_Friends_ToTable" Association="BazaUżytkownikowModel.FK_Friends_ToTable">
+      <End Role="DaneKonta" EntitySet="DaneKontas" />
+      <End Role="Friend" EntitySet="Friends" />
+    </AssociationSet>
+    <EntitySet Name="Kodies" EntityType="BazaUżytkownikowModel.Kody" />
+    <EntitySet Name="HistoriaZakupows" EntityType="BazaUżytkownikowModel.HistoriaZakupow" />
+    <AssociationSet Name="FK_HistoriaZakupow_ToTable" Association="BazaUżytkownikowModel.FK_HistoriaZakupow_ToTable">
+      <End Role="DaneKonta" EntitySet="DaneKontas" />
+      <End Role="HistoriaZakupow" EntitySet="HistoriaZakupows" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Karty">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nrKarty" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+    <Property Name="Imie" Type="String" Nullable="false" MaxLength="20" FixedLength="true" Unicode="true" />
+    <Property Name="Nazwisko" Type="String" Nullable="false" MaxLength="20" FixedLength="true" Unicode="true" />
+    <Property Name="nrID" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="Stan" Type="Double" Nullable="false" />
+  </EntityType>
+  <EntityType Name="GrywMojejBibliotece">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nazwa_gry" Type="String" Nullable="false" MaxLength="30" FixedLength="true" Unicode="true" />
+    <Property Name="godzinywGrze" Type="Int32" Nullable="false" />
+    <Property Name="Użytkownik" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="DaneKonta" Relationship="BazaUżytkownikowModel.FK_Table_ToTable" FromRole="GrywMojejBibliotece" ToRole="DaneKonta" />
+    <Property Name="Path" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <Association Name="FK_Table_ToTable">
+    <End Type="BazaUżytkownikowModel.DaneKonta" Role="DaneKonta" Multiplicity="1" />
+    <End Type="BazaUżytkownikowModel.GrywMojejBibliotece" Role="GrywMojejBibliotece" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DaneKonta">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="GrywMojejBibliotece">
+        <PropertyRef Name="Użytkownik" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="Friend">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nick" Type="String" Nullable="false" MaxLength="30" FixedLength="true" Unicode="true" />
+    <Property Name="Id_kogo" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="DaneKonta" Relationship="BazaUżytkownikowModel.FK_Friends_ToTable" FromRole="Friend" ToRole="DaneKonta" />
+  </EntityType>
+  <Association Name="FK_Friends_ToTable">
+    <End Type="BazaUżytkownikowModel.DaneKonta" Role="DaneKonta" Multiplicity="1" />
+    <End Type="BazaUżytkownikowModel.Friend" Role="Friend" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DaneKonta">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Friend">
+        <PropertyRef Name="Id_kogo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="Kody">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="Nazwa_gry" Type="String" Nullable="false" MaxLength="30" FixedLength="true" Unicode="true" />
+    <Property Name="Kod_gry" Type="String" Nullable="false" MaxLength="30" FixedLength="true" Unicode="true" />
+  </EntityType>
+  <EntityType Name="HistoriaZakupow">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Id_uzytkownika" Type="Int32" Nullable="false" />
+    <Property Name="Nazwa_prod" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Cena" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Data_zakupu" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="DaneKonta" Relationship="BazaUżytkownikowModel.FK_HistoriaZakupow_ToTable" FromRole="HistoriaZakupow" ToRole="DaneKonta" />
+  </EntityType>
+  <Association Name="FK_HistoriaZakupow_ToTable">
+    <End Type="BazaUżytkownikowModel.DaneKonta" Role="DaneKonta" Multiplicity="1" />
+    <End Type="BazaUżytkownikowModel.HistoriaZakupow" Role="HistoriaZakupow" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DaneKonta">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="HistoriaZakupow">
+        <PropertyRef Name="Id_uzytkownika" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>
