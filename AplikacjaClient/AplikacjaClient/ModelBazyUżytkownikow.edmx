@@ -5,6 +5,22 @@
     <!-- SSDL content -->
     <edmx:StorageModels>
     <Schema Namespace="BazaUżytkownikowModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Dane">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nr_zamowienia" Type="int" />
+          <Property Name="Imie" Type="nvarchar" MaxLength="50" />
+          <Property Name="Nazwisko" Type="nvarchar" MaxLength="50" />
+          <Property Name="Miejscowość" Type="nvarchar" MaxLength="50" />
+          <Property Name="Kod_pocztowy" Type="nvarchar" MaxLength="50" />
+          <Property Name="Ulica_NrDomu" Type="nvarchar" MaxLength="50" />
+          <Property Name="Email" Type="nvarchar" MaxLength="50" />
+          <Property Name="Telefon" Type="nvarchar" MaxLength="50" />
+          <Property Name="Full_price" Type="nvarchar" MaxLength="50" />
+          <Property Name="Opis_zamowienia" Type="nvarchar" MaxLength="1000" />
+        </EntityType>
         <EntityType Name="DaneKonta">
           <Key>
             <PropertyRef Name="Id" />
@@ -27,6 +43,26 @@
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Nick" Type="nchar" MaxLength="30" Nullable="false" />
           <Property Name="Id_kogo" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="GamesForSale">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nazwa" Type="nvarchar" MaxLength="50" />
+          <Property Name="Opis" Type="nvarchar" MaxLength="200" />
+          <Property Name="Cena" Type="int" />
+          <Property Name="Podgatunek1" Type="nvarchar" MaxLength="50" />
+          <Property Name="Podgatunek2" Type="nvarchar" MaxLength="50" />
+          <Property Name="Podgatunek3" Type="nvarchar" MaxLength="50" />
+          <Property Name="Podgatunek4" Type="nvarchar" MaxLength="50" />
+          <Property Name="Tworca" Type="nvarchar" MaxLength="50" />
+          <Property Name="RokWydania" Type="int" />
+          <Property Name="Image" Type="image" />
+          <Property Name="Gatunek" Type="nvarchar" MaxLength="50" />
+          <Property Name="Zdj_tytulowe" Type="image" />
+          <Property Name="path_more" Type="nvarchar" MaxLength="100" />
+          <Property Name="path_wideo" Type="nchar" MaxLength="100" />
         </EntityType>
         <EntityType Name="GrywMojejBibliotece">
           <Key>
@@ -104,8 +140,10 @@
           </ReferentialConstraint>
         </Association>
         <EntityContainer Name="BazaUżytkownikowModelStoreContainer">
+          <EntitySet Name="Dane" EntityType="Self.Dane" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="DaneKonta" EntityType="Self.DaneKonta" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Friends" EntityType="Self.Friends" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="GamesForSale" EntityType="Self.GamesForSale" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="GrywMojejBibliotece" EntityType="Self.GrywMojejBibliotece" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="HistoriaZakupow" EntityType="Self.HistoriaZakupow" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Karty" EntityType="Self.Karty" Schema="dbo" store:Type="Tables" />
@@ -164,6 +202,8 @@
             <End Role="DaneKonta" EntitySet="DaneKontas" />
             <End Role="HistoriaZakupow" EntitySet="HistoriaZakupows" />
           </AssociationSet>
+          <EntitySet Name="Danes" EntityType="BazaUżytkownikowModel.Dane" />
+          <EntitySet Name="GamesForSales" EntityType="BazaUżytkownikowModel.GamesForSale" />
         </EntityContainer>
         <EntityType Name="Karty">
           <Key>
@@ -251,6 +291,42 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="Dane">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nr_zamowienia" Type="Int32" />
+          <Property Name="Imie" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Nazwisko" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Miejscowość" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Kod_pocztowy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Ulica_NrDomu" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Telefon" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Full_price" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Opis_zamowienia" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="GamesForSale">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nazwa" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Opis" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Cena" Type="Int32" />
+          <Property Name="Podgatunek1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Podgatunek2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Podgatunek3" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Podgatunek4" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Tworca" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="RokWydania" Type="Int32" />
+          <Property Name="Image" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="Gatunek" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Zdj_tytulowe" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="path_more" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="path_wideo" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -321,6 +397,44 @@
                 <ScalarProperty Name="Cena" ColumnName="Cena" />
                 <ScalarProperty Name="Nazwa_prod" ColumnName="Nazwa_prod" />
                 <ScalarProperty Name="Id_uzytkownika" ColumnName="Id_uzytkownika" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Danes">
+            <EntityTypeMapping TypeName="BazaUżytkownikowModel.Dane">
+              <MappingFragment StoreEntitySet="Dane">
+                <ScalarProperty Name="Opis_zamowienia" ColumnName="Opis_zamowienia" />
+                <ScalarProperty Name="Full_price" ColumnName="Full_price" />
+                <ScalarProperty Name="Telefon" ColumnName="Telefon" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Ulica_NrDomu" ColumnName="Ulica_NrDomu" />
+                <ScalarProperty Name="Kod_pocztowy" ColumnName="Kod_pocztowy" />
+                <ScalarProperty Name="Miejscowość" ColumnName="Miejscowość" />
+                <ScalarProperty Name="Nazwisko" ColumnName="Nazwisko" />
+                <ScalarProperty Name="Imie" ColumnName="Imie" />
+                <ScalarProperty Name="Nr_zamowienia" ColumnName="Nr_zamowienia" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="GamesForSales">
+            <EntityTypeMapping TypeName="BazaUżytkownikowModel.GamesForSale">
+              <MappingFragment StoreEntitySet="GamesForSale">
+                <ScalarProperty Name="path_wideo" ColumnName="path_wideo" />
+                <ScalarProperty Name="path_more" ColumnName="path_more" />
+                <ScalarProperty Name="Zdj_tytulowe" ColumnName="Zdj_tytulowe" />
+                <ScalarProperty Name="Gatunek" ColumnName="Gatunek" />
+                <ScalarProperty Name="Image" ColumnName="Image" />
+                <ScalarProperty Name="RokWydania" ColumnName="RokWydania" />
+                <ScalarProperty Name="Tworca" ColumnName="Tworca" />
+                <ScalarProperty Name="Podgatunek4" ColumnName="Podgatunek4" />
+                <ScalarProperty Name="Podgatunek3" ColumnName="Podgatunek3" />
+                <ScalarProperty Name="Podgatunek2" ColumnName="Podgatunek2" />
+                <ScalarProperty Name="Podgatunek1" ColumnName="Podgatunek1" />
+                <ScalarProperty Name="Cena" ColumnName="Cena" />
+                <ScalarProperty Name="Opis" ColumnName="Opis" />
+                <ScalarProperty Name="Nazwa" ColumnName="Nazwa" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>

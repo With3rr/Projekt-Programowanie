@@ -65,7 +65,13 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="CzyoknoON.cs" />
+    <Compile Include="Dane.cs">
+      <DependentUpon>ModelBazyUżytkownikow.tt</DependentUpon>
+    </Compile>
     <Compile Include="Friend.cs">
+      <DependentUpon>ModelBazyUżytkownikow.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GamesForSale.cs">
       <DependentUpon>ModelBazyUżytkownikow.tt</DependentUpon>
     </Compile>
     <Compile Include="HistoriaZakupow.cs">

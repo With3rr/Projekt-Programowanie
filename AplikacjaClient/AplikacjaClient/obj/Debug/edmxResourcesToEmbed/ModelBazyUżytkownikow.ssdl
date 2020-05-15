@@ -1,5 +1,21 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="BazaUżytkownikowModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Dane">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nr_zamowienia" Type="int" />
+    <Property Name="Imie" Type="nvarchar" MaxLength="50" />
+    <Property Name="Nazwisko" Type="nvarchar" MaxLength="50" />
+    <Property Name="Miejscowość" Type="nvarchar" MaxLength="50" />
+    <Property Name="Kod_pocztowy" Type="nvarchar" MaxLength="50" />
+    <Property Name="Ulica_NrDomu" Type="nvarchar" MaxLength="50" />
+    <Property Name="Email" Type="nvarchar" MaxLength="50" />
+    <Property Name="Telefon" Type="nvarchar" MaxLength="50" />
+    <Property Name="Full_price" Type="nvarchar" MaxLength="50" />
+    <Property Name="Opis_zamowienia" Type="nvarchar" MaxLength="1000" />
+  </EntityType>
   <EntityType Name="DaneKonta">
     <Key>
       <PropertyRef Name="Id" />
@@ -22,6 +38,26 @@
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Nick" Type="nchar" MaxLength="30" Nullable="false" />
     <Property Name="Id_kogo" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="GamesForSale">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nazwa" Type="nvarchar" MaxLength="50" />
+    <Property Name="Opis" Type="nvarchar" MaxLength="200" />
+    <Property Name="Cena" Type="int" />
+    <Property Name="Podgatunek1" Type="nvarchar" MaxLength="50" />
+    <Property Name="Podgatunek2" Type="nvarchar" MaxLength="50" />
+    <Property Name="Podgatunek3" Type="nvarchar" MaxLength="50" />
+    <Property Name="Podgatunek4" Type="nvarchar" MaxLength="50" />
+    <Property Name="Tworca" Type="nvarchar" MaxLength="50" />
+    <Property Name="RokWydania" Type="int" />
+    <Property Name="Image" Type="image" />
+    <Property Name="Gatunek" Type="nvarchar" MaxLength="50" />
+    <Property Name="Zdj_tytulowe" Type="image" />
+    <Property Name="path_more" Type="nvarchar" MaxLength="100" />
+    <Property Name="path_wideo" Type="nchar" MaxLength="100" />
   </EntityType>
   <EntityType Name="GrywMojejBibliotece">
     <Key>
@@ -99,8 +135,10 @@
     </ReferentialConstraint>
   </Association>
   <EntityContainer Name="BazaUżytkownikowModelStoreContainer">
+    <EntitySet Name="Dane" EntityType="Self.Dane" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="DaneKonta" EntityType="Self.DaneKonta" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Friends" EntityType="Self.Friends" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="GamesForSale" EntityType="Self.GamesForSale" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="GrywMojejBibliotece" EntityType="Self.GrywMojejBibliotece" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="HistoriaZakupow" EntityType="Self.HistoriaZakupow" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Karty" EntityType="Self.Karty" Schema="dbo" store:Type="Tables" />

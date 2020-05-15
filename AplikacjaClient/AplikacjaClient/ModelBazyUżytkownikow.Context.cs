@@ -31,5 +31,7 @@ namespace AplikacjaClient
         public virtual DbSet<Friend> Friends { get; set; }
         public virtual DbSet<Kody> Kodies { get; set; }
         public virtual DbSet<HistoriaZakupow> HistoriaZakupows { get; set; }
+        public virtual DbSet<Dane> Danes { get; set; }
+        public virtual DbSet<GamesForSale> GamesForSales { get; set; }
     }
 }

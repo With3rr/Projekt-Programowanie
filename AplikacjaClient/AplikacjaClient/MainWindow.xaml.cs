@@ -165,6 +165,10 @@ namespace AplikacjaClient
 
 
 
+            
+
+
+
 
 
             InitializeComponent();
@@ -194,6 +198,10 @@ namespace AplikacjaClient
             //bazadanych.Kodies.Add(new Kody { Kod_gry = "223321678", Nazwa_gry = "The surge 2" });
             //bazadanych.SaveChanges();
 
+            //bazadanych.GamesForSales.Add(new GamesForSale() { Nazwa = "Resident evil 3", Opis = "Resident Evil 3: Nemesis is a survival horror game where the player controls the protagonist, Jill Valentine,  from  a third-person  perspective to interact with the environment and enemies.", Gatunek = "Akcja", Cena = 240, Podgatunek1 = "akcja", Podgatunek2 = "horror", Podgatunek3 = "coop", Podgatunek4 = "apokalipsa", RokWydania = 2020, Tworca = "Capcom" });
+            //bazadanych.SaveChanges();
+
+
 
             gridyGier = new List<Grid>();
             gridyGier.Add(gridgames1);
@@ -209,10 +217,8 @@ namespace AplikacjaClient
             
             kody = new Kody();
             inicjalizacjaGier();
-            
 
 
-            
 
 
 
@@ -263,22 +269,103 @@ namespace AplikacjaClient
         /// Metoda ta dodatkowo inicjalizuje właściwość itemsrource dla każdej z kontrolek Datagrid co pozlowi na pobieranie obiektów różnych klas z obpowiednich list przy pomocy Bindingu i datakontext.
         /// Wywołuje ona równiez metodę inicjalizacjaWidokow;
         /// </remarks>
+        /// 
+
+        public void WczytywanieListyGierDoZakupu(string typ)
+        {
+            List<GamesForSale> tymczasowe = null;
+            tymczasowe = bazadanych.GamesForSales.Where(n => n.Gatunek == typ).ToList();
+            if (typ=="Akcja")
+            {
+                
+                for (int i = 0; i < tymczasowe.Count; i++)
+                {
+                    Actiongames.Add(new Gry() { Nazwa = tymczasowe[i].Nazwa, Cena = (double)(tymczasowe[i].Cena), Gatunek = tymczasowe[i].Gatunek, Opis = tymczasowe[i].Opis, Podgatunek1 = tymczasowe[i].Podgatunek1, Podgatunek2 = tymczasowe[i].Podgatunek2, Podgatunek3 = tymczasowe[i].Podgatunek3, Podgatunek4 = tymczasowe[i].Podgatunek4, Rokwydania = (int)tymczasowe[i].RokWydania, Twórca = tymczasowe[i].Tworca, });
+
+                }
+                
+
+            }
+            else if (typ == "Wyscigi")
+            {
+
+                for (int i = 0; i < tymczasowe.Count; i++)
+                {
+                    Racinggames.Add(new Gry() { Nazwa = tymczasowe[i].Nazwa, Cena = (double)(tymczasowe[i].Cena), Gatunek = tymczasowe[i].Gatunek, Opis = tymczasowe[i].Opis, Podgatunek1 = tymczasowe[i].Podgatunek1, Podgatunek2 = tymczasowe[i].Podgatunek2, Podgatunek3 = tymczasowe[i].Podgatunek3, Podgatunek4 = tymczasowe[i].Podgatunek4, Rokwydania = (int)tymczasowe[i].RokWydania, Twórca = tymczasowe[i].Tworca, });
+
+                }
+
+
+            }
+            else if (typ == "Strategia")
+            {
+
+                for (int i = 0; i < tymczasowe.Count; i++)
+                {
+                    Strategygames.Add(new Gry() { Nazwa = tymczasowe[i].Nazwa, Cena = (double)(tymczasowe[i].Cena), Gatunek = tymczasowe[i].Gatunek, Opis = tymczasowe[i].Opis, Podgatunek1 = tymczasowe[i].Podgatunek1, Podgatunek2 = tymczasowe[i].Podgatunek2, Podgatunek3 = tymczasowe[i].Podgatunek3, Podgatunek4 = tymczasowe[i].Podgatunek4, Rokwydania = (int)tymczasowe[i].RokWydania, Twórca = tymczasowe[i].Tworca, });
+
+                }
+
+
+            }
+            else if (typ == "Sportowe")
+            {
+
+                for (int i = 0; i < tymczasowe.Count; i++)
+                {
+                    Sportgames.Add(new Gry() { Nazwa = tymczasowe[i].Nazwa, Cena = (double)(tymczasowe[i].Cena), Gatunek = tymczasowe[i].Gatunek, Opis = tymczasowe[i].Opis, Podgatunek1 = tymczasowe[i].Podgatunek1, Podgatunek2 = tymczasowe[i].Podgatunek2, Podgatunek3 = tymczasowe[i].Podgatunek3, Podgatunek4 = tymczasowe[i].Podgatunek4, Rokwydania = (int)tymczasowe[i].RokWydania, Twórca = tymczasowe[i].Tworca, });
+
+                }
+
+
+            }
+            else if (typ == "Futurystyczne")
+            {
+
+                for (int i = 0; i < tymczasowe.Count; i++)
+                {
+                    Scifigames.Add(new Gry() { Nazwa = tymczasowe[i].Nazwa, Cena = (double)(tymczasowe[i].Cena), Gatunek = tymczasowe[i].Gatunek, Opis = tymczasowe[i].Opis, Podgatunek1 = tymczasowe[i].Podgatunek1, Podgatunek2 = tymczasowe[i].Podgatunek2, Podgatunek3 = tymczasowe[i].Podgatunek3, Podgatunek4 = tymczasowe[i].Podgatunek4, Rokwydania = (int)tymczasowe[i].RokWydania, Twórca = tymczasowe[i].Tworca, });
+
+                }
+
+
+            }
+            else if (typ == "Fantasy")
+            {
+
+                for (int i = 0; i < tymczasowe.Count; i++)
+                {
+                    Rpggames.Add(new Gry() { Nazwa = tymczasowe[i].Nazwa, Cena = (double)(tymczasowe[i].Cena), Gatunek = tymczasowe[i].Gatunek, Opis = tymczasowe[i].Opis, Podgatunek1 = tymczasowe[i].Podgatunek1, Podgatunek2 = tymczasowe[i].Podgatunek2, Podgatunek3 = tymczasowe[i].Podgatunek3, Podgatunek4 = tymczasowe[i].Podgatunek4, Rokwydania = (int)tymczasowe[i].RokWydania, Twórca = tymczasowe[i].Tworca, });
+
+                }
+
+
+            }
+
+        }
         public void inicjalizacjaGier()
         {
+
+          
+
             string sciezka2 = "pack://application:,,,/MainPict/";
             string sciezka = "pack://application:,,,/Games/";
+
+           
             Actiongames = new ObservableCollection<Gry>();
-            Actiongames.Add(new Gry("Resident evil 3", "Resident Evil 3: Nemesis is a survival horror game where the player controls the protagonist, Jill Valentine,  from  a third-person  perspective to interact with the environment and enemies. The player takes control  of another character for a brief portion of the game.", 240,"Akcja", new Uri(sciezka + "actGames/header.jpg"), "akcja", "horror", "coop", "apokalipsa","Capcom",2020));
+            Actiongames.Add(new Gry("Resident evil 3", "Resident Evil 3: Nemesis is a survival horror game where the player controls the protagonist, Jill Valentine,  from  a third-person  perspective to interact with the environment and enemies. The player takes control  of another character for a brief portion of the game.", 240, "Akcja", new Uri(sciezka + "actGames/header.jpg"), "akcja", "horror", "coop", "apokalipsa", "Capcom", 2020));
             Actiongames.Add(new Gry("One piece", "The One Piece video games series is published by Bandai and Banpresto, later as part of Bandai Namco  Entertainment, and  is  based on Eiichiro Oda's shonen manga and anime series of the same name. The games   take place in the fictional world of One Piece, and the stories revolve around the adventures of Monkey D.", 120, "Akcja", new Uri(sciezka + "actGames/header1.jpg"), "piraci", "anime", "walka", "fantasy", "Capcom", 2020));
-            Actiongames.Add(new Gry("Doom eternal", "Doom Eternal is a first person shooter video game developed by id Software and published by Bethesda  Softworks. ... The game  received critical acclaim, with praise for its campaign, graphics, level design, soundtrack  and  combat mechanics, while some disliked the game's increased focus on storytelling.", 255, "Akcja", new Uri(sciezka + "actGames/header6.jpg"), "diabły", "piekło", "walka", "krew","Bethesda",2020));
-            Actiongames.Add(new Gry("Dragon ball kakkarott", "Dragon Ball Z: Kakarot (ドラゴンボールZ カカロット, Doragon Bōru Zetto Kakarotto) is a semi open  world action role-playing  game developed by CyberConnect2 and published by Bandai Namco Entertainment, based  on the Dragon  Ball franchise, released for Microsoft Windows, PlayStation 4, and Xbox One.", 180, "Akcja", new Uri(sciezka + "actGames/header8.jpg"), "anime", "walka", "opowieść", "turniej","Capcom",2020));
-            Actiongames.Add(new Gry("Metro exodus", "Metro Exodus is a first-person shooter game with survival horror and stealth elements. ... The game  features  a mixture of linear levels  and sandbox environments. It also includes a dynamic weather  system, a day-night cycle, and environments that change along with the seasons as the story progresses.", 245, "Akcja", new Uri(sciezka + "actGames/header9.jpg"), "rosja", "apokalipsa", "samotność", "przetrwanie","4A Games",2019));
-            Actiongames.Add(new Gry("Assassin's creed origins", "Assassin's Creed Origins is an action-adventure stealth game played from a third-person  perspective. ... The player  can take control of Senu and scout an area in advance, highlighting  enemies which will then be  visible when they return to controlling Bayek, the game's main character.", 110, "Akcja", new Uri(sciezka + "actGames/header17.jpg"), "pustynia", "walka", "skradanie", "open-world","Ubisoft",2017));
-            Actiongames.Add(new Gry("Deus ex human revolution", "Deus Ex: Human Revolution is an action role-playing game with incorporated first-person shooter  and stealth  mechanics. Players take the role of Adam Jensen, a man equipped with mechanical cybernetic implants  called augmentations.", 140, "Akcja", new Uri(sciezka + "actGames/header25.jpg"), "skradanie", "cyber", "walka", "futuryzm", "Eidos Montreal",2014));
-            Actiongames.Add(new Gry("Arma 3", "ARMA 3. ARMA 3 is an open-world, realism-based, military tactical shooter video game developed  and published  by Bohemia  Interactive.  It was released for Microsoft Windows in September 2013, and   later announced for macOS and Linux  in August 2015.", 260, "Akcja", new Uri(sciezka + "actGames/header28.jpg"), "broń", "walka", "multiplayer", "wojna","Sonic",2015));
+            Actiongames.Add(new Gry("Doom eternal", "Doom Eternal is a first person shooter video game developed by id Software and published by Bethesda  Softworks. ... The game  received critical acclaim, with praise for its campaign, graphics, level design, soundtrack  and  combat mechanics, while some disliked the game's increased focus on storytelling.", 255, "Akcja", new Uri(sciezka + "actGames/header6.jpg"), "diabły", "piekło", "walka", "krew", "Bethesda", 2020));
+            Actiongames.Add(new Gry("Dragon ball kakkarott", "Dragon Ball Z: Kakarot (ドラゴンボールZ カカロット, Doragon Bōru Zetto Kakarotto) is a semi open  world action role-playing  game developed by CyberConnect2 and published by Bandai Namco Entertainment, based  on the Dragon  Ball franchise, released for Microsoft Windows, PlayStation 4, and Xbox One.", 180, "Akcja", new Uri(sciezka + "actGames/header8.jpg"), "anime", "walka", "opowieść", "turniej", "Capcom", 2020));
+            Actiongames.Add(new Gry("Metro exodus", "Metro Exodus is a first-person shooter game with survival horror and stealth elements. ... The game  features  a mixture of linear levels  and sandbox environments. It also includes a dynamic weather  system, a day-night cycle, and environments that change along with the seasons as the story progresses.", 245, "Akcja", new Uri(sciezka + "actGames/header9.jpg"), "rosja", "apokalipsa", "samotność", "przetrwanie", "4A Games", 2019));
+            Actiongames.Add(new Gry("Assassin's creed origins", "Assassin's Creed Origins is an action-adventure stealth game played from a third-person  perspective. ... The player  can take control of Senu and scout an area in advance, highlighting  enemies which will then be  visible when they return to controlling Bayek, the game's main character.", 110, "Akcja", new Uri(sciezka + "actGames/header17.jpg"), "pustynia", "walka", "skradanie", "open-world", "Ubisoft", 2017));
+            Actiongames.Add(new Gry("Deus ex human revolution", "Deus Ex: Human Revolution is an action role-playing game with incorporated first-person shooter  and stealth  mechanics. Players take the role of Adam Jensen, a man equipped with mechanical cybernetic implants  called augmentations.", 140, "Akcja", new Uri(sciezka + "actGames/header25.jpg"), "skradanie", "cyber", "walka", "futuryzm", "Eidos Montreal", 2014));
+            Actiongames.Add(new Gry("Arma 3", "ARMA 3. ARMA 3 is an open-world, realism-based, military tactical shooter video game developed  and published  by Bohemia  Interactive.  It was released for Microsoft Windows in September 2013, and   later announced for macOS and Linux  in August 2015.", 260, "Akcja", new Uri(sciezka + "actGames/header28.jpg"), "broń", "walka", "multiplayer", "wojna", "Sonic", 2015));
             Actiongames[7].ZdjTytulowe = new Uri(sciezka2 + "tytul.jpg");
             Actiongames[5].SciezkaVideo = "https://www.youtube.com/watch?v=cK4iAjzAoas&t=53s";
             Actiongames[5].sciezKaVideoOkno = @"C:\Users\With3rr\source\repos\Platforma\AplikacjaClient\AplikacjaClient\Movies\acs.mp4";
+            //WczytywanieListyGierDoZakupu("Akcja");
+
 
             Racinggames = new ObservableCollection<Gry>();
             Racinggames.Add(new Gry("Street Racing", "", 240, "Wyscigi", new Uri(sciezka + "racingGames/header36.jpg"), "akcja", "open world", "multiplayer", "rywalizacja", "Capcom", 2000));
@@ -287,7 +374,7 @@ namespace AplikacjaClient
             Racinggames.Add(new Gry("Mad max", "", 180, "Wiścigi", new Uri(sciezka + "racingGames/header41.jpg"), "akcja", "open world", "coop", "rywalizacja", "Capcom", 2015));
             Racinggames.Add(new Gry("Just drift it", "", 154, "Wyścigi", new Uri(sciezka + "racingGames/header42.jpg"), "akcja", "open world", "szybkie auta", "rywalizacja", "Capcom", 2015));
             Racinggames.Add(new Gry("Silicon rising", "", 180, "Wiścigi", new Uri(sciezka + "racingGames/header43.jpg"), "akcja", "open world", "szybkie auta", "rywalizacja", "Capcom", 2015));
-
+            //WczytywanieListyGierDoZakupu("Wyscigi");
 
             Strategygames = new ObservableCollection<Gry>();
             Strategygames.Add(new Gry("Frostpunk", "", 260, "Strategia", new Uri(sciezka + "stratGames/header31.jpg"), "coop", "potyczka", "kreatury", "taktyka", "steam", 2013));
@@ -298,7 +385,7 @@ namespace AplikacjaClient
             Strategygames.Add(new Gry("Gordian Quest", "", 170, "Strategia", new Uri(sciezka + "stratGames/header47.jpg"), "coop", "potyczka", "kreatury", "taktyka", "steam", 2012));
             Strategygames[4].SciezkaVideo = "https://www.youtube.com/watch?v=2reK8k8nwBc";
             Strategygames[4].sciezKaVideoOkno = @"C:\Users\With3rr\source\repos\Platforma\AplikacjaClient\AplikacjaClient\Movies\acs.mp4";
-
+            //WczytywanieListyGierDoZakupu("Strategia");
 
 
             Sportgames = new ObservableCollection<Gry>();
@@ -309,6 +396,8 @@ namespace AplikacjaClient
             Sportgames.Add(new Gry("Rbi 20", "", 125, "Sportowe", new Uri(sciezka + "sportGames/header33.jpg"), "widowisko", "pałki", "apokalipsa", "sport","Amda",2012));
             Sportgames.Add(new Gry("Vikubb", "", 33, "Sportowe", new Uri(sciezka + "sportGames/header46.jpg"), "konie", "multiplayer", "przeszkody", "zabawki", "Amda", 2012));
 
+            //WczytywanieListyGierDoZakupu("Sportowe");
+
             Scifigames = new ObservableCollection<Gry>();
             Scifigames.Add(new Gry("The surge 2", "", 115, "Futurystyczne", new Uri(sciezka + "scifGames/header23.jpg"), "cyber", "elektryczność", "apokalipsa", "pancerz", "Deck13",2020));
             Scifigames.Add(new Gry("Cyberpunk 2077", "", 225, "Futurystyczne", new Uri(sciezka + "scifGames/header19.jpg"), "cyber", "wszczepy", "fabuła", "retrofuturyzm", "Cdp red", 2020));
@@ -316,6 +405,8 @@ namespace AplikacjaClient
             Scifigames.Add(new Gry("Borderlands 3", "", 250, "Futurystyczne", new Uri(sciezka + "scifGames/header23.jpg"), "dziwne", "apokalipsa", "kreatury", "kolory", "2K Games",2019));
             Scifigames.Add(new Gry("Comanche", "", 215, "Futurystyczne", new Uri(sciezka + "scifGames/header44.jpg"), "statki", "moc", "kreatury", "galaktyka", "Ea games", 2019));
             Scifigames.Add(new Gry("Ark", "", 250, "Futurystyczne", new Uri(sciezka + "scifGames/header45.jpg"), "dziwne", "bajkowość", "kreatury", "kolory", "2K Games", 2019));
+
+            //WczytywanieListyGierDoZakupu("Futurystyczne");
 
             Rpggames = new ObservableCollection<Gry>();
             Rpggames.Add(new Gry("Mount blade bannerlord ", "", 215, "Fantasy", new Uri(sciezka + "rpgGames/header2.jpg"), "potyczki", "multiplayer", "rezbudowa królestwa", "walka", "Piranha bytes", 2000));
@@ -331,6 +422,8 @@ namespace AplikacjaClient
             Rpggames.Add(new Gry("Gothic 4 ", "", 215, "Fantasy", new Uri(sciezka + "rpgGames/header27.jpg"), "kasty", "magia", "orowie", "walka","Piranha bytes",2014));
             Rpggames[2].SciezkaVideo = "https://www.youtube.com/watch?v=ehjJ614QfeM";
             Rpggames[2].sciezKaVideoOkno = @"C:\Users\With3rr\source\repos\Platforma\AplikacjaClient\AplikacjaClient\Movies\Wiedmin 3 Dziki Gon - trailer PL.mp4";
+
+            //WczytywanieListyGierDoZakupu("Fantasy");
 
 
             listapatchy = new ObservableCollection<ZmianyPatche>();

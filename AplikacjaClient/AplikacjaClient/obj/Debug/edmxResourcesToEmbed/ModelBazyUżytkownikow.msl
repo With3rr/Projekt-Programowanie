@@ -69,5 +69,43 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="Danes">
+      <EntityTypeMapping TypeName="BazaUżytkownikowModel.Dane">
+        <MappingFragment StoreEntitySet="Dane">
+          <ScalarProperty Name="Opis_zamowienia" ColumnName="Opis_zamowienia" />
+          <ScalarProperty Name="Full_price" ColumnName="Full_price" />
+          <ScalarProperty Name="Telefon" ColumnName="Telefon" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Ulica_NrDomu" ColumnName="Ulica_NrDomu" />
+          <ScalarProperty Name="Kod_pocztowy" ColumnName="Kod_pocztowy" />
+          <ScalarProperty Name="Miejscowość" ColumnName="Miejscowość" />
+          <ScalarProperty Name="Nazwisko" ColumnName="Nazwisko" />
+          <ScalarProperty Name="Imie" ColumnName="Imie" />
+          <ScalarProperty Name="Nr_zamowienia" ColumnName="Nr_zamowienia" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GamesForSales">
+      <EntityTypeMapping TypeName="BazaUżytkownikowModel.GamesForSale">
+        <MappingFragment StoreEntitySet="GamesForSale">
+          <ScalarProperty Name="path_wideo" ColumnName="path_wideo" />
+          <ScalarProperty Name="path_more" ColumnName="path_more" />
+          <ScalarProperty Name="Zdj_tytulowe" ColumnName="Zdj_tytulowe" />
+          <ScalarProperty Name="Gatunek" ColumnName="Gatunek" />
+          <ScalarProperty Name="Image" ColumnName="Image" />
+          <ScalarProperty Name="RokWydania" ColumnName="RokWydania" />
+          <ScalarProperty Name="Tworca" ColumnName="Tworca" />
+          <ScalarProperty Name="Podgatunek4" ColumnName="Podgatunek4" />
+          <ScalarProperty Name="Podgatunek3" ColumnName="Podgatunek3" />
+          <ScalarProperty Name="Podgatunek2" ColumnName="Podgatunek2" />
+          <ScalarProperty Name="Podgatunek1" ColumnName="Podgatunek1" />
+          <ScalarProperty Name="Cena" ColumnName="Cena" />
+          <ScalarProperty Name="Opis" ColumnName="Opis" />
+          <ScalarProperty Name="Nazwa" ColumnName="Nazwa" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>
