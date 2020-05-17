@@ -17,13 +17,18 @@ namespace AplikacjaClient
     /// Na podstawie tej klasy twożone są obiekty które wykorzystywane są do dokumentacji zmian wprowadzanych w aplikacji a ich wyniki są wyświetlane w samej aplikacji.
     /// Dostęp do nich jest swobodny.
     /// </remarks>
-    class ZmianyPatche
+    public class ZmianyPatche
     {
         /// <summary>
         /// Konstruktor bezargumentowy klasy
         /// </summary>
         public ZmianyPatche()
         {
+
+        }
+        public bool CoTam(int a)
+        {
+            return true;
 
         }
 

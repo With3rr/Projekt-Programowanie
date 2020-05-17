@@ -1,0 +1,159 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="BazaUżytkownikowModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Dane">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nr_zamowienia" Type="int" />
+    <Property Name="Imie" Type="nvarchar" MaxLength="50" />
+    <Property Name="Nazwisko" Type="nvarchar" MaxLength="50" />
+    <Property Name="Miejscowość" Type="nvarchar" MaxLength="50" />
+    <Property Name="Kod_pocztowy" Type="nvarchar" MaxLength="50" />
+    <Property Name="Ulica_NrDomu" Type="nvarchar" MaxLength="50" />
+    <Property Name="Email" Type="nvarchar" MaxLength="50" />
+    <Property Name="Telefon" Type="nvarchar" MaxLength="50" />
+    <Property Name="Full_price" Type="nvarchar" MaxLength="50" />
+    <Property Name="Opis_zamowienia" Type="nvarchar" MaxLength="1000" />
+  </EntityType>
+  <EntityType Name="DaneKonta">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NazwaUżytkownika" Type="nchar" MaxLength="50" Nullable="false" />
+    <Property Name="HasloUzytkownika" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="EmailAdress" Type="nchar" MaxLength="40" Nullable="false" />
+    <Property Name="Imie" Type="nvarchar" MaxLength="50" />
+    <Property Name="Nazwisko" Type="nvarchar" MaxLength="50" />
+    <Property Name="Płeć" Type="nchar" MaxLength="10" />
+    <Property Name="Hobby" Type="nvarchar" MaxLength="200" />
+    <Property Name="Narodowosc" Type="nvarchar" MaxLength="50" />
+    <Property Name="Miejscowosc" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Friends">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nick" Type="nchar" MaxLength="30" Nullable="false" />
+    <Property Name="Id_kogo" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="GamesForSale">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nazwa" Type="nvarchar" MaxLength="50" />
+    <Property Name="Opis" Type="nvarchar" MaxLength="200" />
+    <Property Name="Cena" Type="int" />
+    <Property Name="Podgatunek1" Type="nvarchar" MaxLength="50" />
+    <Property Name="Podgatunek2" Type="nvarchar" MaxLength="50" />
+    <Property Name="Podgatunek3" Type="nvarchar" MaxLength="50" />
+    <Property Name="Podgatunek4" Type="nvarchar" MaxLength="50" />
+    <Property Name="Tworca" Type="nvarchar" MaxLength="50" />
+    <Property Name="RokWydania" Type="int" />
+    <Property Name="Image" Type="image" />
+    <Property Name="Gatunek" Type="nvarchar" MaxLength="50" />
+    <Property Name="Zdj_tytulowe" Type="image" />
+    <Property Name="path_more" Type="nvarchar" MaxLength="100" />
+    <Property Name="path_wideo" Type="nchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="GrywMojejBibliotece">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nazwa_gry" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="godzinywGrze" Type="int" Nullable="false" />
+    <Property Name="Użytkownik" Type="int" Nullable="false" />
+    <Property Name="Path" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="HistoriaZakupow">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Id_uzytkownika" Type="int" Nullable="false" />
+    <Property Name="Nazwa_prod" Type="nvarchar" MaxLength="50" />
+    <Property Name="Cena" Type="nvarchar" MaxLength="50" />
+    <Property Name="Data_zakupu" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Karty">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nrKarty" Type="nchar" MaxLength="50" Nullable="false" />
+    <Property Name="Imie" Type="nchar" MaxLength="20" Nullable="false" />
+    <Property Name="Nazwisko" Type="nchar" MaxLength="20" Nullable="false" />
+    <Property Name="nrID" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="Stan" Type="float" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Kody">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nazwa_gry" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Kod_gry" Type="nchar" MaxLength="30" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_Friends_ToTable">
+    <End Role="DaneKonta" Type="Self.DaneKonta" Multiplicity="1" />
+    <End Role="Friends" Type="Self.Friends" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DaneKonta">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Friends">
+        <PropertyRef Name="Id_kogo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_HistoriaZakupow_ToTable">
+    <End Role="DaneKonta" Type="Self.DaneKonta" Multiplicity="1" />
+    <End Role="HistoriaZakupow" Type="Self.HistoriaZakupow" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DaneKonta">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="HistoriaZakupow">
+        <PropertyRef Name="Id_uzytkownika" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Table_ToTable">
+    <End Role="DaneKonta" Type="Self.DaneKonta" Multiplicity="1" />
+    <End Role="GrywMojejBibliotece" Type="Self.GrywMojejBibliotece" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DaneKonta">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="GrywMojejBibliotece">
+        <PropertyRef Name="Użytkownik" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="BazaUżytkownikowModelStoreContainer">
+    <EntitySet Name="Dane" EntityType="Self.Dane" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DaneKonta" EntityType="Self.DaneKonta" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Friends" EntityType="Self.Friends" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="GamesForSale" EntityType="Self.GamesForSale" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="GrywMojejBibliotece" EntityType="Self.GrywMojejBibliotece" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="HistoriaZakupow" EntityType="Self.HistoriaZakupow" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Karty" EntityType="Self.Karty" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Kody" EntityType="Self.Kody" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Friends_ToTable" Association="Self.FK_Friends_ToTable">
+      <End Role="DaneKonta" EntitySet="DaneKonta" />
+      <End Role="Friends" EntitySet="Friends" />
+    </AssociationSet>
+    <AssociationSet Name="FK_HistoriaZakupow_ToTable" Association="Self.FK_HistoriaZakupow_ToTable">
+      <End Role="DaneKonta" EntitySet="DaneKonta" />
+      <End Role="HistoriaZakupow" EntitySet="HistoriaZakupow" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Table_ToTable" Association="Self.FK_Table_ToTable">
+      <End Role="DaneKonta" EntitySet="DaneKonta" />
+      <End Role="GrywMojejBibliotece" EntitySet="GrywMojejBibliotece" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

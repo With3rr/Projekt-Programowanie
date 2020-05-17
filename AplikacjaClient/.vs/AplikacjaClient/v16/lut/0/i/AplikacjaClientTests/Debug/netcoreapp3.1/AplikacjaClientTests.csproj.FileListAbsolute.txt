@@ -1,0 +1,14 @@
+C:\Users\With3rr\source\repos\Platforma\AplikacjaClient\.vs\AplikacjaClient\v16\lut\0\b\AplikacjaClientTests\Debug\netcoreapp3.1\NUnit3.TestAdapter.dll
+C:\Users\With3rr\source\repos\Platforma\AplikacjaClient\.vs\AplikacjaClient\v16\lut\0\b\AplikacjaClientTests\Debug\netcoreapp3.1\NUnit3.TestAdapter.pdb
+C:\Users\With3rr\source\repos\Platforma\AplikacjaClient\.vs\AplikacjaClient\v16\lut\0\b\AplikacjaClientTests\Debug\netcoreapp3.1\nunit.engine.dll
+C:\Users\With3rr\source\repos\Platforma\AplikacjaClient\.vs\AplikacjaClient\v16\lut\0\b\AplikacjaClientTests\Debug\netcoreapp3.1\nunit.engine.api.dll
+C:\Users\With3rr\source\repos\Platforma\AplikacjaClient\.vs\AplikacjaClient\v16\lut\0\b\AplikacjaClientTests\Debug\netcoreapp3.1\AplikacjaClientTests.deps.json
+C:\Users\With3rr\source\repos\Platforma\AplikacjaClient\.vs\AplikacjaClient\v16\lut\0\b\AplikacjaClientTests\Debug\netcoreapp3.1\AplikacjaClientTests.runtimeconfig.json
+C:\Users\With3rr\source\repos\Platforma\AplikacjaClient\.vs\AplikacjaClient\v16\lut\0\b\AplikacjaClientTests\Debug\netcoreapp3.1\AplikacjaClientTests.runtimeconfig.dev.json
+C:\Users\With3rr\source\repos\Platforma\AplikacjaClient\.vs\AplikacjaClient\v16\lut\0\b\AplikacjaClientTests\Debug\netcoreapp3.1\AplikacjaClientTests.dll
+C:\Users\With3rr\source\repos\Platforma\AplikacjaClient\.vs\AplikacjaClient\v16\lut\0\i\AplikacjaClientTests\Debug\netcoreapp3.1\AplikacjaClientTests.AssemblyInfoInputs.cache
+C:\Users\With3rr\source\repos\Platforma\AplikacjaClient\.vs\AplikacjaClient\v16\lut\0\i\AplikacjaClientTests\Debug\netcoreapp3.1\AplikacjaClientTests.AssemblyInfo.cs
+C:\Users\With3rr\source\repos\Platforma\AplikacjaClient\.vs\AplikacjaClient\v16\lut\0\i\AplikacjaClientTests\Debug\netcoreapp3.1\AplikacjaClientTests.csproj.CopyComplete
+C:\Users\With3rr\source\repos\Platforma\AplikacjaClient\.vs\AplikacjaClient\v16\lut\0\i\AplikacjaClientTests\Debug\netcoreapp3.1\AplikacjaClientTests.dll
+C:\Users\With3rr\source\repos\Platforma\AplikacjaClient\.vs\AplikacjaClient\v16\lut\0\i\AplikacjaClientTests\Debug\netcoreapp3.1\AplikacjaClientTests.genruntimeconfig.cache
+C:\Users\With3rr\source\repos\Platforma\AplikacjaClient\.vs\AplikacjaClient\v16\lut\0\i\AplikacjaClientTests\Debug\netcoreapp3.1\AplikacjaClientTests.csprojAssemblyReference.cache

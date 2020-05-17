@@ -175,7 +175,7 @@ namespace AplikacjaClient
             if(wpisywanianowegoZnaj.Text==string.Empty)
             {
 
-                bladznajomego.Text = "Podany użytkownik nie istnieje lub już go posiadasz";
+                bladznajomego.Text = "Incorrect data";
                 bladznajomego.Visibility = Visibility.Visible;
 
                 wpisywanianowegoZnaj.BorderBrush = Brushes.Red;
@@ -232,7 +232,7 @@ namespace AplikacjaClient
                 }
                 else
                 {
-                    bladznajomego.Text = "Podany użytkownik nie istnieje lub już go posiadasz";
+                    bladznajomego.Text = "Incorrect data";
                     bladznajomego.Visibility = Visibility.Visible;
                 }
 

@@ -13,13 +13,14 @@ namespace AplikacjaClient
     /// Klasa ta pozwala dostęp do poszczególnych właściwości obiektów typu Gry które będą zawierać podstawowe własciowsci i typy gier sprzedawanych.
     /// Dostęp do nich jest swobodny.
     /// </remarks>
-    class Gry
+    public class Gry
     {
         /// <summary>
         /// Konstruktor bezargumentowy klasy.
         /// </summary>
         public Gry()
         {
+
 
         }
         /// <summary>

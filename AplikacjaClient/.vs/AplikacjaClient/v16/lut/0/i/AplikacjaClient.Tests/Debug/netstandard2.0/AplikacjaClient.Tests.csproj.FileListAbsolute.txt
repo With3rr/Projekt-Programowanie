@@ -1,0 +1,11 @@
+C:\Users\With3rr\source\repos\Platforma\AplikacjaClient\.vs\AplikacjaClient\v16\lut\0\b\AplikacjaClient.Tests\Debug\netstandard2.0\NUnit3.TestAdapter.dll
+C:\Users\With3rr\source\repos\Platforma\AplikacjaClient\.vs\AplikacjaClient\v16\lut\0\b\AplikacjaClient.Tests\Debug\netstandard2.0\NUnit3.TestAdapter.pdb
+C:\Users\With3rr\source\repos\Platforma\AplikacjaClient\.vs\AplikacjaClient\v16\lut\0\b\AplikacjaClient.Tests\Debug\netstandard2.0\nunit.engine.dll
+C:\Users\With3rr\source\repos\Platforma\AplikacjaClient\.vs\AplikacjaClient\v16\lut\0\b\AplikacjaClient.Tests\Debug\netstandard2.0\nunit.engine.api.dll
+C:\Users\With3rr\source\repos\Platforma\AplikacjaClient\.vs\AplikacjaClient\v16\lut\0\b\AplikacjaClient.Tests\Debug\netstandard2.0\AplikacjaClient.Tests.deps.json
+C:\Users\With3rr\source\repos\Platforma\AplikacjaClient\.vs\AplikacjaClient\v16\lut\0\b\AplikacjaClient.Tests\Debug\netstandard2.0\AplikacjaClient.Tests.dll
+C:\Users\With3rr\source\repos\Platforma\AplikacjaClient\.vs\AplikacjaClient\v16\lut\0\i\AplikacjaClient.Tests\Debug\netstandard2.0\AplikacjaClient.Tests.AssemblyInfoInputs.cache
+C:\Users\With3rr\source\repos\Platforma\AplikacjaClient\.vs\AplikacjaClient\v16\lut\0\i\AplikacjaClient.Tests\Debug\netstandard2.0\AplikacjaClient.Tests.AssemblyInfo.cs
+C:\Users\With3rr\source\repos\Platforma\AplikacjaClient\.vs\AplikacjaClient\v16\lut\0\i\AplikacjaClient.Tests\Debug\netstandard2.0\AplikacjaClient.Tests.csproj.CopyComplete
+C:\Users\With3rr\source\repos\Platforma\AplikacjaClient\.vs\AplikacjaClient\v16\lut\0\i\AplikacjaClient.Tests\Debug\netstandard2.0\AplikacjaClient.Tests.dll
+C:\Users\With3rr\source\repos\Platforma\AplikacjaClient\.vs\AplikacjaClient\v16\lut\0\i\AplikacjaClient.Tests\Debug\netstandard2.0\AplikacjaClient.Tests.csprojAssemblyReference.cache

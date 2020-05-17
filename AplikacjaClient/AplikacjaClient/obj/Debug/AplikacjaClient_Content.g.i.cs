@@ -8,6 +8,10 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("nunit3.testadapter.dll")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("nunit3.testadapter.pdb")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("nunit.engine.dll")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("nunit.engine.api.dll")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("movies/acs.mp4")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("movies/wiedmin%203%20dziki%20gon%20-%20trailer%20pl.mp4")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("modelbazyu%c5%bcytkownikow.context.tt")]

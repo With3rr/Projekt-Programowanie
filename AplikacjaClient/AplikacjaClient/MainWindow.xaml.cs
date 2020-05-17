@@ -16,9 +16,15 @@ using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Windows.Threading;
 using System.IO;
+using NUnit.Framework;
 
 namespace AplikacjaClient
 {
+   
+
+       
+
+
     /// <summary>
     /// Głowna klasa aplikacji
     /// </summary>
@@ -26,9 +32,9 @@ namespace AplikacjaClient
     /// Klasa ta za w sobie wszystkie wiekszość metod manipulacji nad aplikacją,kupowania gier,dostęp do metody płatności,biblioteka gier i różnych opcji personalizacji konta.
     ///
     /// </remarks>
-    public partial class MainWindow : Window
+    public partial class MainWindow :  Window
     {
-        private double max = 0;
+        public  double max = 0;
 
 
         /// <summary>
@@ -139,6 +145,8 @@ namespace AplikacjaClient
         /// <remarks>
         /// Odpowiada ona za inicjalizację obiektu Aplikacji i to od niej zaczyna się wykonywanie programu
         /// </remarks>
+        /// 
+        
         public MainWindow()
         {
 
@@ -217,6 +225,9 @@ namespace AplikacjaClient
             
             kody = new Kody();
             inicjalizacjaGier();
+
+
+           
 
 
 
@@ -822,13 +833,14 @@ namespace AplikacjaClient
 
         }
 
+       
         private void SignUp_Click(object sender, RoutedEventArgs e)
         {
-            if(tbPassword.Text==string.Empty || tbLogin.Text==string.Empty ||tbEmail.Text==string.Empty || cbAgrement.IsChecked==false || tbPassword.Text.Count()<8 || tbLogin.Text.Count() < 5 || tbEmail.Text.Count() < 8 )
+            if(tbPassword.Text==string.Empty || tbLogin.Text==string.Empty ||tbEmail.Text==string.Empty || cbAgrement.IsChecked==false || Obliczenia.CzyDaneSpelniajaZalozenia(tbPassword.Text)  || Obliczenia.CzyDaneSpelniajaZalozenia(tbLogin.Text)  || Obliczenia.CzyDaneSpelniajaZalozenia(tbEmail.Text) )
             {
                 errorLogin.Visibility = Visibility.Visible;
 
-                if (tbPassword.Text == string.Empty || tbPassword.Text.Count() < 8)
+                if (tbPassword.Text == string.Empty || Obliczenia.CzyDaneSpelniajaZalozenia(tbPassword.Text))
                 {
                     tbPassword.BorderBrush = Brushes.Red;
                 }
@@ -837,7 +849,7 @@ namespace AplikacjaClient
                     tbPassword.BorderBrush = Brushes.Black;
 
                 }
-                if (tbLogin.Text == string.Empty || tbLogin.Text.Count() < 5)
+                if (tbLogin.Text == string.Empty || Obliczenia.CzyDaneSpelniajaZalozenia(tbLogin.Text))
                 {
                     tbLogin.BorderBrush = Brushes.Red;
                     takiNickJest.Visibility = Visibility.Hidden;
@@ -847,7 +859,7 @@ namespace AplikacjaClient
                     tbLogin.BorderBrush = Brushes.Black;
 
                 }
-                if (tbEmail.Text == string.Empty || tbEmail.Text.Count() < 8)
+                if (tbEmail.Text == string.Empty || Obliczenia.CzyDaneSpelniajaZalozenia(tbEmail.Text))
                 {
                     tbEmail.BorderBrush = Brushes.Red;
                     takiEmailJest.Visibility = Visibility.Hidden;
@@ -1364,28 +1376,16 @@ namespace AplikacjaClient
         /// <summary>
         /// Obliczanie całkiwitej ceny Zamówienia które znajduje się w koszyku na podstawie sumy cen gier które się tam znajdują.
         /// </summary>
-        private void obliczanieFullPrice()
-        {
-            max = 0;
-            
-            for (int i = 0; i < gryWkoszyku.Count; i++)
-            {
-                max += gryWkoszyku[i].Cena;
-
-
-            }
-            
-            cenaMax.Content = "Full price: " + max + "$";
-
-        }
-
-
+        
 
         private void MenuItem_Click_3(object sender, RoutedEventArgs e)
         {
             cenaMax.Content = "Full price: " + 0 + "$";
             refresz();
-            obliczanieFullPrice();
+
+            max = Obliczenia.obliczanieFullPrice(gryWkoszyku);
+            cenaMax.Content = "Full price: " + max + "$";
+
             gryBibliotekaOkno.Visibility = Visibility.Collapsed;
             gProfile.Visibility = Visibility.Collapsed;
 
@@ -1449,7 +1449,8 @@ namespace AplikacjaClient
             {
                 gryWkoszyku.Remove(produktZlisty);
             }
-            obliczanieFullPrice();
+            max = Obliczenia.obliczanieFullPrice(gryWkoszyku);
+            cenaMax.Content = "Full price: " + max + "$";
         }
 
         private void Button_Click_9(object sender, RoutedEventArgs e)
@@ -2106,6 +2107,11 @@ namespace AplikacjaClient
         private void ToggleButton_Click(object sender, RoutedEventArgs e)
         {
             zlykod.Visibility = Visibility.Collapsed;
+        }
+
+        public bool CzyBlednaGlgDanych()
+        {
+            throw new NotImplementedException();
         }
     }
 }

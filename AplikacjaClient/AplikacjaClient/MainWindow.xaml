@@ -156,7 +156,7 @@
                             <ColumnDefinition Width="*"></ColumnDefinition>
                         </Grid.ColumnDefinitions>
                         <TextBlock x:Name="labLogin" Text="Username" FontSize="20"  Background="{x:Null}" Style="{StaticResource stylText}" Grid.Column="0"></TextBlock>
-                        <TextBlock x:Name="takiNickJest" Grid.Column="1" Text="Konto o podanum nicku już istnieje"  Foreground="Red" Margin="0,2" Visibility="Collapsed"/>
+                        <TextBlock x:Name="takiNickJest" Grid.Column="1" Text="account with the given nickname exists"  Foreground="Red" Margin="0,2" Visibility="Collapsed"/>
                     </Grid>
 
                     <TextBox x:Name="tbLogin" Height="40" Background="#FFC5B3B3" VerticalContentAlignment="Center" HorizontalContentAlignment="Left" Style="{StaticResource stylTextWpisywanie}" />
@@ -170,7 +170,7 @@
                             <ColumnDefinition Width="*"></ColumnDefinition>
                         </Grid.ColumnDefinitions>
                         <TextBlock x:Name="labEmail" Text="Email" FontSize="20" Style="{StaticResource stylText}"  Background="{x:Null}" ></TextBlock>
-                        <Label x:Name="takiEmailJest" Grid.Column="1" Content="Konto o podanum emailu już istnieje" VerticalContentAlignment="Center" Foreground="Red" Visibility="Collapsed"></Label>
+                        <Label x:Name="takiEmailJest" Grid.Column="1" Content="account with the given email exists" VerticalContentAlignment="Center" Foreground="Red" Visibility="Collapsed"></Label>
                     </Grid>
 
 
@@ -369,7 +369,7 @@
                 <StackPanel x:Name="st1" Width="300" Height="180"  Style="{StaticResource stylPaneli}">
                     <TextBlock HorizontalAlignment="Center" FontSize="20" Style="{StaticResource stylText}" Margin="5,5">Enter your code</TextBlock>
                     <TextBox x:Name="kluczwpisywanie" Height="35" Margin="5,5" HorizontalContentAlignment="Left"  VerticalContentAlignment="Center" FontSize="20"></TextBox>
-                    <TextBlock Margin="3,0" TextWrapping="Wrap" Text="Klucze wyglądają następująco: AAABBBCCC" Style="{StaticResource stylText}" ></TextBlock>
+                    <TextBlock Margin="5,0" TextWrapping="Wrap"  Text="AAABBBCCC" Style="{StaticResource stylText}" ></TextBlock>
                     <TextBlock Margin="10,0" x:Name="zlykod" Height="15" Foreground="#FFCD1717" Text="Invalid code or u already have the game" FontSize="11" Visibility="Collapsed"  />
                     <Separator></Separator>
                     <Button x:Name="potwiedzenieklucza" Style="{StaticResource buttony}" Margin="0,10"   FontSize="20" Click="potwiedzenieklucza_Click">Confirm</Button>
@@ -714,7 +714,7 @@
                                         <Image Source="{Binding Path=Zdjecie}" Grid.Row="0" Grid.RowSpan="2" Grid.Column="0" ></Image>
                                         <TextBlock Text="{Binding Path=Nazwa}" Grid.Row="0" Grid.Column="1"  HorizontalAlignment="Left" FontSize="22" Grid.ColumnSpan="4" Style="{StaticResource stylText}"></TextBlock>
                                         <TextBlock Grid.Row="1" Grid.Column="3" Text="{Binding StringFormat={}{0} $ ,Path=Cena}" HorizontalAlignment="Right"  FontSize="14" FontStyle="Italic" Style="{StaticResource stylText}"></TextBlock>
-                                        <Button Content="Usuń" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center" Height="30" Width="50" Click="Button_Click_8" Background="{x:Null}" BorderBrush="{x:Null}"></Button>
+                                        <Button Content="Remove" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center" Height="30" Width="50" Click="Button_Click_8" Background="{x:Null}" BorderBrush="{x:Null}"></Button>
 
 
 
@@ -1522,7 +1522,7 @@
                         <ColumnDefinition Width="*" ></ColumnDefinition>
                     </Grid.ColumnDefinitions>
                     <TextBox x:Name="txtfiltrowanie" Grid.Column="0"  FontSize="16" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" TextChanged="txtfiltrowanie_TextChanged" />
-                    <Button Grid.Column="1"  Content="Szukaj" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Click="Button_Click_4" Style="{StaticResource buttony}" Height="Auto" Width="Auto" />
+                    <Button Grid.Column="1"  Content="Search" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Click="Button_Click_4" Style="{StaticResource buttony}" Height="Auto" Width="Auto" />
 
                 </Grid>
 
