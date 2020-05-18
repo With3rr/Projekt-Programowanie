@@ -13,6 +13,7 @@
         <Grid Margin="0,0,0,518"  Height="25" Style="{StaticResource stylPanelijednokolorowy}">
 
             <Image Margin="0,0,325,0" Source="logo.png"/>
+            
             <Button Margin="325,0,0,0" Click="Button_Click" Foreground="{x:Null}" BorderBrush="{x:Null}" RenderTransformOrigin="-0.093,0.533" Opacity="0.6">
                 <Button.Background>
                     <ImageBrush ImageSource="close.png"/>

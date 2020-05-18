@@ -291,7 +291,7 @@ namespace AplikacjaClient
                 
                 for (int i = 0; i < tymczasowe.Count; i++)
                 {
-                    Actiongames.Add(new Gry() { Nazwa = tymczasowe[i].Nazwa, Cena = (double)(tymczasowe[i].Cena), Gatunek = tymczasowe[i].Gatunek, Opis = tymczasowe[i].Opis, Podgatunek1 = tymczasowe[i].Podgatunek1, Podgatunek2 = tymczasowe[i].Podgatunek2, Podgatunek3 = tymczasowe[i].Podgatunek3, Podgatunek4 = tymczasowe[i].Podgatunek4, Rokwydania = (int)tymczasowe[i].RokWydania, Twórca = tymczasowe[i].Tworca, });
+                    Actiongames.Add(new Gry() { Nazwa = tymczasowe[i].Nazwa, Cena = (double)(tymczasowe[i].Cena), Gatunek = tymczasowe[i].Gatunek, Opis = tymczasowe[i].Opis, Podgatunek1 = tymczasowe[i].Podgatunek1, Podgatunek2 = tymczasowe[i].Podgatunek2, Podgatunek3 = tymczasowe[i].Podgatunek3, Podgatunek4 = tymczasowe[i].Podgatunek4, Rokwydania = (int)tymczasowe[i].RokWydania, Twórca = tymczasowe[i].Tworca, SciezkaVideo=tymczasowe[i].path_more, sciezKaVideoOkno=tymczasowe[i].path_wideo});
 
                 }
                 
@@ -302,7 +302,7 @@ namespace AplikacjaClient
 
                 for (int i = 0; i < tymczasowe.Count; i++)
                 {
-                    Racinggames.Add(new Gry() { Nazwa = tymczasowe[i].Nazwa, Cena = (double)(tymczasowe[i].Cena), Gatunek = tymczasowe[i].Gatunek, Opis = tymczasowe[i].Opis, Podgatunek1 = tymczasowe[i].Podgatunek1, Podgatunek2 = tymczasowe[i].Podgatunek2, Podgatunek3 = tymczasowe[i].Podgatunek3, Podgatunek4 = tymczasowe[i].Podgatunek4, Rokwydania = (int)tymczasowe[i].RokWydania, Twórca = tymczasowe[i].Tworca, });
+                    Racinggames.Add(new Gry() { Nazwa = tymczasowe[i].Nazwa, Cena = (double)(tymczasowe[i].Cena), Gatunek = tymczasowe[i].Gatunek, Opis = tymczasowe[i].Opis, Podgatunek1 = tymczasowe[i].Podgatunek1, Podgatunek2 = tymczasowe[i].Podgatunek2, Podgatunek3 = tymczasowe[i].Podgatunek3, Podgatunek4 = tymczasowe[i].Podgatunek4, Rokwydania = (int)tymczasowe[i].RokWydania, Twórca = tymczasowe[i].Tworca, SciezkaVideo = tymczasowe[i].path_more, sciezKaVideoOkno = tymczasowe[i].path_wideo });
 
                 }
 
@@ -313,7 +313,7 @@ namespace AplikacjaClient
 
                 for (int i = 0; i < tymczasowe.Count; i++)
                 {
-                    Strategygames.Add(new Gry() { Nazwa = tymczasowe[i].Nazwa, Cena = (double)(tymczasowe[i].Cena), Gatunek = tymczasowe[i].Gatunek, Opis = tymczasowe[i].Opis, Podgatunek1 = tymczasowe[i].Podgatunek1, Podgatunek2 = tymczasowe[i].Podgatunek2, Podgatunek3 = tymczasowe[i].Podgatunek3, Podgatunek4 = tymczasowe[i].Podgatunek4, Rokwydania = (int)tymczasowe[i].RokWydania, Twórca = tymczasowe[i].Tworca, });
+                    Strategygames.Add(new Gry() { Nazwa = tymczasowe[i].Nazwa, Cena = (double)(tymczasowe[i].Cena), Gatunek = tymczasowe[i].Gatunek, Opis = tymczasowe[i].Opis, Podgatunek1 = tymczasowe[i].Podgatunek1, Podgatunek2 = tymczasowe[i].Podgatunek2, Podgatunek3 = tymczasowe[i].Podgatunek3, Podgatunek4 = tymczasowe[i].Podgatunek4, Rokwydania = (int)tymczasowe[i].RokWydania, Twórca = tymczasowe[i].Tworca, SciezkaVideo = tymczasowe[i].path_more, sciezKaVideoOkno = tymczasowe[i].path_wideo });
 
                 }
 
@@ -324,7 +324,7 @@ namespace AplikacjaClient
 
                 for (int i = 0; i < tymczasowe.Count; i++)
                 {
-                    Sportgames.Add(new Gry() { Nazwa = tymczasowe[i].Nazwa, Cena = (double)(tymczasowe[i].Cena), Gatunek = tymczasowe[i].Gatunek, Opis = tymczasowe[i].Opis, Podgatunek1 = tymczasowe[i].Podgatunek1, Podgatunek2 = tymczasowe[i].Podgatunek2, Podgatunek3 = tymczasowe[i].Podgatunek3, Podgatunek4 = tymczasowe[i].Podgatunek4, Rokwydania = (int)tymczasowe[i].RokWydania, Twórca = tymczasowe[i].Tworca, });
+                    Sportgames.Add(new Gry() { Nazwa = tymczasowe[i].Nazwa, Cena = (double)(tymczasowe[i].Cena), Gatunek = tymczasowe[i].Gatunek, Opis = tymczasowe[i].Opis, Podgatunek1 = tymczasowe[i].Podgatunek1, Podgatunek2 = tymczasowe[i].Podgatunek2, Podgatunek3 = tymczasowe[i].Podgatunek3, Podgatunek4 = tymczasowe[i].Podgatunek4, Rokwydania = (int)tymczasowe[i].RokWydania, Twórca = tymczasowe[i].Tworca, SciezkaVideo = tymczasowe[i].path_more, sciezKaVideoOkno = tymczasowe[i].path_wideo });
 
                 }
 
@@ -335,7 +335,7 @@ namespace AplikacjaClient
 
                 for (int i = 0; i < tymczasowe.Count; i++)
                 {
-                    Scifigames.Add(new Gry() { Nazwa = tymczasowe[i].Nazwa, Cena = (double)(tymczasowe[i].Cena), Gatunek = tymczasowe[i].Gatunek, Opis = tymczasowe[i].Opis, Podgatunek1 = tymczasowe[i].Podgatunek1, Podgatunek2 = tymczasowe[i].Podgatunek2, Podgatunek3 = tymczasowe[i].Podgatunek3, Podgatunek4 = tymczasowe[i].Podgatunek4, Rokwydania = (int)tymczasowe[i].RokWydania, Twórca = tymczasowe[i].Tworca, });
+                    Scifigames.Add(new Gry() { Nazwa = tymczasowe[i].Nazwa, Cena = (double)(tymczasowe[i].Cena), Gatunek = tymczasowe[i].Gatunek, Opis = tymczasowe[i].Opis, Podgatunek1 = tymczasowe[i].Podgatunek1, Podgatunek2 = tymczasowe[i].Podgatunek2, Podgatunek3 = tymczasowe[i].Podgatunek3, Podgatunek4 = tymczasowe[i].Podgatunek4, Rokwydania = (int)tymczasowe[i].RokWydania, Twórca = tymczasowe[i].Tworca, SciezkaVideo = tymczasowe[i].path_more, sciezKaVideoOkno = tymczasowe[i].path_wideo });
 
                 }
 
@@ -346,7 +346,7 @@ namespace AplikacjaClient
 
                 for (int i = 0; i < tymczasowe.Count; i++)
                 {
-                    Rpggames.Add(new Gry() { Nazwa = tymczasowe[i].Nazwa, Cena = (double)(tymczasowe[i].Cena), Gatunek = tymczasowe[i].Gatunek, Opis = tymczasowe[i].Opis, Podgatunek1 = tymczasowe[i].Podgatunek1, Podgatunek2 = tymczasowe[i].Podgatunek2, Podgatunek3 = tymczasowe[i].Podgatunek3, Podgatunek4 = tymczasowe[i].Podgatunek4, Rokwydania = (int)tymczasowe[i].RokWydania, Twórca = tymczasowe[i].Tworca, });
+                    Rpggames.Add(new Gry() { Nazwa = tymczasowe[i].Nazwa, Cena = (double)(tymczasowe[i].Cena), Gatunek = tymczasowe[i].Gatunek, Opis = tymczasowe[i].Opis, Podgatunek1 = tymczasowe[i].Podgatunek1, Podgatunek2 = tymczasowe[i].Podgatunek2, Podgatunek3 = tymczasowe[i].Podgatunek3, Podgatunek4 = tymczasowe[i].Podgatunek4, Rokwydania = (int)tymczasowe[i].RokWydania, Twórca = tymczasowe[i].Tworca, SciezkaVideo = tymczasowe[i].path_more, sciezKaVideoOkno = tymczasowe[i].path_wideo });
 
                 }
 
@@ -2263,6 +2263,12 @@ namespace AplikacjaClient
 
         }
 
+
+        /// <summary>
+        /// Jest to metoda która sprawdza czy dana ścieżka gry podana przez użytkownika jest poprawna.Jezeli tak proces jest uruchamiany jeżeli nie nic nie jest wykonywane.
+        /// </summary>
+        /// <param name="sender">określa obiekt który wywołał dany event</param>
+        /// <param name="e">Zawiera informacje o stanie i dane zdarzenia powiązane ze zdarzeniem kierowanym.</param>
         private void Button_Click_21(object sender, RoutedEventArgs e)
         {
             if(File.Exists((gridBiblioteka.SelectedItem as GryBiblioteka).SciezkaGry))
@@ -2277,6 +2283,13 @@ namespace AplikacjaClient
             
         }
 
+
+
+        /// <summary>
+        /// Jest to metoda służąca do uruchamiania wideo wraz z licznikiem czasu przebiegu wideo.
+        /// </summary>
+        /// <param name="sender">określa obiekt który wywołał dany event</param>
+        /// <param name="e">Zawiera informacje o stanie i dane zdarzenia powiązane ze zdarzeniem kierowanym.</param>
         private void VideoPlaY(object sender, RoutedEventArgs e)
         {
             btstop.Visibility = Visibility.Visible;
@@ -2288,6 +2301,12 @@ namespace AplikacjaClient
             }
         }
 
+
+        /// <summary>
+        /// Jest to metoda służąca do zatrzymania wideo wraz z licznikiem czasu przebiegu wideo.
+        /// </summary>
+        /// <param name="sender">określa obiekt który wywołał dany event</param>
+        /// <param name="e">Zawiera informacje o stanie i dane zdarzenia powiązane ze zdarzeniem kierowanym.</param>
         private void VideoPause(object sender, RoutedEventArgs e)
         {
             btplay.Visibility = Visibility.Visible;
@@ -2299,6 +2318,11 @@ namespace AplikacjaClient
             }
         }
 
+        /// <summary>
+        /// Jest to metoda zatrzymująca   wideo wraz z licznikiem czasu przebiegu wideo.
+        /// </summary>
+        /// <param name="sender">określa obiekt który wywołał dany event</param>
+        /// <param name="e">Zawiera informacje o stanie i dane zdarzenia powiązane ze zdarzeniem kierowanym.</param>
         private void VideoStop(object sender, RoutedEventArgs e)
         {
             video.Stop();
@@ -2308,12 +2332,26 @@ namespace AplikacjaClient
             }
         }
 
+
+
+        /// <summary>
+        /// Jest to metoda służąca do obsługi wideo.
+        /// </summary>
+        /// <param name="sender">określa obiekt który wywołał dany event</param>
+        /// <param name="e">Zawiera informacje o stanie i dane zdarzenia powiązane ze zdarzeniem kierowanym.</param>
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             video.ScrubbingEnabled = true;
             video.Stop();
         }
 
+
+
+        /// <summary>
+        /// Jest to metoda służąca do obsługi wideo.
+        /// </summary>
+        /// <param name="sender">określa obiekt który wywołał dany event</param>
+        /// <param name="e">Zawiera informacje o stanie i dane zdarzenia powiązane ze zdarzeniem kierowanym.</param>
         private void video_MediaOpened(object sender, RoutedEventArgs e)
         {
             acctime.Maximum = video.NaturalDuration.TimeSpan.TotalSeconds;
@@ -2327,16 +2365,36 @@ namespace AplikacjaClient
             
 
         }
+
+
+
+        /// <summary>
+        /// Jest to metoda służąca do obsługi wideo.
+        /// </summary>
+        /// <param name="sender">określa obiekt który wywołał dany event</param>
+        /// <param name="e">Zawiera informacje o stanie i dane zdarzenia powiązane ze zdarzeniem kierowanym.</param>
         void timer_Tick(object sender, EventArgs e)
         {
             acctime.Value = video.Position.TotalSeconds;
         }
 
+
+
+        /// <summary>
+        /// Jest to metoda służąca do obsługi wideo.
+        /// </summary>
+        /// <param name="sender">określa obiekt który wywołał dany event</param>
+        /// <param name="e">Zawiera informacje o stanie i dane zdarzenia powiązane ze zdarzeniem kierowanym.</param>
         private void acctime_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
             video.Position = TimeSpan.FromSeconds(acctime.Value);
         }
 
+        /// <summary>
+        /// Jest to metoda służąca do obsługi wideo.
+        /// </summary>
+        /// <param name="sender">określa obiekt który wywołał dany event</param>
+        /// <param name="e">Zawiera informacje o stanie i dane zdarzenia powiązane ze zdarzeniem kierowanym.</param>
         private void acctime_DragStarted(object sender, System.Windows.Controls.Primitives.DragStartedEventArgs e)
         {
             video.Pause();
@@ -2347,6 +2405,11 @@ namespace AplikacjaClient
 
         }
 
+        /// <summary>
+        /// Jest to metoda służąca do obsługi wideo.
+        /// </summary>
+        /// <param name="sender">określa obiekt który wywołał dany event</param>
+        /// <param name="e">Zawiera informacje o stanie i dane zdarzenia powiązane ze zdarzeniem kierowanym.</param>
         private void acctime_DragCompleted(object sender, System.Windows.Controls.Primitives.DragCompletedEventArgs e)
         {
             video.Play();
@@ -2354,6 +2417,15 @@ namespace AplikacjaClient
 
         }
 
+
+        /// <summary>
+        /// Metoda która obsługuje prodókty wyświetlane w koszyku oraz uwidacznia panel z koszykiem.
+        /// </summary>
+        /// <remarks>
+        /// Metoda ta odpowiada za przełączanie pomiędzy panelami w pierwszej kolejności a następnie (za kazdym wejściem do koszyka) uaktualnianie koszyka produktów poprzez dodawanie objektów do kolekcji.
+        /// </remarks>
+        /// <param name="sender">określa obiekt który wywołał dany event</param>
+        /// <param name="e">Zawiera informacje o stanie i dane zdarzenia powiązane ze zdarzeniem kierowanym.</param>
         private void MenuItem_Click_9(object sender, RoutedEventArgs e)
         {
             gProfile.Visibility = Visibility.Visible;
@@ -2381,8 +2453,14 @@ namespace AplikacjaClient
             
            
         }
-       
 
+
+
+        /// <summary>
+        /// Jest to metoda służąca do przełączania się pomiędzy panelami.
+        /// </summary>
+        /// <param name="sender">określa obiekt który wywołał dany event</param>
+        /// <param name="e">Zawiera informacje o stanie i dane zdarzenia powiązane ze zdarzeniem kierowanym.</param>
         private void Button_Click_22(object sender, RoutedEventArgs e)
         {
             scrollOrderhistory.Visibility = Visibility.Visible;
@@ -2390,6 +2468,12 @@ namespace AplikacjaClient
             daneuzytkownika.Visibility = Visibility.Collapsed;
         }
 
+
+        /// <summary>
+        /// Jest to metoda służąca do przełączania się pomiędzy panelami.
+        /// </summary>
+        /// <param name="sender">określa obiekt który wywołał dany event</param>
+        /// <param name="e">Zawiera informacje o stanie i dane zdarzenia powiązane ze zdarzeniem kierowanym.</param>
         private void Button_Click_23(object sender, RoutedEventArgs e)
         {
             spzmianahasla.Visibility = Visibility.Visible;
@@ -2397,9 +2481,20 @@ namespace AplikacjaClient
             daneuzytkownika.Visibility = Visibility.Collapsed;
         }
 
+
+
+        /// <summary>
+        /// Jest to metoda która obsługuje zmianę hasła przez usera.
+        /// </summary>
+        /// <remarks>
+        /// Podczas chęci zmiany hasła ta metoda spawdzi czy długość jest odpowiednia a następnie w zależności od tego albo zmieni hasło użytkownika albo wyświetli odpowiedni błąd
+        /// </remarks>
+        /// <param name="sender">określa obiekt który wywołał dany event</param>
+        /// <param name="e">Zawiera informacje o stanie i dane zdarzenia powiązane ze zdarzeniem kierowanym.</param>
         private void Button_Click_24(object sender, RoutedEventArgs e)
         {
-            if(newPassword.Text.Length<8)
+            
+            if(Obliczenia.CzyDaneSpelniajaZalozenia(newPassword.Text))
             {
                 bladzmianyhasla.Visibility = Visibility.Visible;
             }
@@ -2416,6 +2511,13 @@ namespace AplikacjaClient
             }
         }
 
+
+
+        /// <summary>
+        /// Jest to metoda służąca do przełączania się pomiędzy panelami.
+        /// </summary>
+        /// <param name="sender">określa obiekt który wywołał dany event</param>
+        /// <param name="e">Zawiera informacje o stanie i dane zdarzenia powiązane ze zdarzeniem kierowanym.</param>
         private void Button_Click_25(object sender, RoutedEventArgs e)
         {
             spzmianahasla.Visibility = Visibility.Collapsed;
@@ -2423,6 +2525,12 @@ namespace AplikacjaClient
             scrollOrderhistory.Visibility = Visibility.Collapsed;
         }
 
+
+        /// <summary>
+        /// Jest to metoda odpowiadająca za zmianę danych urzytkownika i zapisaniu zmian w bazie danych.
+        /// </summary>
+        /// <param name="sender">określa obiekt który wywołał dany event</param>
+        /// <param name="e">Zawiera informacje o stanie i dane zdarzenia powiązane ze zdarzeniem kierowanym.</param>
         private void Button_Click_26(object sender, RoutedEventArgs e)
         {
             logowanie.Imie = imieZmiana.Text;
@@ -2440,6 +2548,17 @@ namespace AplikacjaClient
             
         }
 
+
+
+
+        /// <summary>
+        /// Jest to metoda odpowiadająca za zmianę sprawdzanie czy podana ścieżka wideo jest prawidłowa.
+        /// </summary>
+        /// <remarks>
+        /// Sprawdzana ścieżka w przypadku gdy jest prawidłowa zotstaje uruchomiona odpowiednia strona z treściami opisującymi grę.
+        /// </remarks>
+        /// <param name="sender">określa obiekt który wywołał dany event</param>
+        /// <param name="e">Zawiera informacje o stanie i dane zdarzenia powiązane ze zdarzeniem kierowanym.</param>
         private void Button_Click_28(object sender, RoutedEventArgs e)
         {
             if((gridBiblioteka.SelectedItem as GryBiblioteka).SciezkaVideo!=null)
@@ -2451,16 +2570,38 @@ namespace AplikacjaClient
                 
         }
 
+
+
+        /// <summary>
+        /// Jest to metoda służąca do przełączania się pomiędzy panelami.
+        /// </summary>
+        /// <param name="sender">określa obiekt który wywołał dany event</param>
+        /// <param name="e">Zawiera informacje o stanie i dane zdarzenia powiązane ze zdarzeniem kierowanym.</param>
         private void Button_Click_29(object sender, RoutedEventArgs e)
         {
             potwiedzenieZmianydanych.Visibility = Visibility.Collapsed;
         }
 
+
+
+
+        /// <summary>
+        /// Jest to metoda służąca do przełączania się pomiędzy panelami.
+        /// </summary>
+        /// <param name="sender">określa obiekt który wywołał dany event</param>
+        /// <param name="e">Zawiera informacje o stanie i dane zdarzenia powiązane ze zdarzeniem kierowanym.</param>
         private void Button_Click_30(object sender, RoutedEventArgs e)
         {
             potwiedzenieZmianyHasla.Visibility = Visibility.Collapsed;
         }
 
+
+
+        /// <summary>
+        /// Metoda która sprawdza czy wartość Jakacena.Value ==300 w przypadku jeżeli ni text w kontrolce ustawiany jest na 300.
+        /// </summary>
+        /// <param name="sender">określa obiekt który wywołał dany event</param>
+        /// <param name="e">Zawiera informacje o stanie i dane zdarzenia powiązane ze zdarzeniem kierowanym.</param>
         private void Jakacena_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
             if(Jakacena.Value==300)
@@ -2475,6 +2616,12 @@ namespace AplikacjaClient
             
         }
 
+
+        /// <summary>
+        /// Jest to metoda służąca do przełączania się pomiędzy panelami.
+        /// </summary>
+        /// <param name="sender">określa obiekt który wywołał dany event</param>
+        /// <param name="e">Zawiera informacje o stanie i dane zdarzenia powiązane ze zdarzeniem kierowanym.</param>
         private void ToggleButton_Click(object sender, RoutedEventArgs e)
         {
             zlykod.Visibility = Visibility.Collapsed;

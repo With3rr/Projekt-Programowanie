@@ -160,7 +160,6 @@
     <None Include="..\.editorconfig">
       <Link>.editorconfig</Link>
     </None>
-    <None Include="AplikacjaClient.Tests" />
     <None Include="ModelBazyUżytkownikow.edmx.diagram">
       <DependentUpon>ModelBazyUżytkownikow.edmx</DependentUpon>
     </None>

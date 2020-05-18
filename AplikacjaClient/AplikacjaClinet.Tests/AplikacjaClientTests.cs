@@ -5,10 +5,22 @@ using System.Collections.ObjectModel;
 
 namespace AplikacjaClinet.Tests
 {
+
+    /// <summary>
+    /// Jest to testowa klasa.
+    /// </summary>
+    /// <remarks>
+    /// W klasie tej znajdują sie dwie metody testowe które odpowiadają za testowanie różnych wariantów kodu.
+    /// </remarks>
     [TestClass]
     public class AplikacjaClientTests
     {
 
+
+
+        /// <summary>
+        /// Metoda testowa która odpowiada za testowanie metody która przyjmuje dane w postaci teksu i zwraca wartość typu boolean jako to czy metoda spełnia warunki lub nie.
+        /// </summary>
         [TestMethod]
         public void TestNiepoprawnosciWprowadzanychDanych()
         {
@@ -55,6 +67,9 @@ namespace AplikacjaClinet.Tests
 
         }
 
+        /// <summary>
+        /// Testowa metoda która sprawdza sumowanie cen poszczególnych produktów typy Gry w kolekcji oraz zraca adekwatną zsumowaną kwotę.Metoda testowana jest różnymi danymi w celu sprawdzenia jej poprawności.
+        /// </summary>
         [TestMethod]
         public void TestPoprawnosciWprowadzanychGier()
         {

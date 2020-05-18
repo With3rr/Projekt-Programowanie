@@ -125,14 +125,27 @@ namespace AplikacjaClient
 
         }
 
-        
 
+        /// <summary>
+        /// Metoda zamykania okna która dodatkowo zmienia wartość zmiennej statycznej klasy
+        /// </summary>
+        /// <remarks>
+        /// Celem konstrukcji tej metody jest zapewnienie aby nie można było dwa razy włączyć tego okna a zmiana składowej statycznej klasy jak flaga ma temu zapobiec.
+        /// </remarks>
+        /// <param name="sender">określa obiekt który wywołał dany event</param>
+        /// <param name="e">Zawiera informacje o stanie i dane zdarzenia powiązane ze zdarzeniem kierowanym.</param>
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             CzyoknoON.Wlaczany = false;
             this.Close();
         }
 
+
+        /// <summary>
+        /// Metoda pozwalająca na przesówanie okna.
+        /// </summary>
+        /// <param name="sender">określa obiekt który wywołał dany event</param>
+        /// <param name="e">Zawiera informacje o stanie i dane zdarzenia powiązane ze zdarzeniem kierowanym.</param>
         private void Window_MouseDown(object sender, MouseButtonEventArgs e)
         {
             try
@@ -147,12 +160,25 @@ namespace AplikacjaClient
             }
         }
 
+
+        /// <summary>
+        /// Metoda której działanie opiera się na odświeżaniu widoku kontrolki datagrid.
+        /// </summary>
+        /// <param name="sender">określa obiekt który wywołał dany event</param>
+        /// <param name="e">Zawiera informacje o stanie i dane zdarzenia powiązane ze zdarzeniem kierowanym.</param>
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             ((CollectionView)CollectionViewSource.GetDefaultView(gridFriends.ItemsSource)).Refresh();
 
         }
 
+
+
+        /// <summary>
+        /// Metoda której działanie opiera się na odświeżaniu widoku kontrolki datagrid.
+        /// </summary>
+        /// <param name="sender">określa obiekt który wywołał dany event</param>
+        /// <param name="e">Zawiera informacje o stanie i dane zdarzenia powiązane ze zdarzeniem kierowanym.</param>
         private void filtrowanieFriends_TextChanged(object sender, TextChangedEventArgs e)
         {
             if (filtrowanieFriends.Text == string.Empty)
@@ -164,11 +190,27 @@ namespace AplikacjaClient
             
         }
 
+
+        /// <summary>
+        /// Metoda wyświetlająca panel z dodawaniem znajomych.
+        /// </summary>
+        /// <param name="sender">określa obiekt który wywołał dany event</param>
+        /// <param name="e">Zawiera informacje o stanie i dane zdarzenia powiązane ze zdarzeniem kierowanym.</param>
+
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
             dodajznaj.Visibility = Visibility.Visible;
         }
 
+
+        /// <summary>
+        /// Metoda służąca do dodawania znajomych.
+        /// </summary>
+        /// <remarks>
+        /// W ciele metody na początek sprawdzane jest czy dany użytkownik już znajduje się w liście znajomych.Jeżeli nie znajduje się to do bazy danych (do relacji Friend) dodawaany jest znajomy z określonym kluczem obcym.
+        /// </remarks>
+        /// <param name="sender">określa obiekt który wywołał dany event</param>
+        /// <param name="e">Zawiera informacje o stanie i dane zdarzenia powiązane ze zdarzeniem kierowanym.</param>
         private void Button_Click_3(object sender, RoutedEventArgs e)
         {
 
@@ -245,6 +287,11 @@ namespace AplikacjaClient
 
         }
 
+        /// <summary>
+        /// Metoda ukrywająca panele oraz ustawia text kontrolki textBlock na wartość pustą.
+        /// </summary>
+        /// <param name="sender">określa obiekt który wywołał dany event</param>
+        /// <param name="e">Zawiera informacje o stanie i dane zdarzenia powiązane ze zdarzeniem kierowanym.</param>
         private void Button_Click_4(object sender, RoutedEventArgs e)
         {
             bladznajomego.Visibility = Visibility.Collapsed;
@@ -252,6 +299,15 @@ namespace AplikacjaClient
             dodajznaj.Visibility = Visibility.Collapsed;
         }
 
+
+        /// <summary>
+        /// Metoda służąca do usuwania znajomych użytkownika.
+        /// </summary>
+        /// <remarks>
+        /// Po najechaniu na kontrolkę data grid i wybraniu użytkownika do usunięcia i naciśnięcie buttona który znajduje się w każym z wierszy objektów w kontrolce następuje usunięcie usera.
+        /// </remarks>
+        /// <param name="sender">określa obiekt który wywołał dany event</param>
+        /// <param name="e">Zawiera informacje o stanie i dane zdarzenia powiązane ze zdarzeniem kierowanym.</param>
         private void usuwanieZnajomego_Click(object sender, RoutedEventArgs e)
         {
             Friend dousuniecia = null;

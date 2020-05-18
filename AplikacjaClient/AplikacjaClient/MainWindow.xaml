@@ -13,6 +13,7 @@
 
             <Style x:Key="panelGridow">
                 <Setter Property="Grid.Background">
+                    
                     <Setter.Value>
                         <LinearGradientBrush StartPoint="0.3,0" EndPoint="2,1">
                             <GradientStop Color="Black" Offset="0"></GradientStop>
