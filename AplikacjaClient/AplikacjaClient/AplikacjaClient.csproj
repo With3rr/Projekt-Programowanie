@@ -71,7 +71,6 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="AplikacjaKlientaTests.cs" />
     <Compile Include="CzyoknoON.cs" />
     <Compile Include="Dane.cs">
       <DependentUpon>ModelBazyUżytkownikow.tt</DependentUpon>

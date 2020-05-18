@@ -10,6 +10,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		.editorconfig = .editorconfig
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AplikacjaClinet.Tests", "AplikacjaClinet.Tests\AplikacjaClinet.Tests.csproj", "{48A4D6E8-6CCA-42DA-91C1-CF91A2EA829D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -20,6 +22,10 @@ Global
 		{9ED07198-0AFF-4670-9983-DF0A79C06C05}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9ED07198-0AFF-4670-9983-DF0A79C06C05}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9ED07198-0AFF-4670-9983-DF0A79C06C05}.Release|Any CPU.Build.0 = Release|Any CPU
+		{48A4D6E8-6CCA-42DA-91C1-CF91A2EA829D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{48A4D6E8-6CCA-42DA-91C1-CF91A2EA829D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{48A4D6E8-6CCA-42DA-91C1-CF91A2EA829D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{48A4D6E8-6CCA-42DA-91C1-CF91A2EA829D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

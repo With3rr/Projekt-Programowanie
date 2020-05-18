@@ -14,8 +14,8 @@ namespace AplikacjaClient
         /// <summary>
         /// Ta metoda sprawdza czy założenia zostały spełnione
         /// </summary>
-        /// <param name="tekst"></param>
-        /// <returns></returns>
+        /// <param name="tekst"> Jest to parametr który określa dane urzytkownika przesyłane w celu sprawdzenia poprawności</param>
+        /// <returns>Zwraca true jeżeli tekst nie spełnia wymagań i false jeśli spełnia</returns>
         static public bool CzyDaneSpelniajaZalozenia(string tekst)
         {
             if (tekst.Length < 8)
@@ -42,7 +42,18 @@ namespace AplikacjaClient
 
         }
 
-
+        /// <summary>
+        /// Metoda która odpowiada na sumowanie wartości zakupionych gier.
+        /// </summary>
+        /// <remarks>
+        /// Działanie tej metody polega na przyjmowaniu zestawu gier oraz zwracaniu zsumowanej ceny tych gier.
+        /// </remarks>
+        /// <param name="gry">
+        /// Kolekcja obiektów typu Gry.
+        /// </param>
+        /// <returns>
+        /// Zwracany jest zsumowana cena gier w koszyku
+        /// </returns>
         public static  double  obliczanieFullPrice(ObservableCollection<Gry> gry)
         {
             double max = 0;

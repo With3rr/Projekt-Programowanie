@@ -354,6 +354,15 @@ namespace AplikacjaClient
             }
 
         }
+
+        /// <summary>
+        /// Metoda inicjująca dane do prezentowania danych gier na ekranie.
+        /// </summary>
+        /// <remarks>
+        /// Metoda inicjuje kolekcje danymi gier do zakupu.Do każdej z kolekcji określana jest zestaw objektów(gier) które je reprezentują.
+        /// Metoda ta również inicjuje Itemssource kontrolek dataGrid tymi grami.
+        /// W swoim ciele metoda zawiera również wywołanie innej metody która przypisuje widoki kontrolek data grid do kolekcji.
+        /// </remarks>
         public void inicjalizacjaGier()
         {
 
@@ -594,7 +603,7 @@ namespace AplikacjaClient
 
         }
         /// <summary>
-        /// MEtoda ta jest częscią FiltryUzytkownika(jest wywoływana w jej ciele).
+        /// Metoda ta jest częscią FiltryUzytkownika(jest wywoływana w jej ciele).
         /// </summary>
         /// <remarks>
         /// Metoda ta jest jednym z filtrów.
@@ -720,10 +729,14 @@ namespace AplikacjaClient
 
 
         }
-       
-       
 
 
+
+        /// <summary>
+        /// Metoda odpowiada za możliwość dowolnego przesówania okna aplikacji przez użytkownika.
+        /// </summary>
+        /// <param name="sender">określa obiekt który wywołał dany even</param>
+        /// <param name="e">Zawiera informacje o stanie i dane zdarzenia powiązane ze zdarzeniem kierowanym.</param>
         private void Window_MouseDown(object sender, MouseButtonEventArgs e)
         {
             try
@@ -740,14 +753,25 @@ namespace AplikacjaClient
      
         }
 
+        /// <summary>
+        /// Zamykanie aplikacji.
+        /// </summary>
+        /// <param name="sender">określa obiekt który wywołał dany event</param>
+        /// <param name="e">Zawiera informacje o stanie i dane zdarzenia powiązane ze zdarzeniem kierowanym.</param>
+
         private void Exit_Click(object sender, RoutedEventArgs e)
         {
            
             Application.Current.Shutdown();
         }
 
-        
 
+
+        /// <summary>
+        /// Zdarzenie minimalizacji okna.
+        /// </summary>
+        /// <param name="sender">określa obiekt który wywołał dany event</param>
+        /// <param name="e">Zawiera informacje o stanie i dane zdarzenia powiązane ze zdarzeniem kierowanym.</param>
         private void Minimize_Click(object sender, RoutedEventArgs e)
         {
 
@@ -763,18 +787,28 @@ namespace AplikacjaClient
           
         }
 
-       
 
-       
 
-       
 
+
+
+        /// <summary>
+        /// Zdarzenie uruchamiajace proces ze stroną internetową do przęglądania(uruchomienie przeglądarki oraz określonej strony).
+        /// </summary>
+        /// <param name="sender">określa obiekt który wywołał dany event</param>
+        /// <param name="e">Zawiera informacje o stanie i dane zdarzenia powiązane ze zdarzeniem kierowanym.</param>
         private void Label_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
             System.Diagnostics.Process.Start("https://www.biedronka.pl/pl/regulamin-serwisu");
 
         }
 
+
+        /// <summary>
+        /// Zdarzenie uruchamiajace proces ze stroną internetową do przęglądania(uruchomienie przeglądarki oraz określonej strony).
+        /// </summary>
+        /// <param name="sender">określa obiekt który wywołał dany event</param>
+        /// <param name="e">Zawiera informacje o stanie i dane zdarzenia powiązane ze zdarzeniem kierowanym.</param>
         private void Button_Click(object sender, RoutedEventArgs e)
         {
         
@@ -782,6 +816,11 @@ namespace AplikacjaClient
 
         }
 
+        /// <summary>
+        /// Zdarzenie uruchamiajace proces ze stroną internetową do przęglądania(uruchomienie przeglądarki oraz określonej strony).
+        /// </summary>
+        /// <param name="sender">określa obiekt który wywołał dany event</param>
+        /// <param name="e">Zawiera informacje o stanie i dane zdarzenia powiązane ze zdarzeniem kierowanym.</param>
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
         
@@ -789,29 +828,44 @@ namespace AplikacjaClient
 
         }
 
+
+        /// <summary>
+        /// Zdarzenie uruchamiajace proces ze stroną internetową do przęglądania(uruchomienie przeglądarki oraz określonej strony).
+        /// </summary>
+        /// <param name="sender">określa obiekt który wywołał dany event</param>
+        /// <param name="e">Zawiera informacje o stanie i dane zdarzenia powiązane ze zdarzeniem kierowanym.</param>
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
             System.Diagnostics.Process.Start("https://play.google.com/store/apps/details?id=com.snapchat.android&hl=pl");
 
         }
 
-        /// <summary>
-        /// siema co tam kacper sie nazywam
+        //// <summary>
+        /// Zdarzenie uruchamiajace proces ze stroną internetową do przęglądania(uruchomienie przeglądarki oraz określonej strony).
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+        /// <param name="sender">określa obiekt który wywołał dany event</param>
+        /// <param name="e">Zawiera informacje o stanie i dane zdarzenia powiązane ze zdarzeniem kierowanym.</param>
         private void Button_Click_3(object sender, RoutedEventArgs e)
         {
             System.Diagnostics.Process.Start("https://twitter.com/explore");
 
         }
 
+
+        /// <summary>
+        /// Przełączanie się pomiędzy panelami w aplikacji(zmiana iś własciwości visibility).
+        /// </summary>
+        /// <param name="sender">określa obiekt który wywołał dany event</param>
+        /// <param name="e">Zawiera informacje o stanie i dane zdarzenia powiązane ze zdarzeniem kierowanym.</param>
         private void ClickToRegister_Click(object sender, RoutedEventArgs e)
         {
             Rejestracja.Visibility = Visibility.Visible;
             Logowanie.Visibility = Visibility.Hidden;
         }
 
+        /// <summary>
+        /// Metoda która polega na zresetowaniu wszystkich wypełnionych pól po wyjściu z okna panelu rejestracji.
+        /// </summary>
         public void resetowanie_danych_rejestracji()
         {
             tbEmail.Text = string.Empty;
@@ -825,6 +879,12 @@ namespace AplikacjaClient
             errorLogin.Visibility = Visibility.Collapsed;
             cbAgrement.IsChecked = false;
         }
+
+        /// <summary>
+        /// Zdarzenie ukrywające i odsłaniające panele oraz wywołujące resetowanie danych pól rejestracji.
+        /// </summary>
+        /// <param name="sender">określa obiekt który wywołał dany event</param>
+        /// <param name="e">Zawiera informacje o stanie i dane zdarzenia powiązane ze zdarzeniem kierowanym.</param>
         private void GotSignIn_Click(object sender, RoutedEventArgs e)
         {
             Rejestracja.Visibility = Visibility.Collapsed;
@@ -833,7 +893,17 @@ namespace AplikacjaClient
 
         }
 
-       
+
+        /// <summary>
+        /// Jest to zdażenie które odpowiada za rejestracje użystkownika.
+        /// </summary>
+        /// <remarks>
+        /// W pierwszym kroku na podstawie danych pobranych z aplikacji sprawdzane są wartości danych podanych przez użytkownika.
+        /// W zależności od tego zy spełniają one określone warunki wywoływane są różne operacje(wyświetlanie błądów bądź akceptacja rejestracji).
+        /// Jeżeli po sprawdzeniu poprawności składni jak i poprawności spójności z bazą danych konto można założyć to do bazy danych dodawany jest nowy objekt a zmiany na bazie danych są zapisywane.
+        /// </remarks>
+        /// <param name="sender">określa obiekt który wywołał dany event</param>
+        /// <param name="e">Zawiera informacje o stanie i dane zdarzenia powiązane ze zdarzeniem kierowanym.</param>
         private void SignUp_Click(object sender, RoutedEventArgs e)
         {
             if(tbPassword.Text==string.Empty || tbLogin.Text==string.Empty ||tbEmail.Text==string.Empty || cbAgrement.IsChecked==false || Obliczenia.CzyDaneSpelniajaZalozenia(tbPassword.Text)  || Obliczenia.CzyDaneSpelniajaZalozenia(tbLogin.Text)  || Obliczenia.CzyDaneSpelniajaZalozenia(tbEmail.Text) )
@@ -988,12 +1058,29 @@ namespace AplikacjaClient
 
         }
 
+
+        /// <summary>
+        /// Zdarzenie przełączające pomiędzy panelami.
+        /// </summary>
+        /// <param name="sender">określa obiekt który wywołał dany event</param>
+        /// <param name="e">Zawiera informacje o stanie i dane zdarzenia powiązane ze zdarzeniem kierowanym.</param>
         private void btprzejdzdoLog_Click(object sender, RoutedEventArgs e)
         {
             Logowanie.Visibility = Visibility.Visible;
             PotwierdzenieRejestracji.Visibility = Visibility.Collapsed;
         }
 
+
+        /// <summary>
+        /// Jest to metoda obsługująca proces logowania.
+        /// </summary>
+        /// <remarks>
+        /// Pobierane zotają dane podane przez użytkownika oraz zapisywane w odpowiednich zmiennych.Kolejnym krokiem jest pobieranie objektu z bazy danych który posiada określone dane.
+        /// Jezeli pobrany objekt jest wartością null oznacza to ze dany user nie istnieje,konieczne jest wiec odpowiednie powiadomienie użytkownika poprzez uwidacznianie odpowiednich komunikatów.
+        /// W przypadku poprawnych danych logowania następuje przełączenie pomędzy odpowiednimi panelami i dostęp do pozostałych opcji aplikacji.
+        /// </remarks>
+        /// <param name="sender">określa obiekt który wywołał dany event</param>
+        /// <param name="e">Zawiera informacje o stanie i dane zdarzenia powiązane ze zdarzeniem kierowanym.</param>
         private void LogInNow_Click(object sender, RoutedEventArgs e)
         {
             string loginLogowanie = string.Empty;
@@ -1168,6 +1255,13 @@ namespace AplikacjaClient
 
         }
 
+
+
+        /// <summary>
+        /// metoda wywołująca metody  wyświetlania paneli oraz w zależności od tego zmiana wyświetlania przycisków w głównym panelu z grami(data grid).
+        /// </summary>
+        /// <param name="sender">określa obiekt który wywołał dany event</param>
+        /// <param name="e">Zawiera informacje o stanie i dane zdarzenia powiązane ze zdarzeniem kierowanym.</param>
         private void leftbt1_Click(object sender, RoutedEventArgs e)
         {
             przyciskkolor(1);
@@ -1175,6 +1269,12 @@ namespace AplikacjaClient
 
         }
 
+
+        /// <summary>
+        /// metoda wywołująca metody  wyświetlania paneli oraz w zależności od tego zmiana wyświetlania przycisków w głównym panelu z grami(data grid).
+        /// </summary>
+        /// <param name="sender">określa obiekt który wywołał dany event</param>
+        /// <param name="e">Zawiera informacje o stanie i dane zdarzenia powiązane ze zdarzeniem kierowanym.</param>
         private void leftbt2_Click(object sender, RoutedEventArgs e)
         {
             przyciskkolor(2);
@@ -1182,6 +1282,11 @@ namespace AplikacjaClient
 
         }
 
+        /// <summary>
+        /// metoda wywołująca metody  wyświetlania paneli oraz w zależności od tego zmiana wyświetlania przycisków w głównym panelu z grami(data grid).
+        /// </summary>
+        /// <param name="sender">określa obiekt który wywołał dany event</param>
+        /// <param name="e">Zawiera informacje o stanie i dane zdarzenia powiązane ze zdarzeniem kierowanym.</param>
         private void leftbt3_Click(object sender, RoutedEventArgs e)
         {
             przyciskkolor(3);
@@ -1189,6 +1294,11 @@ namespace AplikacjaClient
 
         }
 
+        /// <summary>
+        /// metoda wywołująca metody  wyświetlania paneli oraz w zależności od tego zmiana wyświetlania przycisków w głównym panelu z grami(data grid).
+        /// </summary>
+        /// <param name="sender">określa obiekt który wywołał dany event</param>
+        /// <param name="e">Zawiera informacje o stanie i dane zdarzenia powiązane ze zdarzeniem kierowanym.</param>
         private void leftbt4_Click(object sender, RoutedEventArgs e)
         {
             przyciskkolor(4);
@@ -1196,6 +1306,11 @@ namespace AplikacjaClient
 
         }
 
+        /// <summary>
+        /// metoda wywołująca metody  wyświetlania paneli oraz w zależności od tego zmiana wyświetlania przycisków w głównym panelu z grami(data grid).
+        /// </summary>
+        /// <param name="sender">określa obiekt który wywołał dany event</param>
+        /// <param name="e">Zawiera informacje o stanie i dane zdarzenia powiązane ze zdarzeniem kierowanym.</param>
         private void leftbt5_Click(object sender, RoutedEventArgs e)
         {
             przyciskkolor(5);
@@ -1203,6 +1318,12 @@ namespace AplikacjaClient
 
         }
 
+
+        /// <summary>
+        /// metoda wywołująca metody  wyświetlania paneli oraz w zależności od tego zmiana wyświetlania przycisków w głównym panelu z grami(data grid).
+        /// </summary>
+        /// <param name="sender">określa obiekt który wywołał dany event</param>
+        /// <param name="e">Zawiera informacje o stanie i dane zdarzenia powiązane ze zdarzeniem kierowanym.</param>
         private void leftbt6_Click(object sender, RoutedEventArgs e)
         {
             przyciskkolor(6);
@@ -1210,6 +1331,12 @@ namespace AplikacjaClient
 
         }
 
+
+        /// <summary>
+        /// metoda wywołująca metody  wyświetlania paneli oraz w zależności od tego zmiana wyświetlania przycisków w głównym panelu z grami(data grid).
+        /// </summary>
+        /// <param name="sender">określa obiekt który wywołał dany event</param>
+        /// <param name="e">Zawiera informacje o stanie i dane zdarzenia powiązane ze zdarzeniem kierowanym.</param>
         private void leftbt7_Click(object sender, RoutedEventArgs e)
         {
             przyciskkolor(7);
@@ -1217,6 +1344,11 @@ namespace AplikacjaClient
 
         }
 
+        /// <summary>
+        /// W przypadku gdy w kontrolce textBox wartość tekstu zmieni się na pusty łańcuch nastąpi wywoanie metody odświeżenia widoków.
+        /// </summary>
+        /// <param name="sender">określa obiekt który wywołał dany event</param>
+        /// <param name="e">Zawiera informacje o stanie i dane zdarzenia powiązane ze zdarzeniem kierowanym.</param>
         private void txtfiltrowanie_TextChanged(object sender, TextChangedEventArgs e)
         {
             if(txtfiltrowanie.Text==string.Empty)
@@ -1246,27 +1378,49 @@ namespace AplikacjaClient
 
         }
 
-        
 
-       
 
+
+        /// <summary>
+        /// Wywołanie metody odświeżania widoku.
+        /// </summary>
+        /// <param name="sender">określa obiekt który wywołał dany event</param>
+        /// <param name="e">Zawiera informacje o stanie i dane zdarzenia powiązane ze zdarzeniem kierowanym.</param>
         private void Button_Click_5(object sender, RoutedEventArgs e)
         {
             refreshowanie();
 
         }
 
+
+        /// <summary>
+        /// Wywołanie metody odświeżania widoku.
+        /// </summary>
+        /// <param name="sender">określa obiekt który wywołał dany event</param>
+        /// <param name="e">Zawiera informacje o stanie i dane zdarzenia powiązane ze zdarzeniem kierowanym.</param>
         private void Button_Click_4(object sender, RoutedEventArgs e)
         {
             refreshowanie();
         }
 
+
+        /// <summary>
+        /// Wywołanie metody odświeżania widoku.
+        /// </summary>
+        /// <param name="sender">określa obiekt który wywołał dany event</param>
+        /// <param name="e">Zawiera informacje o stanie i dane zdarzenia powiązane ze zdarzeniem kierowanym.</param>
         private void Button_Click_6(object sender, RoutedEventArgs e)
         {
             refreshowanie();
 
         }
 
+
+        /// <summary>
+        /// Metoda resetująca deane do filtrowania wyświetlanych gier w kontrolkach datagrid.
+        /// </summary>
+        /// <param name="sender">określa obiekt który wywołał dany event</param>
+        /// <param name="e">Zawiera informacje o stanie i dane zdarzenia powiązane ze zdarzeniem kierowanym.</param>
         private void Button_Click_7(object sender, RoutedEventArgs e)
         {
             textslidera.Text = "300";
@@ -1283,6 +1437,13 @@ namespace AplikacjaClient
 
         }
 
+
+
+        /// <summary>
+        /// Ukrywanie paneli poprzez ich wpłaściwość visibility.
+        /// </summary>
+        /// <param name="sender">określa obiekt który wywołał dany event</param>
+        /// <param name="e">Zawiera informacje o stanie i dane zdarzenia powiązane ze zdarzeniem kierowanym.</param>
         private void MenuItem_Click(object sender, RoutedEventArgs e)
         {
             gProfile.Visibility = Visibility.Collapsed;
@@ -1300,6 +1461,13 @@ namespace AplikacjaClient
            
         }
 
+
+
+        /// <summary>
+        /// Przycisk dodawania gry do koszyka poprze pobranie wybranego objektu z kontrolki data grid(selected item).
+        /// </summary>
+        /// <param name="sender">określa obiekt który wywołał dany event</param>
+        /// <param name="e">Zawiera informacje o stanie i dane zdarzenia powiązane ze zdarzeniem kierowanym.</param>
         private void btndodajDoKosz1_Click(object sender, RoutedEventArgs e)
         {
             gryWkoszyku.Add((Gry)gridProdukty1.SelectedItem);
@@ -1307,13 +1475,23 @@ namespace AplikacjaClient
         }
 
 
+
+        /// <summary>
+        /// Przycisk dodawania gry do koszyka poprze pobranie wybranego objektu z kontrolki data grid(selected item).
+        /// </summary>
+        /// <param name="sender">określa obiekt który wywołał dany event</param>
+        /// <param name="e">Zawiera informacje o stanie i dane zdarzenia powiązane ze zdarzeniem kierowanym.</param>
         private void btndodajDoKosz2_Click(object sender, RoutedEventArgs e)
         {
             gryWkoszyku.Add((Gry)gridProdukty2.SelectedItem);
 
         }
 
-        
+        /// <summary>
+        /// Przycisk dodawania gry do koszyka poprze pobranie wybranego objektu z kontrolki data grid(selected item).
+        /// </summary>
+        /// <param name="sender">określa obiekt który wywołał dany event</param>
+        /// <param name="e">Zawiera informacje o stanie i dane zdarzenia powiązane ze zdarzeniem kierowanym.</param>
         private void btndodajDoKosz3_Click(object sender, RoutedEventArgs e)
         {
             bool prawda = true;
@@ -1351,33 +1529,61 @@ namespace AplikacjaClient
 
         }
 
+
+        /// <summary>
+        /// Przycisk dodawania gry do koszyka poprze pobranie wybranego objektu z kontrolki data grid(selected item).
+        /// </summary>
+        /// <param name="sender">określa obiekt który wywołał dany event</param>
+        /// <param name="e">Zawiera informacje o stanie i dane zdarzenia powiązane ze zdarzeniem kierowanym.</param>
         private void btndodajDoKosz4_Click(object sender, RoutedEventArgs e)
         {
             gryWkoszyku.Add((Gry)gridProdukty4.SelectedItem);
 
         }
 
+
+        /// <summary>
+        /// Przycisk dodawania gry do koszyka poprze pobranie wybranego objektu z kontrolki data grid(selected item).
+        /// </summary>
+        /// <param name="sender">określa obiekt który wywołał dany event</param>
+        /// <param name="e">Zawiera informacje o stanie i dane zdarzenia powiązane ze zdarzeniem kierowanym.</param>
         private void btndodajDoKosz5_Click(object sender, RoutedEventArgs e)
         {
             gryWkoszyku.Add((Gry)gridProdukty5.SelectedItem);
 
         }
+
+
+        /// <summary>
+        /// Przycisk dodawania gry do koszyka poprze pobranie wybranego objektu z kontrolki data grid(selected item).
+        /// </summary>
+        /// <param name="sender">określa obiekt który wywołał dany event</param>
+        /// <param name="e">Zawiera informacje o stanie i dane zdarzenia powiązane ze zdarzeniem kierowanym.</param>
         private void btndodajDoKosz6_Click(object sender, RoutedEventArgs e)
         {
             gryWkoszyku.Add((Gry)gridProdukty6.SelectedItem);
 
         }
 
+
+        /// <summary>
+        /// Przycisk dodawania gry do koszyka poprze pobranie wybranego objektu z kontrolki data grid(selected item).
+        /// </summary>
+        /// <param name="sender">określa obiekt który wywołał dany event</param>
+        /// <param name="e">Zawiera informacje o stanie i dane zdarzenia powiązane ze zdarzeniem kierowanym.</param>
         private void btndodajDoKosz7_Click(object sender, RoutedEventArgs e)
         {
             gryWkoszyku.Add((Gry)gridProdukty7.SelectedItem);
 
         }
+
+
+
         /// <summary>
         /// Obliczanie całkiwitej ceny Zamówienia które znajduje się w koszyku na podstawie sumy cen gier które się tam znajdują.
         /// </summary>
-        
-
+        /// <param name="sender">określa obiekt który wywołał dany event</param>
+        /// <param name="e">Zawiera informacje o stanie i dane zdarzenia powiązane ze zdarzeniem kierowanym.</param>
         private void MenuItem_Click_3(object sender, RoutedEventArgs e)
         {
             cenaMax.Content = "Full price: " + 0 + "$";
@@ -1441,6 +1647,13 @@ namespace AplikacjaClient
 
         }
 
+
+        /// <summary>
+        /// Wyświetlanie komunikatu czy użytkownik chce usunąć produkt z koszyka poprzez MessageBox.Jezeli odpowiednie dane zostana
+        /// zwrócone to obiekt zostanie usunięty z listy a cena zamówienia zostanie poprzez metodę statyczną klasy statycznej od nowa policzona.
+        /// </summary>
+        /// <param name="sender">określa obiekt który wywołał dany event</param>
+        /// <param name="e">Zawiera informacje o stanie i dane zdarzenia powiązane ze zdarzeniem kierowanym.</param>
         private void Button_Click_8(object sender, RoutedEventArgs e)
         {
             Gry produktZlisty = datagridKoszyk.SelectedItem as Gry;
@@ -1453,6 +1666,13 @@ namespace AplikacjaClient
             cenaMax.Content = "Full price: " + max + "$";
         }
 
+
+        /// <summary>
+        /// Wyświetlanie komunikatu czy użytkownik chce usunąć produkty z koszyka poprzez MessageBox.Jezeli odpowiednie dane zostaną
+        /// zwrócone to wszystkie objekty  zostaną usunięte z listy a cena zamówienia zostanie poprzez metodę statyczną klasy statycznej od nowa policzona.
+        /// </summary>
+        /// <param name="sender">określa obiekt który wywołał dany event</param>
+        /// <param name="e">Zawiera informacje o stanie i dane zdarzenia powiązane ze zdarzeniem kierowanym.</param>
         private void Button_Click_9(object sender, RoutedEventArgs e)
         {
             if (gryWkoszyku.Count == 0)
@@ -1473,6 +1693,12 @@ namespace AplikacjaClient
             }
         }
 
+
+        /// <summary>
+        /// Metoda przełączająca pomiędzy panelami(gdy cena zamówienia jest wieksza od 0)
+        /// </summary>
+        /// <param name="sender">określa obiekt który wywołał dany event</param>
+        /// <param name="e">Zawiera informacje o stanie i dane zdarzenia powiązane ze zdarzeniem kierowanym.</param>
         private void Button_Click_10(object sender, RoutedEventArgs e)
         {
             if(max>0)
@@ -1485,8 +1711,16 @@ namespace AplikacjaClient
 
         }
 
-       
 
+        /// <summary>
+        /// Metodoa sprawdzająca poprawność podanej karty płatniczej.
+        /// </summary>
+        /// <remarks>
+        /// Metoda ta sprawdza czy stan konta użytkownika (właściwość Stan objektu karta) jest większy bądź równy od kosztu zamówienia(max).Operacja ta wykonywana jest dopiero po weryfikacji czy dana karta o podanych danych istnieje w bazie danych.
+        /// Jeżeli wszystkie wymagania zostaną spełnione nastąpi dodanie zakupionych gier(objektów GryWMojejBibliotece) do bazy danych oraz odpowiednie zmniejszenie stanu konta odpowiednio o koszt z koszyka.
+        /// </remarks>
+        /// <param name="sender">określa obiekt który wywołał dany event</param>
+        /// <param name="e">Zawiera informacje o stanie i dane zdarzenia powiązane ze zdarzeniem kierowanym.</param>
         private void Button_Click_11(object sender, RoutedEventArgs e)
         {
             Karty karta = null;
@@ -1547,6 +1781,12 @@ namespace AplikacjaClient
 
         }
 
+
+        /// <summary>
+        /// Zmiana widoczności paneli poprzez właściwość Visibility.
+        /// </summary>
+        /// <param name="sender">określa obiekt który wywołał dany event</param>
+        /// <param name="e">Zawiera informacje o stanie i dane zdarzenia powiązane ze zdarzeniem kierowanym.</param>
         private void Button_Click_12(object sender, RoutedEventArgs e)
         {
             potwiedzenieplacenia.Visibility = Visibility.Collapsed;
@@ -1557,6 +1797,15 @@ namespace AplikacjaClient
 
         }
 
+
+
+
+
+        /// <summary>
+        /// Zmiana widoczności paneli poprzez właściwość Visibility.
+        /// </summary>
+        /// <param name="sender">określa obiekt który wywołał dany event</param>
+        /// <param name="e">Zawiera informacje o stanie i dane zdarzenia powiązane ze zdarzeniem kierowanym.</param>
         private void gridBiblioteka_SelectedCellsChanged(object sender, SelectedCellsChangedEventArgs e)
         {
             gProfile.Visibility = Visibility.Collapsed;
@@ -1574,6 +1823,13 @@ namespace AplikacjaClient
 
         }
 
+
+
+        /// <summary>
+        /// Przesuwanie okna.
+        /// </summary>
+        /// <param name="sender">określa obiekt który wywołał dany event</param>
+        /// <param name="e">Zawiera informacje o stanie i dane zdarzenia powiązane ze zdarzeniem kierowanym.</param>
         private void Grid_MouseDown(object sender, MouseButtonEventArgs e)
         {
             try
@@ -1588,6 +1844,13 @@ namespace AplikacjaClient
             }
         }
 
+
+
+        /// <summary>
+        /// Metoda tworząca nowy objekt okna WindowsFriend oraz jego otwieranie jeżeli nie zostało jescze otwarte.
+        /// </summary>
+        /// <param name="sender">określa obiekt który wywołał dany event</param>
+        /// <param name="e">Zawiera informacje o stanie i dane zdarzenia powiązane ze zdarzeniem kierowanym.</param>
         private void Button_Click_13(object sender, RoutedEventArgs e)
         {
             if(CzyoknoON.Wlaczany==false)
@@ -1600,11 +1863,26 @@ namespace AplikacjaClient
 
         }
 
+
+
+        /// <summary>
+        /// Odświeżanie widoku pobranego z kontrolki dataGrid.
+        /// </summary>
+        /// <param name="sender">określa obiekt który wywołał dany event</param>
+        /// <param name="e">Zawiera informacje o stanie i dane zdarzenia powiązane ze zdarzeniem kierowanym.</param>
+
         private void Button_Click_14(object sender, RoutedEventArgs e)
         {
             CollectionViewSource.GetDefaultView(gridBiblioteka.ItemsSource).Refresh();
 
         }
+
+
+        /// <summary>
+        /// Odświeżanie widoku pobranego z kontrolki dataGrid.
+        /// </summary>
+        /// <param name="sender">określa obiekt który wywołał dany event</param>
+        /// <param name="e">Zawiera informacje o stanie i dane zdarzenia powiązane ze zdarzeniem kierowanym.</param>
 
         private void filtrBiblioteki_TextChanged(object sender, TextChangedEventArgs e)
         {
@@ -1615,17 +1893,36 @@ namespace AplikacjaClient
             }
         }
 
+
+
+        //// <summary>
+        /// Zdarzenie uruchamiajace proces ze stroną internetową do przęglądania(uruchomienie przeglądarki oraz określonej strony).
+        /// </summary>
+        /// <param name="sender">określa obiekt który wywołał dany event</param>
+        /// <param name="e">Zawiera informacje o stanie i dane zdarzenia powiązane ze zdarzeniem kierowanym.</param>
         private void MenuItem_Click_2(object sender, RoutedEventArgs e)
         {
             System.Diagnostics.Process.Start("https://www.facebook.com");
 
         }
 
+
+        //// <summary>
+        /// Zdarzenie uruchamiajace proces ze stroną internetową do przęglądania(uruchomienie przeglądarki oraz określonej strony).
+        /// </summary>
+        /// <param name="sender">określa obiekt który wywołał dany event</param>
+        /// <param name="e">Zawiera informacje o stanie i dane zdarzenia powiązane ze zdarzeniem kierowanym.</param>
         private void MenuItem_Click_5(object sender, RoutedEventArgs e)
         {
             System.Diagnostics.Process.Start("https://www.youtube.com");
         }
 
+
+        //// <summary>
+        /// Zdarzenie uruchamiajace proces ze stroną internetową do przęglądania(uruchomienie przeglądarki oraz określonej strony).
+        /// </summary>
+        /// <param name="sender">określa obiekt który wywołał dany event</param>
+        /// <param name="e">Zawiera informacje o stanie i dane zdarzenia powiązane ze zdarzeniem kierowanym.</param>
         private void MenuItem_Click_6(object sender, RoutedEventArgs e)
         {
        
@@ -1633,6 +1930,12 @@ namespace AplikacjaClient
 
         }
 
+
+        //// <summary>
+        /// Zdarzenie uruchamiajace proces ze stroną internetową do przęglądania(uruchomienie przeglądarki oraz określonej strony).
+        /// </summary>
+        /// <param name="sender">określa obiekt który wywołał dany event</param>
+        /// <param name="e">Zawiera informacje o stanie i dane zdarzenia powiązane ze zdarzeniem kierowanym.</param>
         private void MenuItem_Click_7(object sender, RoutedEventArgs e)
         {
             System.Diagnostics.Process.Start(Application.ResourceAssembly.Location);
@@ -1641,17 +1944,36 @@ namespace AplikacjaClient
             
         }
 
+        //// <summary>
+        /// Zamykanie aplikacji.
+        /// </summary>
+        /// <param name="sender">określa obiekt który wywołał dany event</param>
+        /// <param name="e">Zawiera informacje o stanie i dane zdarzenia powiązane ze zdarzeniem kierowanym.</param>
         private void Button_Click_15(object sender, RoutedEventArgs e)
         {
             this.Close();
         }
 
+
+        //// <summary>
+        /// Zdarzenie uruchamiajace proces ze stroną internetową do przęglądania(uruchomienie przeglądarki oraz określonej strony).
+        /// </summary>
+        /// <param name="sender">określa obiekt który wywołał dany event</param>
+        /// <param name="e">Zawiera informacje o stanie i dane zdarzenia powiązane ze zdarzeniem kierowanym.</param>
         private void Button_Click_16(object sender, RoutedEventArgs e)
         {
             System.Diagnostics.Process.Start("https://help.steampowered.com/pl/");
 
         }
 
+
+
+        //// <summary>
+        /// Metoda która sprawdza czy podany kod klucza (cd key) jest poprawny oraz sparwdza dodatkowo czy nazwa gry która reprezentuje dany kod nie istnieje już jako nazwa jednej z gier  w kolekcji "listagier".
+        /// Jezeli istnieje to danego produktu nie można dodać.
+        /// </summary>
+        /// <param name="sender">określa obiekt który wywołał dany event</param>
+        /// <param name="e">Zawiera informacje o stanie i dane zdarzenia powiązane ze zdarzeniem kierowanym.</param>
         private void potwiedzenieklucza_Click(object sender, RoutedEventArgs e)
         {
            
@@ -1736,11 +2058,23 @@ namespace AplikacjaClient
 
         }
 
+
+        //// <summary>
+        /// Ukrywanie panelu.
+        /// </summary>
+        /// <param name="sender">określa obiekt który wywołał dany event</param>
+        /// <param name="e">Zawiera informacje o stanie i dane zdarzenia powiązane ze zdarzeniem kierowanym.</param>
         private void Button_Click_17(object sender, RoutedEventArgs e)
         {
             potwiedzeniekodu.Visibility = Visibility.Collapsed;
         }
 
+
+        //// <summary>
+        /// Metoda która wywołuje metody sortowania wykazu gier w kontrolce data grid.
+        /// </summary>
+        /// <param name="sender">określa obiekt który wywołał dany event</param>
+        /// <param name="e">Zawiera informacje o stanie i dane zdarzenia powiązane ze zdarzeniem kierowanym.</param>
         private void wyborsortowania_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             if(wyborsortowania.SelectedIndex==0)
@@ -1790,6 +2124,11 @@ namespace AplikacjaClient
            
         }
 
+        /// <summary>
+        /// Wyświetlanie panelu oraz ukrywanie pozostałych dzięki właściwości paneli jaką jest Visibility.
+        /// </summary>
+        /// <param name="sender">określa obiekt który wywołał dany event</param>
+        /// <param name="e">Zawiera informacje o stanie i dane zdarzenia powiązane ze zdarzeniem kierowanym.</param>
         private void MenuItem_Click_8(object sender, RoutedEventArgs e)
         {
            
@@ -1809,8 +2148,11 @@ namespace AplikacjaClient
             
         }
 
-       
-
+        /// <summary>
+        /// Wyświetlanie panelu oraz ukrywanie pozostałych dzięki właściwości paneli jaką jest Visibility.
+        /// </summary>
+        /// <param name="sender">określa obiekt który wywołał dany event</param>
+        /// <param name="e">Zawiera informacje o stanie i dane zdarzenia powiązane ze zdarzeniem kierowanym.</param>
         private void gridBiblioteka_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
             video.Stop();
@@ -1828,6 +2170,10 @@ namespace AplikacjaClient
             }
 
         }
+
+        /// <summary>
+        /// Metoda ta ustawia poszczególne wartości zmiennych string na wartości null.
+        /// </summary>
         public void resetowaniedanychplacenia()
         {
             imiePlacenie.Text = string.Empty;
@@ -1836,6 +2182,13 @@ namespace AplikacjaClient
             kodPlacenie.Text = string.Empty;
         }
 
+
+
+        /// <summary>
+        /// Wyświetlanie panelu oraz ukrywanie pozostałych dzięki właściwości paneli jaką jest Visibility.Dodatkowo metoda resetuje dane podane w panelu danych karty płatniczej.
+        /// </summary>
+        /// <param name="sender">określa obiekt który wywołał dany event</param>
+        /// <param name="e">Zawiera informacje o stanie i dane zdarzenia powiązane ze zdarzeniem kierowanym.</param>
         private void Button_Click_18(object sender, RoutedEventArgs e)
         {
 
@@ -1846,17 +2199,35 @@ namespace AplikacjaClient
 
         }
 
+
+        /// <summary>
+        /// Odsłanianie  panelu.
+        /// </summary>
+        /// <param name="sender">określa obiekt który wywołał dany event</param>
+        /// <param name="e">Zawiera informacje o stanie i dane zdarzenia powiązane ze zdarzeniem kierowanym.</param>
         private void Button_Click_19(object sender, RoutedEventArgs e)
         {
             spsciezka.Visibility = Visibility.Visible;
         }
 
+
+        /// <summary>
+        /// Ukrywanie  panelu.
+        /// </summary>
+        /// <param name="sender">określa obiekt który wywołał dany event</param>
+        /// <param name="e">Zawiera informacje o stanie i dane zdarzenia powiązane ze zdarzeniem kierowanym.</param>
         private void Button_Click_20(object sender, RoutedEventArgs e)
         {
             spsciezka.Visibility = Visibility.Collapsed;
             tbsciezka.Text = string.Empty;
         }
 
+
+        /// <summary>
+        /// Metoda polegająca na dodawaniu ścieżki do gry podanej przez urzytkownika oraz zapisaniu tej ścieżki do odpowiedniego obiektu w bazie danych.
+        /// </summary>
+        /// <param name="sender">określa obiekt który wywołał dany event</param>
+        /// <param name="e">Zawiera informacje o stanie i dane zdarzenia powiązane ze zdarzeniem kierowanym.</param>
         private void potwiedzeniesciezki_Click(object sender, RoutedEventArgs e)
         {
             
